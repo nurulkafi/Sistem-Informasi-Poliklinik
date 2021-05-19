@@ -253,6 +253,8 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegawaiActionPerformed
         // TODO add your handling code here:
+        new MenuPegawai.MenuPegawai().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPegawaiActionPerformed
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
