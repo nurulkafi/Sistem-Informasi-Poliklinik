@@ -9,6 +9,7 @@ import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
+import java.util.*;
 
 /**
  *
@@ -21,6 +22,8 @@ public class MenuUtama extends javax.swing.JFrame {
      */
     public MenuUtama() {
         initComponents();
+        Time();
+        username.setText(GlobalVar.nama.toUpperCase());
     }
 
     /**
@@ -45,6 +48,9 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
+        tgl = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        jam = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -192,6 +198,18 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
+        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        tgl.setText("19 Mei 2021");
+        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        username.setText("Admin");
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 110, -1, -1));
+
+        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jam.setText("17:18:9");
+        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
@@ -209,7 +227,21 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-
+    private void Time(){
+        int detik, menit, jam, hari, bulan, tahun;
+        GregorianCalendar date = new GregorianCalendar();
+        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+        detik = date.get(Calendar.SECOND);
+        menit = date.get(Calendar.MINUTE);
+        jam =  date.get(Calendar.HOUR_OF_DAY);
+        hari = date.get(Calendar.DAY_OF_MONTH);
+        bulan = date.get(Calendar.MONTH);
+        tahun = date.get(Calendar.YEAR);
+        int test = date.get(Calendar.DAY_OF_WEEK);
+        
+        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
+        this.jam.setText(jam+":"+menit+":"+detik);
+    }
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -311,6 +343,9 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
+    private javax.swing.JLabel jam;
     private javax.swing.JLabel navi;
+    private javax.swing.JLabel tgl;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
