@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuUtama;
+package Dokter;
 
 import Koneksi.GlobalVar;
 import java.awt.Color;
@@ -15,15 +15,13 @@ import java.util.*;
  *
  * @author donih
  */
-public class MenuUtama extends javax.swing.JFrame {
+public class EditData extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
-    public MenuUtama() {
+    public EditData() {
         initComponents();
-        Time();
-        username.setText(GlobalVar.nama.toUpperCase());
     }
 
     /**
@@ -38,7 +36,6 @@ public class MenuUtama extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnUser = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
@@ -48,9 +45,18 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        tgl = new javax.swing.JLabel();
-        username = new javax.swing.JLabel();
-        jam = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Username = new javax.swing.JTextField();
+        Username1 = new javax.swing.JTextField();
+        Poli = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -88,16 +94,6 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnUser.setBackground(new Color(0,0,0,0));
-        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/user.png"))); // NOI18N
-        btnUser.setBorder(null);
-        btnUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 47, -1, -1));
 
         btnLogout.setBackground(new Color(0,0,0,0));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
@@ -168,6 +164,7 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter.setBackground(new Color(0,0,0,0));
         btnDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Dokter.png"))); // NOI18N
         btnDokter.setBorder(null);
+        btnDokter.setSelected(true);
         btnDokter.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/DokterAktif.png"))); // NOI18N
         btnDokter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,17 +195,99 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        tgl.setText("19 Mei 2021");
-        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (4).png"))); // NOI18N
+        jLabel4.setText("No Telephone");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, -1, -1));
 
-        username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        username.setText("Admin");
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, -1, -1));
+        Username.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Username.setToolTipText("Username");
+        Username.setAlignmentX(1.0F);
+        Username.setAlignmentY(1.0F);
+        Username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        Username.setCaretColor(new java.awt.Color(30, 174, 152));
+        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 330, 30));
 
-        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jam.setText("17:18:9");
-        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        Username1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Username1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Username1.setToolTipText("Username");
+        Username1.setAlignmentX(1.0F);
+        Username1.setAlignmentY(1.0F);
+        Username1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        Username1.setCaretColor(new java.awt.Color(30, 174, 152));
+        Username1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(Username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
+
+        Poli.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Poli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Poli.setBorder(null);
+        Poli.setPreferredSize(new java.awt.Dimension(5, 28));
+        Poli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PoliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 330, 30));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 330, 100));
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (3).png"))); // NOI18N
+        jLabel7.setText("Alamat");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (2).png"))); // NOI18N
+        jLabel6.setText("Poliklinik");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(204, 0, 0));
+        jButton1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Batal");
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 490, 160, 40));
+
+        jButton2.setBackground(new java.awt.Color(30, 174, 152));
+        jButton2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Simpan");
+        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton2.setBorderPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 160, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 28, 1190, 50));
+
+        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel5.setText("Nama Dokter");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, -1));
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
@@ -216,7 +295,7 @@ public class MenuUtama extends javax.swing.JFrame {
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/background.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/EditData.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
@@ -227,21 +306,7 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-    private void Time(){
-        int detik, menit, jam, hari, bulan, tahun;
-        GregorianCalendar date = new GregorianCalendar();
-        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
-        hari = date.get(Calendar.DAY_OF_MONTH);
-        bulan = date.get(Calendar.MONTH);
-        tahun = date.get(Calendar.YEAR);
-        int test = date.get(Calendar.DAY_OF_WEEK);
-        
-        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
-        this.jam.setText(jam+":"+menit+":"+detik);
-    }
+
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -257,9 +322,6 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         // TODO add your handling code here:
-        Dokter.MenuDokter frm = new Dokter.MenuDokter();
-        frm.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnDokterActionPerformed
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
@@ -291,9 +353,18 @@ public class MenuUtama extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUserActionPerformed
+      
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PoliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,20 +383,35 @@ public class MenuUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUtama().setVisible(true);
+                new EditData().setVisible(true);
             }
         });
     }
@@ -334,6 +420,9 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton CLOSE;
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
+    private javax.swing.JComboBox<String> Poli;
+    private javax.swing.JTextField Username;
+    private javax.swing.JTextField Username1;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
@@ -344,11 +433,16 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPemeriksaan;
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
-    private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
-    private javax.swing.JLabel jam;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel navi;
-    private javax.swing.JLabel tgl;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

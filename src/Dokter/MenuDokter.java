@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuUtama;
+package Dokter;
 
 import Koneksi.GlobalVar;
 import java.awt.Color;
@@ -15,15 +15,13 @@ import java.util.*;
  *
  * @author donih
  */
-public class MenuUtama extends javax.swing.JFrame {
+public class MenuDokter extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
-    public MenuUtama() {
+    public MenuDokter() {
         initComponents();
-        Time();
-        username.setText(GlobalVar.nama.toUpperCase());
     }
 
     /**
@@ -38,7 +36,6 @@ public class MenuUtama extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnUser = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
@@ -48,9 +45,12 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        tgl = new javax.swing.JLabel();
-        username = new javax.swing.JLabel();
-        jam = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        CLOSE1 = new javax.swing.JButton();
+        CLOSE2 = new javax.swing.JButton();
+        CLOSE3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -88,16 +88,6 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnUser.setBackground(new Color(0,0,0,0));
-        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/user.png"))); // NOI18N
-        btnUser.setBorder(null);
-        btnUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 47, -1, -1));
 
         btnLogout.setBackground(new Color(0,0,0,0));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
@@ -168,6 +158,7 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter.setBackground(new Color(0,0,0,0));
         btnDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Dokter.png"))); // NOI18N
         btnDokter.setBorder(null);
+        btnDokter.setSelected(true);
         btnDokter.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/DokterAktif.png"))); // NOI18N
         btnDokter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,17 +189,63 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        tgl.setText("19 Mei 2021");
-        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        username.setText("Admin");
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 870, 460));
 
-        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jam.setText("17:18:9");
-        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        CLOSE1.setBackground(new Color(0,0,0,0));
+        CLOSE1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Group 11.png"))); // NOI18N
+        CLOSE1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE1.setBorderPainted(false);
+        CLOSE1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Group 12 (1).png"))); // NOI18N
+        CLOSE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CLOSE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 310, 90, 70));
+
+        CLOSE2.setBackground(new Color(0,0,0,0));
+        CLOSE2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Group 9.png"))); // NOI18N
+        CLOSE2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE2.setBorderPainted(false);
+        CLOSE2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Group 12.png"))); // NOI18N
+        CLOSE2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CLOSE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 230, 90, 80));
+
+        CLOSE3.setBackground(new Color(0,0,0,0));
+        CLOSE3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/input.png"))); // NOI18N
+        CLOSE3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE3.setBorderPainted(false);
+        CLOSE3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/input (2).png"))); // NOI18N
+        CLOSE3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 150, 90, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
@@ -216,7 +253,7 @@ public class MenuUtama extends javax.swing.JFrame {
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/background.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/MenuPegawai (1).png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
@@ -227,21 +264,7 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-    private void Time(){
-        int detik, menit, jam, hari, bulan, tahun;
-        GregorianCalendar date = new GregorianCalendar();
-        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
-        hari = date.get(Calendar.DAY_OF_MONTH);
-        bulan = date.get(Calendar.MONTH);
-        tahun = date.get(Calendar.YEAR);
-        int test = date.get(Calendar.DAY_OF_WEEK);
-        
-        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
-        this.jam.setText(jam+":"+menit+":"+detik);
-    }
+
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -257,9 +280,6 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         // TODO add your handling code here:
-        Dokter.MenuDokter frm = new Dokter.MenuDokter();
-        frm.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnDokterActionPerformed
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
@@ -291,9 +311,22 @@ public class MenuUtama extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+    private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUserActionPerformed
+    }//GEN-LAST:event_CLOSE1ActionPerformed
+
+    private void CLOSE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE2ActionPerformed
+        // TODO add your handling code here:
+        new Dokter.EditData().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_CLOSE2ActionPerformed
+
+    private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
+        // TODO add your handling code here:
+        Dokter.TambahData frm = new Dokter.TambahData();
+        frm.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_CLOSE3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,26 +345,32 @@ public class MenuUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDokter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDokter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDokter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDokter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUtama().setVisible(true);
+                new MenuDokter().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CLOSE;
+    private javax.swing.JButton CLOSE1;
+    private javax.swing.JButton CLOSE2;
+    private javax.swing.JButton CLOSE3;
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
     private javax.swing.JLabel bg;
@@ -344,11 +383,10 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPemeriksaan;
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
-    private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
-    private javax.swing.JLabel jam;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel navi;
-    private javax.swing.JLabel tgl;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
