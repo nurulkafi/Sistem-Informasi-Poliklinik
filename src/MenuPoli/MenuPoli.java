@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuUtama;
+package MenuPoli;
 
+import MenuUtama.*;
 import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
@@ -15,15 +16,13 @@ import java.util.*;
  *
  * @author donih
  */
-public class MenuUtama extends javax.swing.JFrame {
+public class MenuPoli extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
-    public MenuUtama() {
+    public MenuPoli() {
         initComponents();
-        Time();
-        username.setText(GlobalVar.nama.toUpperCase());
     }
 
     /**
@@ -35,10 +34,17 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Cari = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Delete = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
+        Input = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnUser = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
@@ -48,9 +54,6 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        tgl = new javax.swing.JLabel();
-        username = new javax.swing.JLabel();
-        jam = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -58,6 +61,68 @@ public class MenuUtama extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Cari.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        Cari.setText("Cari");
+        getContentPane().add(Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, -1, -1));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, 120, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "KodePoli", "NamaPoli"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 880, 470));
+
+        Delete.setBackground(new Color(0,0,0,0));
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/delete.png"))); // NOI18N
+        Delete.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Delete.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/delete huruf.png"))); // NOI18N
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 370, 90, 80));
+
+        Edit.setBackground(new Color(0,0,0,0));
+        Edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/edit.png"))); // NOI18N
+        Edit.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Edit.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/edit huruf.png"))); // NOI18N
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 270, 90, 80));
+
+        Input.setBackground(new Color(0,0,0,0));
+        Input.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/input.png"))); // NOI18N
+        Input.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Input.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/input huruf.png"))); // NOI18N
+        Input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 170, 90, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/Text.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 75, -1, -1));
 
         MIN.setBackground(new Color(0,0,0,0));
         MIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -88,16 +153,6 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnUser.setBackground(new Color(0,0,0,0));
-        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/user.png"))); // NOI18N
-        btnUser.setBorder(null);
-        btnUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 47, -1, -1));
 
         btnLogout.setBackground(new Color(0,0,0,0));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
@@ -157,6 +212,7 @@ public class MenuUtama extends javax.swing.JFrame {
         btnPoli.setBackground(new Color(0,0,0,0));
         btnPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Poli.png"))); // NOI18N
         btnPoli.setBorder(null);
+        btnPoli.setSelected(true);
         btnPoli.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PoliAktif.png"))); // NOI18N
         btnPoli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,25 +254,13 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        tgl.setText("19 Mei 2021");
-        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
-
-        username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        username.setText("Admin");
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, -1, -1));
-
-        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jam.setText("17:18:9");
-        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
-
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/background.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/BG.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
@@ -227,21 +271,7 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-    private void Time(){
-        int detik, menit, jam, hari, bulan, tahun;
-        GregorianCalendar date = new GregorianCalendar();
-        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
-        hari = date.get(Calendar.DAY_OF_MONTH);
-        bulan = date.get(Calendar.MONTH);
-        tahun = date.get(Calendar.YEAR);
-        int test = date.get(Calendar.DAY_OF_WEEK);
-        
-        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
-        this.jam.setText(jam+":"+menit+":"+detik);
-    }
+
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -259,15 +289,12 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         // TODO add your handling code here:
-        Dokter.MenuDokter frm = new Dokter.MenuDokter();
-        frm.setVisible(true);
+        new Dokter.MenuDokter().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnDokterActionPerformed
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
         // TODO add your handling code here:
-        new MenuPoli.MenuPoli().setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnPoliActionPerformed
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
@@ -295,9 +322,25 @@ public class MenuUtama extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+    private void InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUserActionPerformed
+        new TambahPoli().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_InputActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        // TODO add your handling code here:
+        new EditPoli().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EditActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,26 +359,31 @@ public class MenuUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUtama().setVisible(true);
+                new MenuPoli().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CLOSE;
+    private javax.swing.JButton Cari;
+    private javax.swing.JButton Delete;
+    private javax.swing.JButton Edit;
+    private javax.swing.JButton Input;
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
     private javax.swing.JLabel bg;
@@ -348,11 +396,11 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPemeriksaan;
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
-    private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
-    private javax.swing.JLabel jam;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel navi;
-    private javax.swing.JLabel tgl;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

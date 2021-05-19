@@ -286,6 +286,8 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
         // TODO add your handling code here:
+        new MenuPoli.MenuPoli().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPoliActionPerformed
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuUtama;
+package MenuPoli;
 
+import MenuUtama.*;
 import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
@@ -15,15 +16,13 @@ import java.util.*;
  *
  * @author donih
  */
-public class MenuUtama extends javax.swing.JFrame {
+public class TambahPoli extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
-    public MenuUtama() {
+    public TambahPoli() {
         initComponents();
-        Time();
-        username.setText(GlobalVar.nama.toUpperCase());
     }
 
     /**
@@ -35,10 +34,15 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Batal = new javax.swing.JButton();
+        Simpan = new javax.swing.JButton();
+        IsiNama = new javax.swing.JTextField();
+        NamaPoli = new javax.swing.JLabel();
+        IsiKode = new javax.swing.JTextField();
+        KodePoli = new javax.swing.JLabel();
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnUser = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
@@ -48,9 +52,6 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        tgl = new javax.swing.JLabel();
-        username = new javax.swing.JLabel();
-        jam = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -58,6 +59,55 @@ public class MenuUtama extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Batal.setBackground(new java.awt.Color(255, 7, 0));
+        Batal.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        Batal.setForeground(new java.awt.Color(255, 255, 255));
+        Batal.setText("Batal");
+        Batal.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Batal.setBorderPainted(false);
+        Batal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 200, 40));
+
+        Simpan.setBackground(new java.awt.Color(30, 174, 152));
+        Simpan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        Simpan.setForeground(new java.awt.Color(255, 255, 255));
+        Simpan.setText("Simpan");
+        Simpan.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Simpan.setBorderPainted(false);
+        Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SimpanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 200, 40));
+
+        IsiNama.setToolTipText("");
+        getContentPane().add(IsiNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 240, -1));
+
+        NamaPoli.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        NamaPoli.setForeground(new java.awt.Color(30, 174, 152));
+        NamaPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/NamaPoli.png"))); // NOI18N
+        NamaPoli.setText("Nama Poli");
+        getContentPane().add(NamaPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, -1, -1));
+
+        IsiKode.setToolTipText("");
+        IsiKode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IsiKodeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(IsiKode, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 240, -1));
+
+        KodePoli.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        KodePoli.setForeground(new java.awt.Color(30, 174, 152));
+        KodePoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/KodePoli.png"))); // NOI18N
+        KodePoli.setText("Kode Poli");
+        getContentPane().add(KodePoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
 
         MIN.setBackground(new Color(0,0,0,0));
         MIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -88,16 +138,6 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnUser.setBackground(new Color(0,0,0,0));
-        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/user.png"))); // NOI18N
-        btnUser.setBorder(null);
-        btnUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 47, -1, -1));
 
         btnLogout.setBackground(new Color(0,0,0,0));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
@@ -157,6 +197,7 @@ public class MenuUtama extends javax.swing.JFrame {
         btnPoli.setBackground(new Color(0,0,0,0));
         btnPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Poli.png"))); // NOI18N
         btnPoli.setBorder(null);
+        btnPoli.setSelected(true);
         btnPoli.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PoliAktif.png"))); // NOI18N
         btnPoli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,25 +239,13 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        tgl.setText("19 Mei 2021");
-        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
-
-        username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        username.setText("Admin");
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, -1, -1));
-
-        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jam.setText("17:18:9");
-        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
-
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/background.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/BGTambah.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
@@ -227,21 +256,7 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-    private void Time(){
-        int detik, menit, jam, hari, bulan, tahun;
-        GregorianCalendar date = new GregorianCalendar();
-        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
-        hari = date.get(Calendar.DAY_OF_MONTH);
-        bulan = date.get(Calendar.MONTH);
-        tahun = date.get(Calendar.YEAR);
-        int test = date.get(Calendar.DAY_OF_WEEK);
-        
-        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
-        this.jam.setText(jam+":"+menit+":"+detik);
-    }
+
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -259,15 +274,12 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         // TODO add your handling code here:
-        Dokter.MenuDokter frm = new Dokter.MenuDokter();
-        frm.setVisible(true);
+        new Dokter.MenuDokter().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnDokterActionPerformed
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
         // TODO add your handling code here:
-        new MenuPoli.MenuPoli().setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnPoliActionPerformed
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
@@ -295,9 +307,17 @@ public class MenuUtama extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+    private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUserActionPerformed
+    }//GEN-LAST:event_SimpanActionPerformed
+
+    private void IsiKodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsiKodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IsiKodeActionPerformed
+
+    private void BatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,28 +336,37 @@ public class MenuUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TambahPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TambahPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TambahPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TambahPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUtama().setVisible(true);
+                new TambahPoli().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Batal;
     private javax.swing.JButton CLOSE;
+    private javax.swing.JTextField IsiKode;
+    private javax.swing.JTextField IsiNama;
+    private javax.swing.JLabel KodePoli;
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
+    private javax.swing.JLabel NamaPoli;
+    private javax.swing.JButton Simpan;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
@@ -348,11 +377,7 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPemeriksaan;
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
-    private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
-    private javax.swing.JLabel jam;
     private javax.swing.JLabel navi;
-    private javax.swing.JLabel tgl;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
