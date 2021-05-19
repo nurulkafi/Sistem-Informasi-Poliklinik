@@ -5,8 +5,10 @@
  */
 
 package Login;
+import Koneksi.GlobalVar;
 import Koneksi.Koneksi;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -69,6 +71,11 @@ public class Login extends javax.swing.JFrame {
         MIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/-Off.png"))); // NOI18N
         MIN.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         MIN.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/Min.png"))); // NOI18N
+        MIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MINActionPerformed(evt);
+            }
+        });
         getContentPane().add(MIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, 30, 30));
 
         MAX.setBackground(new Color(0,0,0,0));
@@ -142,16 +149,22 @@ public class Login extends javax.swing.JFrame {
                     GlobalVar.id_user = go.getString("id_user");
                     GlobalVar.hak_akses = go.getString("TypeUser");
                     JOptionPane.showMessageDialog(null, "Selamat Datang " + GlobalVar.nama );
+                    new MenuUtama.MenuUtama().setVisible(true);
+                    dispose();
                 }else if("gudang".equals(go.getString("TypeUser"))){
                     GlobalVar.nama = go.getString("username");
                     GlobalVar.id_user = go.getString("id_user");
                     GlobalVar.hak_akses = go.getString("TypeUser");
                     JOptionPane.showMessageDialog(null, "Selamat Datang " + GlobalVar.nama );
+                    new MenuUtama.MenuUtama().setVisible(true);
+                    dispose();
                 }else{
                     GlobalVar.nama = go.getString("username");
                     GlobalVar.id_user = go.getString("id_user");
                     GlobalVar.hak_akses = go.getString("TypeUser");
                     JOptionPane.showMessageDialog(null, "Selamat Datang " + GlobalVar.nama );
+                    new MenuUtama.MenuUtama().setVisible(true);
+                    dispose();
 
                 }
             }else{
@@ -178,6 +191,11 @@ public class Login extends javax.swing.JFrame {
             login();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
+        // TODO add your handling code here:
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_MINActionPerformed
 
     /**
      * @param args the command line arguments
