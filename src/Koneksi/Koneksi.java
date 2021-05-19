@@ -22,7 +22,7 @@ public class Koneksi {
     private static Connection koneksi;  
     public static Connection getKoneksi(){
         try{
-            String url = "jdbc:mysql://localhost/minimarket";
+            String url = "jdbc:mysql://localhost/poliklinik";
             String user = "root";
             String password = "";
             
