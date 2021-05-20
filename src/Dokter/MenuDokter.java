@@ -29,6 +29,7 @@ public class MenuDokter extends javax.swing.JFrame {
      * Creates new form MenuUtama
      */
     DefaultTableModel table = new DefaultTableModel();
+    String kodepoli;
     public MenuDokter() {
         initComponents();
         tableDokter.setModel(table);
@@ -50,6 +51,42 @@ public class MenuDokter extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tambahData = new javax.swing.JDialog();
+        MIN1 = new javax.swing.JButton();
+        MAX1 = new javax.swing.JButton();
+        CLOSE4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        nama = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Poli = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        alamat = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        telp = new javax.swing.JTextField();
+        btnSimpan = new javax.swing.JButton();
+        btnBatal = new javax.swing.JButton();
+        header1 = new javax.swing.JLabel();
+        bg1 = new javax.swing.JLabel();
+        kodedokter = new javax.swing.JTextField();
+        editData = new javax.swing.JDialog();
+        MIN2 = new javax.swing.JButton();
+        MAX2 = new javax.swing.JButton();
+        CLOSE5 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        nama1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        Poli1 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        alamat1 = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        telp1 = new javax.swing.JTextField();
+        btnSimpan1 = new javax.swing.JButton();
+        btnBatal1 = new javax.swing.JButton();
+        header2 = new javax.swing.JLabel();
+        bg2 = new javax.swing.JLabel();
+        kodedokter1 = new javax.swing.JTextField();
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
@@ -71,6 +108,300 @@ public class MenuDokter extends javax.swing.JFrame {
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
+
+        tambahData.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        tambahData.setUndecorated(true);
+        tambahData.setOpacity(0.0F);
+        tambahData.setSize(new java.awt.Dimension(600, 600));
+        tambahData.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                tambahDataWindowOpened(evt);
+            }
+        });
+        tambahData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MIN1.setBackground(new Color(0,0,0,0));
+        MIN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
+        MIN1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MIN1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Min.png"))); // NOI18N
+        MIN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MIN1ActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(MIN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
+
+        MAX1.setBackground(new Color(0,0,0,0));
+        MAX1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/maxOff.png"))); // NOI18N
+        MAX1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MAX1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Max.png"))); // NOI18N
+        tambahData.getContentPane().add(MAX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
+
+        CLOSE4.setBackground(new Color(0,0,0,0));
+        CLOSE4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/xOff.png"))); // NOI18N
+        CLOSE4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE4.setBorderPainted(false);
+        CLOSE4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Close.png"))); // NOI18N
+        CLOSE4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE4ActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(CLOSE4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
+
+        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel5.setText("Nama Dokter");
+        tambahData.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
+
+        nama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nama.setToolTipText("Username");
+        nama.setAlignmentX(1.0F);
+        nama.setAlignmentY(1.0F);
+        nama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        nama.setCaretColor(new java.awt.Color(30, 174, 152));
+        nama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        tambahData.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 270, 30));
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (2).png"))); // NOI18N
+        jLabel6.setText("Poliklinik");
+        tambahData.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+
+        Poli.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Poli.setBorder(null);
+        Poli.setPreferredSize(new java.awt.Dimension(5, 28));
+        Poli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PoliActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(Poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 270, 30));
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (3).png"))); // NOI18N
+        jLabel7.setText("Alamat");
+        tambahData.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
+        alamat.setColumns(20);
+        alamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        alamat.setRows(5);
+        alamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        alamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane2.setViewportView(alamat);
+
+        tambahData.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, 100));
+
+        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (4).png"))); // NOI18N
+        jLabel4.setText("No Telephone");
+        tambahData.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+
+        telp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        telp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        telp.setToolTipText("Username");
+        telp.setAlignmentX(1.0F);
+        telp.setAlignmentY(1.0F);
+        telp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        telp.setCaretColor(new java.awt.Color(30, 174, 152));
+        telp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        tambahData.getContentPane().add(telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 270, 30));
+
+        btnSimpan.setBackground(new Color (0,0,0,0));
+        btnSimpan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnSimpan.setForeground(new java.awt.Color(255, 255, 255));
+        btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpan.png"))); // NOI18N
+        btnSimpan.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSimpan.setBorderPainted(false);
+        btnSimpan.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpanAktif.png"))); // NOI18N
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpanActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 130, -1));
+
+        btnBatal.setBackground(new Color (0,0,0,0));
+        btnBatal.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnBatal.setForeground(new java.awt.Color(255, 255, 255));
+        btnBatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/TmblBatal.png"))); // NOI18N
+        btnBatal.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnBatal.setBorderPainted(false);
+        btnBatal.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/TmblBatalAktif.png"))); // NOI18N
+        btnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatalActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 130, -1));
+
+        header1.setBackground(new Color(0,0,0,0));
+        header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Tambah Data (2).png"))); // NOI18N
+        tambahData.getContentPane().add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
+
+        bg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
+        bg1.setToolTipText("");
+        tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
+
+        kodedokter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kodedokterActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(kodedokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        editData.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        editData.setUndecorated(true);
+        editData.setOpacity(0.0F);
+        editData.setSize(new java.awt.Dimension(600, 600));
+        editData.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                editDataWindowOpened(evt);
+            }
+        });
+        editData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MIN2.setBackground(new Color(0,0,0,0));
+        MIN2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
+        MIN2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MIN2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Min.png"))); // NOI18N
+        MIN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MIN2ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(MIN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
+
+        MAX2.setBackground(new Color(0,0,0,0));
+        MAX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/maxOff.png"))); // NOI18N
+        MAX2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MAX2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Max.png"))); // NOI18N
+        editData.getContentPane().add(MAX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
+
+        CLOSE5.setBackground(new Color(0,0,0,0));
+        CLOSE5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/xOff.png"))); // NOI18N
+        CLOSE5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE5.setBorderPainted(false);
+        CLOSE5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Close.png"))); // NOI18N
+        CLOSE5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE5ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(CLOSE5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
+
+        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel8.setText("Nama Dokter");
+        editData.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
+
+        nama1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nama1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nama1.setToolTipText("Username");
+        nama1.setAlignmentX(1.0F);
+        nama1.setAlignmentY(1.0F);
+        nama1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        nama1.setCaretColor(new java.awt.Color(30, 174, 152));
+        nama1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        editData.getContentPane().add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 270, 30));
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (2).png"))); // NOI18N
+        jLabel9.setText("Poliklinik");
+        editData.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+
+        Poli1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Poli1.setBorder(null);
+        Poli1.setPreferredSize(new java.awt.Dimension(5, 28));
+        Poli1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Poli1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(Poli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 270, 30));
+
+        jLabel10.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (3).png"))); // NOI18N
+        jLabel10.setText("Alamat");
+        editData.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
+        alamat1.setColumns(20);
+        alamat1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        alamat1.setRows(5);
+        alamat1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        alamat1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane3.setViewportView(alamat1);
+
+        editData.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, 100));
+
+        jLabel11.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Vector (4).png"))); // NOI18N
+        jLabel11.setText("No Telephone");
+        editData.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+
+        telp1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        telp1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        telp1.setToolTipText("Username");
+        telp1.setAlignmentX(1.0F);
+        telp1.setAlignmentY(1.0F);
+        telp1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        telp1.setCaretColor(new java.awt.Color(30, 174, 152));
+        telp1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        editData.getContentPane().add(telp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 270, 30));
+
+        btnSimpan1.setBackground(new Color (0,0,0,0));
+        btnSimpan1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnSimpan1.setForeground(new java.awt.Color(255, 255, 255));
+        btnSimpan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpan.png"))); // NOI18N
+        btnSimpan1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSimpan1.setBorderPainted(false);
+        btnSimpan1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpanAktif.png"))); // NOI18N
+        btnSimpan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpan1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(btnSimpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 130, -1));
+
+        btnBatal1.setBackground(new Color (0,0,0,0));
+        btnBatal1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnBatal1.setForeground(new java.awt.Color(255, 255, 255));
+        btnBatal1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/TmblBatal.png"))); // NOI18N
+        btnBatal1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnBatal1.setBorderPainted(false);
+        btnBatal1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/TmblBatalAktif.png"))); // NOI18N
+        btnBatal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatal1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(btnBatal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 130, -1));
+
+        header2.setBackground(new Color(0,0,0,0));
+        header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Tambah Data (3).png"))); // NOI18N
+        editData.getContentPane().add(header2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
+
+        bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
+        bg2.setToolTipText("");
+        editData.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
+
+        kodedokter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kodedokter1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(kodedokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -335,10 +666,13 @@ public class MenuDokter extends javax.swing.JFrame {
         String kode = table.getValueAt(baris,0).toString();
         
         String query = "DELETE FROM Dokter WHERE KodeDokter = '"+kode+"';";
+        String query2 = "DELETE FROM login WHERE id_user = '"+kode+"';";
         try{
             if ((jawab = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
             PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
             ps.execute();
+            PreparedStatement ps2 = (PreparedStatement) connect.prepareStatement(query2);
+            ps2.execute();
             JOptionPane.showMessageDialog(null , "Data Berhasil Dihapus");
         }
         }catch(SQLException | HeadlessException e){
@@ -348,6 +682,171 @@ public class MenuDokter extends javax.swing.JFrame {
             tampilData();
         }
         
+    }
+    private void TampilComboBox(){      
+        String query = "SELECT * FROM poli ";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                String nama = rslt.getString("NamaPoli");
+                Poli.addItem(nama);
+                Poli1.addItem(nama);
+            } 
+        }catch(Exception e){
+            
+            System.out.println(e);
+        } 
+    }
+    private void kodeotomatis(){
+        String query = "SELECT * FROM dokter ORDER BY KodeDokter DESC ";
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            if (rslt.next()){
+                String kode_dokter = rslt.getString("KodeDokter").substring(1);
+                String AN = "" + (Integer.parseInt(kode_dokter)+1);
+                String NOL = "";
+                if(AN.length()==1){
+                    NOL = "000";
+                }else if(AN.length()==2){
+                    NOL = "00";
+                }else if(AN.length()==3){
+                    NOL = "0";
+                }else if(AN.length()==4){
+                    NOL = "";
+                }
+                kodedokter.setText("D" + NOL + AN);
+            }else{
+                kodedokter.setText("D0001");
+            }
+        rslt.close();
+        connect.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    private void LoadData(){      
+        String query = "SELECT * FROM dokter WHERE KodeDokter = '"+Koneksi.GlobalVar.kode+"' ";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                String nama = rslt.getString("NmDokter");
+                String almt = rslt.getString("AlmDokter");
+                String tlpDokter = rslt.getString("TelpDokter");
+                
+                nama1.setText(nama);
+                alamat1.setText(almt);
+                telp1.setText(tlpDokter);
+            } 
+        }catch(Exception e){
+            
+            System.out.println(e);
+        } 
+    }
+    private void UpdateData(){
+        
+        String kode = Koneksi.GlobalVar.kode;
+        String nama = nama1.getText();
+        String alm = alamat1.getText();
+        String tlp = telp1.getText();
+        
+        String poli = (String)Poli1.getSelectedItem();
+        
+        String query = "SELECT * FROM poli WHERE NamaPoli = '"+poli+"' ";
+                
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+
+            while (rslt.next()){
+                kodepoli = rslt.getString("KodePoli");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+                //panggil koneksi
+            Connection connect = Koneksi.Koneksi.getKoneksi();
+        
+            String query2 = "UPDATE Dokter SET NmDokter = '"+nama+"', KodePoli = '"+kodepoli+"', AlmDokter = '"+alm+"', `TelpDokter` = '"+tlp+"' "
+                    + "WHERE KodeDokter = '"+kode+"';";
+            String query3 = "UPDATE login SET UserName = '"+nama+"', Password = '"+nama+"', TypeUser = '"+"Dokter"+"'"
+                    + "WHERE id_user = '"+kode+"' ;";
+
+            try{
+                PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
+                ps.executeUpdate(query2);
+                PreparedStatement ps2 = (PreparedStatement) connect.prepareStatement(query3);
+                ps2.executeUpdate(query3);
+                JOptionPane.showMessageDialog(null , "Data  Berhasil diUpdate");
+            }catch(SQLException | HeadlessException e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
+            }finally{
+                editData.dispose();
+                this.nama.setText(null);
+                alamat.setText(null);
+                telp.setText(null);
+            }
+        }  
+    }
+    private void tambahData(){
+        String kode = kodedokter.getText();
+        String nama = this.nama.getText();
+        String alm = alamat.getText();
+        String tlp = telp.getText();
+        String poli = (String)Poli.getSelectedItem();
+        
+        String query = "SELECT * FROM poli WHERE NamaPoli = '"+poli+"' ";
+                
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+
+            while (rslt.next()){
+                kodepoli = rslt.getString("KodePoli");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+                //panggil koneksi
+            Connection connect = Koneksi.Koneksi.getKoneksi();
+            //query untuk memasukan data
+            String query2 = "INSERT INTO dokter (KodeDokter, KodePoli, NmDokter, AlmDokter, TelpDokter ) "
+                         + "VALUES ('"+kode+"', '"+kodepoli+"','"+nama+"', '"+alm+"', '"+tlp+"')";
+            String query3 = "INSERT INTO login (id_user, UserName, Password, TypeUser ) "
+                         + "VALUES ('"+kode+"', '"+nama+"','"+nama+"', '"+"Dokter"+"')";
+
+            try{
+                //menyiapkan statement untuk di eksekusi
+                PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
+                ps.executeUpdate(query2);
+                PreparedStatement ps2 = (PreparedStatement) connect.prepareStatement(query3);
+                ps2.executeUpdate(query3);
+                JOptionPane.showMessageDialog(null,"Data Berhasil Disimpan");
+
+            }catch(SQLException | HeadlessException e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null,"Data Gagal Disimpan");
+
+            }finally{
+                tambahData.dispose();
+                this.nama.setText(null);
+                alamat.setText(null);
+                telp.setText(null);
+            }
+        }
     }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
@@ -411,15 +910,18 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void CLOSE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE2ActionPerformed
         // TODO add your handling code here:
-        new Dokter.EditData().setVisible(true);
-        dispose();
+       editData.setVisible(true);
+       editData.setBounds(380, 120, 600, 520);
+       LoadData();
+       TampilComboBox();
     }//GEN-LAST:event_CLOSE2ActionPerformed
 
     private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
         // TODO add your handling code here:
-        Dokter.TambahData frm = new Dokter.TambahData();
-        frm.setVisible(true);
-        dispose();
+       tambahData.setVisible(true);
+       tambahData.setBounds(380, 120, 600, 520);
+       TampilComboBox();
+       kodeotomatis();
     }//GEN-LAST:event_CLOSE3ActionPerformed
 
     private void tableDokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDokterMouseClicked
@@ -441,6 +943,91 @@ public class MenuDokter extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void MIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_MIN1ActionPerformed
+
+    private void CLOSE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE4ActionPerformed
+        // TODO add your handling code here:
+        editData.dispose();
+    }//GEN-LAST:event_CLOSE4ActionPerformed
+
+    private void tambahDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataWindowOpened
+        // TODO add your handling code here:
+        for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+            //            this.setOpacity(f);
+            tambahData.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+            catch(Exception e){
+            }
+        }
+    }//GEN-LAST:event_tambahDataWindowOpened
+
+    private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PoliActionPerformed
+
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        // TODO add your handling code here:
+        tambahData();
+        tampilData();
+    }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+        // TODO add your handling code here:
+        tambahData.dispose();
+    }//GEN-LAST:event_btnBatalActionPerformed
+
+    private void kodedokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodedokterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kodedokterActionPerformed
+
+    private void MIN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MIN2ActionPerformed
+
+    private void CLOSE5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CLOSE5ActionPerformed
+
+    private void Poli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poli1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Poli1ActionPerformed
+
+    private void btnSimpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan1ActionPerformed
+        // TODO add your handling code here:
+        UpdateData();
+        tampilData();
+    }//GEN-LAST:event_btnSimpan1ActionPerformed
+
+    private void btnBatal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatal1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBatal1ActionPerformed
+
+    private void kodedokter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodedokter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kodedokter1ActionPerformed
+
+    private void editDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataWindowOpened
+        // TODO add your handling code here:
+        for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+//            this.setOpacity(f);
+            editData.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+           catch(Exception e){
+            }
+        }
+    }//GEN-LAST:event_editDataWindowOpened
 
     /**
      * @param args the command line arguments
@@ -485,9 +1072,23 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JButton CLOSE1;
     private javax.swing.JButton CLOSE2;
     private javax.swing.JButton CLOSE3;
+    private javax.swing.JButton CLOSE4;
+    private javax.swing.JButton CLOSE5;
     private javax.swing.JButton MAX;
+    private javax.swing.JButton MAX1;
+    private javax.swing.JButton MAX2;
     private javax.swing.JButton MIN;
+    private javax.swing.JButton MIN1;
+    private javax.swing.JButton MIN2;
+    private javax.swing.JComboBox<String> Poli;
+    private javax.swing.JComboBox<String> Poli1;
+    private javax.swing.JTextArea alamat;
+    private javax.swing.JTextArea alamat1;
     private javax.swing.JLabel bg;
+    private javax.swing.JLabel bg1;
+    private javax.swing.JLabel bg2;
+    private javax.swing.JButton btnBatal;
+    private javax.swing.JButton btnBatal1;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnLogout;
@@ -497,10 +1098,32 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JButton btnPemeriksaan;
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
+    private javax.swing.JButton btnSimpan;
+    private javax.swing.JButton btnSimpan1;
+    private javax.swing.JDialog editData;
     private javax.swing.JLabel header;
+    private javax.swing.JLabel header1;
+    private javax.swing.JLabel header2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField kodedokter;
+    private javax.swing.JTextField kodedokter1;
+    private javax.swing.JTextField nama;
+    private javax.swing.JTextField nama1;
     private javax.swing.JLabel navi;
     private javax.swing.JTable tableDokter;
+    private javax.swing.JDialog tambahData;
+    private javax.swing.JTextField telp;
+    private javax.swing.JTextField telp1;
     // End of variables declaration//GEN-END:variables
 }

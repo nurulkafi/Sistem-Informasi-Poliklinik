@@ -319,6 +319,11 @@ public class MenuPegawai extends javax.swing.JFrame {
         tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
         editData.setUndecorated(true);
+        editData.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                editDataWindowOpened(evt);
+            }
+        });
         editData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MIN3.setBackground(new Color(0,0,0,0));
@@ -971,7 +976,6 @@ public class MenuPegawai extends javax.swing.JFrame {
         editData.setVisible(true);
         editData.setBounds(380, 120, 600, 520);
         LoadData();
-        
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -1107,6 +1111,10 @@ public class MenuPegawai extends javax.swing.JFrame {
     private void lakieditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lakieditActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lakieditActionPerformed
+
+    private void editDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataWindowOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editDataWindowOpened
 
     /**
      * @param args the command line arguments
