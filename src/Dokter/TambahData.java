@@ -8,6 +8,12 @@ package Dokter;
 import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.util.*;
 
@@ -20,8 +26,11 @@ public class TambahData extends javax.swing.JFrame {
     /**
      * Creates new form MenuUtama
      */
+    String kodepoli;
     public TambahData() {
         initComponents();
+        TampilComboBox();
+        kodeotomatis();
     }
 
     /**
@@ -46,11 +55,11 @@ public class TambahData extends javax.swing.JFrame {
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        Username = new javax.swing.JTextField();
-        Username1 = new javax.swing.JTextField();
+        telp = new javax.swing.JTextField();
+        nama = new javax.swing.JTextField();
         Poli = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        alamat = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -60,6 +69,7 @@ public class TambahData extends javax.swing.JFrame {
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
+        kodedokter = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -201,28 +211,27 @@ public class TambahData extends javax.swing.JFrame {
         jLabel4.setText("No Telephone");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, -1, -1));
 
-        Username.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Username.setToolTipText("Username");
-        Username.setAlignmentX(1.0F);
-        Username.setAlignmentY(1.0F);
-        Username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        Username.setCaretColor(new java.awt.Color(30, 174, 152));
-        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 330, 30));
+        telp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        telp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        telp.setToolTipText("Username");
+        telp.setAlignmentX(1.0F);
+        telp.setAlignmentY(1.0F);
+        telp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        telp.setCaretColor(new java.awt.Color(30, 174, 152));
+        telp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 330, 30));
 
-        Username1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Username1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Username1.setToolTipText("Username");
-        Username1.setAlignmentX(1.0F);
-        Username1.setAlignmentY(1.0F);
-        Username1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        Username1.setCaretColor(new java.awt.Color(30, 174, 152));
-        Username1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(Username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
+        nama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nama.setToolTipText("Username");
+        nama.setAlignmentX(1.0F);
+        nama.setAlignmentY(1.0F);
+        nama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        nama.setCaretColor(new java.awt.Color(30, 174, 152));
+        nama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
 
         Poli.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Poli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Poli.setBorder(null);
         Poli.setPreferredSize(new java.awt.Dimension(5, 28));
         Poli.addActionListener(new java.awt.event.ActionListener() {
@@ -232,12 +241,12 @@ public class TambahData extends javax.swing.JFrame {
         });
         getContentPane().add(Poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 330, 30));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jScrollPane1.setViewportView(jTextArea1);
+        alamat.setColumns(20);
+        alamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        alamat.setRows(5);
+        alamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        alamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(alamat);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 330, 100));
 
@@ -298,9 +307,36 @@ public class TambahData extends javax.swing.JFrame {
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Tambah Data.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
+        kodedokter.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        kodedokter.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        kodedokter.setToolTipText("Username");
+        kodedokter.setAlignmentX(1.0F);
+        kodedokter.setAlignmentY(1.0F);
+        kodedokter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        kodedokter.setCaretColor(new java.awt.Color(30, 174, 152));
+        kodedokter.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(kodedokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    private void TampilComboBox(){      
+        String query = "SELECT * FROM poli ";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                String nama = rslt.getString("NamaPoli");
+                Poli.addItem(nama);
+            } 
+        }catch(Exception e){
+            
+            System.out.println(e);
+        } 
+    }
 
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
@@ -356,14 +392,90 @@ public class TambahData extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
+    private void kodeotomatis(){
+        String query = "SELECT * FROM dokter ORDER BY KodeDokter DESC ";
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            if (rslt.next()){
+                String kode_dokter = rslt.getString("KodeDokter").substring(1);
+                String AN = "" + (Integer.parseInt(kode_dokter)+1);
+                String NOL = "";
+                if(AN.length()==1){
+                    NOL = "000";
+                }else if(AN.length()==2){
+                    NOL = "00";
+                }else if(AN.length()==3){
+                    NOL = "0";
+                }else if(AN.length()==4){
+                    NOL = "";
+                }
+                kodedokter.setText("D" + NOL + AN);
+            }else{
+                kodedokter.setText("D0001");
+            }
+        rslt.close();
+        connect.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    private void tambahData(){
+        String kode = kodedokter.getText();
+        String nama = this.nama.getText();
+        String alm = alamat.getText();
+        String tlp = telp.getText();
+        String poli = (String)Poli.getSelectedItem();
+        
+        String query = "SELECT * FROM poli WHERE NamaPoli = '"+poli+"' ";
+                
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
 
+            while (rslt.next()){
+                kodepoli = rslt.getString("KodePoli");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+                //panggil koneksi
+            Connection connect = Koneksi.Koneksi.getKoneksi();
+            //query untuk memasukan data
+            String query2 = "INSERT INTO dokter (KodeDokter, KodePoli, NmDokter, AlmDokter, TelpDokter ) "
+                         + "VALUES ('"+kode+"', '"+kodepoli+"','"+nama+"', '"+alm+"', '"+tlp+"')";
+
+            try{
+                //menyiapkan statement untuk di eksekusi
+                PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
+                ps.executeUpdate(query2);
+                JOptionPane.showMessageDialog(null,"Data Berhasil Disimpan");
+
+            }catch(SQLException | HeadlessException e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null,"Data Gagal Disimpan");
+
+            }finally{
+                new Dokter.MenuDokter().setVisible(true);
+                dispose();
+            }
+        }
+        
+        
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      
+        new Dokter.MenuDokter().setVisible(true);
+                dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        tambahData();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
@@ -417,8 +529,7 @@ public class TambahData extends javax.swing.JFrame {
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
     private javax.swing.JComboBox<String> Poli;
-    private javax.swing.JTextField Username;
-    private javax.swing.JTextField Username1;
+    private javax.swing.JTextArea alamat;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
@@ -438,7 +549,9 @@ public class TambahData extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField kodedokter;
+    private javax.swing.JTextField nama;
     private javax.swing.JLabel navi;
+    private javax.swing.JTextField telp;
     // End of variables declaration//GEN-END:variables
 }

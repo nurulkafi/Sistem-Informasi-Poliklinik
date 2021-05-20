@@ -8,20 +8,37 @@ package Dokter;
 import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.util.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author donih
  */
 public class MenuDokter extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form MenuUtama
      */
+    DefaultTableModel table = new DefaultTableModel();
     public MenuDokter() {
         initComponents();
+        tableDokter.setModel(table);
+        table.addColumn("Kode Dokter");
+        table.addColumn("Nama");
+        table.addColumn("Poli");
+        table.addColumn("Alamat");
+        table.addColumn("No Hp");
+        tampilData();
+
     }
 
     /**
@@ -46,7 +63,7 @@ public class MenuDokter extends javax.swing.JFrame {
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableDokter = new javax.swing.JTable();
         CLOSE1 = new javax.swing.JButton();
         CLOSE2 = new javax.swing.JButton();
         CLOSE3 = new javax.swing.JButton();
@@ -189,18 +206,22 @@ public class MenuDokter extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableDokter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tableDokter.setToolTipText("");
+        tableDokter.setGridColor(new java.awt.Color(0, 0, 0));
+        tableDokter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDokterMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableDokter);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 870, 460));
 
@@ -259,7 +280,68 @@ public class MenuDokter extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void tampilData(){
+        //untuk mengahapus baris setelah input
+        int row = tableDokter.getRowCount();
+        for(int a = 0 ; a < row ; a++){
+            table.removeRow(0);
+        }
+        
+        String query = 
+                "SELECT KodeDokter,NamaPoli,NmDokter,AlmDokter,TelpDokter FROM dokter\n" +
+                "INNER JOIN poli ON dokter.KodePoli = poli.KodePoli ORDER BY KodeDokter";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                //menampung data sementara
+                   
+                    String kode = rslt.getString("KodeDokter");
+                    String nama = rslt.getString("NamaPoli");
+                    String namadokter = rslt.getString("NmDokter");
+                    String alm = rslt.getString("AlmDokter");
+                    String tlp = rslt.getString("TelpDokter");
+                    
+                //masukan semua data kedalam array
+                String[] data = {kode,nama,namadokter,alm,tlp};
+                //menambahakan baris sesuai dengan data yang tersimpan diarray
+                table.addRow(data);
+            }
+                //mengeset nilai yang ditampung agar muncul di table
+                tableDokter.setModel(table);
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
+       
+    }
+    private void hapusData(){
+        //ambill data no pendaftaran
+           
+        Connection connect = Koneksi.Koneksi.getKoneksi();
+        int baris = tableDokter.getSelectedRow();
+        int jawab;
+        String kode = table.getValueAt(baris,0).toString();
+        
+        String query = "DELETE FROM Dokter WHERE KodeDokter = '"+kode+"';";
+        try{
+            if ((jawab = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
+            PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
+            ps.execute();
+            JOptionPane.showMessageDialog(null , "Data Berhasil Dihapus");
+        }
+        }catch(SQLException | HeadlessException e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Data Gagal Dihapus");
+        }finally{
+            tampilData();
+        }
+        
+    }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
@@ -316,7 +398,8 @@ public class MenuDokter extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:'
+        hapusData();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void CLOSE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE2ActionPerformed
@@ -331,6 +414,12 @@ public class MenuDokter extends javax.swing.JFrame {
         frm.setVisible(true);
         dispose();
     }//GEN-LAST:event_CLOSE3ActionPerformed
+
+    private void tableDokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDokterMouseClicked
+        // TODO add your handling code here:
+        String kode = table.getValueAt(tableDokter.getSelectedRow(),0).toString();
+        Koneksi.GlobalVar.kode = kode;
+    }//GEN-LAST:event_tableDokterMouseClicked
 
     /**
      * @param args the command line arguments
@@ -390,7 +479,7 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JLabel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel navi;
+    private javax.swing.JTable tableDokter;
     // End of variables declaration//GEN-END:variables
 }

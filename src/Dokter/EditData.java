@@ -8,6 +8,12 @@ package Dokter;
 import Koneksi.GlobalVar;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.util.*;
 
@@ -20,8 +26,11 @@ public class EditData extends javax.swing.JFrame {
     /**
      * Creates new form MenuUtama
      */
+    String kodepoli;
     public EditData() {
         initComponents();
+        TampilComboBox();
+        LoadData();
     }
 
     /**
@@ -46,11 +55,11 @@ public class EditData extends javax.swing.JFrame {
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        Username = new javax.swing.JTextField();
-        Username1 = new javax.swing.JTextField();
+        tlp = new javax.swing.JTextField();
+        namadokter = new javax.swing.JTextField();
         Poli = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        alm = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -201,28 +210,27 @@ public class EditData extends javax.swing.JFrame {
         jLabel4.setText("No Telephone");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, -1, -1));
 
-        Username.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Username.setToolTipText("Username");
-        Username.setAlignmentX(1.0F);
-        Username.setAlignmentY(1.0F);
-        Username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        Username.setCaretColor(new java.awt.Color(30, 174, 152));
-        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 330, 30));
+        tlp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tlp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        tlp.setToolTipText("Username");
+        tlp.setAlignmentX(1.0F);
+        tlp.setAlignmentY(1.0F);
+        tlp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        tlp.setCaretColor(new java.awt.Color(30, 174, 152));
+        tlp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(tlp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 330, 30));
 
-        Username1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Username1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Username1.setToolTipText("Username");
-        Username1.setAlignmentX(1.0F);
-        Username1.setAlignmentY(1.0F);
-        Username1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        Username1.setCaretColor(new java.awt.Color(30, 174, 152));
-        Username1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(Username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
+        namadokter.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        namadokter.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        namadokter.setToolTipText("Username");
+        namadokter.setAlignmentX(1.0F);
+        namadokter.setAlignmentY(1.0F);
+        namadokter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        namadokter.setCaretColor(new java.awt.Color(30, 174, 152));
+        namadokter.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(namadokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 330, 30));
 
         Poli.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        Poli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Poli.setBorder(null);
         Poli.setPreferredSize(new java.awt.Dimension(5, 28));
         Poli.addActionListener(new java.awt.event.ActionListener() {
@@ -232,12 +240,12 @@ public class EditData extends javax.swing.JFrame {
         });
         getContentPane().add(Poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 330, 30));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jScrollPane1.setViewportView(jTextArea1);
+        alm.setColumns(20);
+        alm.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        alm.setRows(5);
+        alm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        alm.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(alm);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 330, 100));
 
@@ -301,12 +309,94 @@ public class EditData extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    private void TampilComboBox(){      
+        String query = "SELECT * FROM poli ";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                String nama = rslt.getString("NamaPoli");
+                Poli.addItem(nama);
+            } 
+        }catch(Exception e){
+            
+            System.out.println(e);
+        } 
+    }
+    private void LoadData(){      
+        String query = "SELECT * FROM dokter WHERE KodeDokter = '"+Koneksi.GlobalVar.kode+"' ";
+        
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            while (rslt.next()){
+                String nama = rslt.getString("NmDokter");
+                String almt = rslt.getString("AlmDokter");
+                String tlpDokter = rslt.getString("TelpDokter");
+                
+                namadokter.setText(nama);
+                alm.setText(almt);
+                tlp.setText(tlpDokter);
+            } 
+        }catch(Exception e){
+            
+            System.out.println(e);
+        } 
+    }
+    private void UpdateData(){
+        
+        String kode = Koneksi.GlobalVar.kode;
+        String nama = namadokter.getText();
+        String alm = this.alm.getText();
+        String tlp = this.tlp.getText();
+        
+        String poli = (String)Poli.getSelectedItem();
+        
+        String query = "SELECT * FROM poli WHERE NamaPoli = '"+poli+"' ";
+                
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
 
+            while (rslt.next()){
+                kodepoli = rslt.getString("KodePoli");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+                //panggil koneksi
+            Connection connect = Koneksi.Koneksi.getKoneksi();
+        
+            String query2 = "UPDATE Dokter SET NmDokter = '"+nama+"', KodePoli = '"+kodepoli+"', AlmDokter = '"+alm+"', `TelpDokter` = '"+tlp+"' "
+                    + "WHERE KodeDokter = '"+kode+"';";
+
+            try{
+                PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
+                ps.executeUpdate(query2);
+                JOptionPane.showMessageDialog(null , "Data  Berhasil diUpdate");
+            }catch(SQLException | HeadlessException e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
+            }finally{
+                new Dokter.MenuDokter().setVisible(true);
+                dispose();
+            }
+        }
+        
+        
+        
+    }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-
+    
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -358,11 +448,13 @@ public class EditData extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-      
+            // TODO add your handling code here:
+      new Dokter.MenuDokter().setVisible(true);
+      dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        UpdateData();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -425,8 +517,7 @@ public class EditData extends javax.swing.JFrame {
     private javax.swing.JButton MAX;
     private javax.swing.JButton MIN;
     private javax.swing.JComboBox<String> Poli;
-    private javax.swing.JTextField Username;
-    private javax.swing.JTextField Username1;
+    private javax.swing.JTextArea alm;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
@@ -446,7 +537,8 @@ public class EditData extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField namadokter;
     private javax.swing.JLabel navi;
+    private javax.swing.JTextField tlp;
     // End of variables declaration//GEN-END:variables
 }
