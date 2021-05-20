@@ -18,5 +18,7 @@ public class GlobalVar {
     public static String id_user;
     public static String no_pen;
     public static String hak_akses;
+    public static String KodePoli;
+    public static String NamaPoli;
  
 }
