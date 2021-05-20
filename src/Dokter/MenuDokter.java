@@ -74,6 +74,13 @@ public class MenuDokter extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setOpacity(0.0F);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MIN.setBackground(new Color(0,0,0,0));
@@ -266,7 +273,7 @@ public class MenuDokter extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
         jLabel1.setToolTipText("");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 27, -1, -1));
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
@@ -420,6 +427,20 @@ public class MenuDokter extends javax.swing.JFrame {
         String kode = table.getValueAt(tableDokter.getSelectedRow(),0).toString();
         Koneksi.GlobalVar.kode = kode;
     }//GEN-LAST:event_tableDokterMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+            this.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+           catch(Exception e){
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

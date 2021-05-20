@@ -57,6 +57,12 @@ public class MenuUtama extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setOpacity(0.0F);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MIN.setBackground(new Color(0,0,0,0));
@@ -203,8 +209,9 @@ public class MenuUtama extends javax.swing.JFrame {
         getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        username.setText("Admin");
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, -1, -1));
+        username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        username.setText("User");
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 180, -1));
 
         jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jam.setText("17:18:9");
@@ -298,6 +305,20 @@ public class MenuUtama extends javax.swing.JFrame {
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+            this.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+           catch(Exception e){
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
