@@ -21,5 +21,8 @@ public class GlobalVar {
     public static String KodePoli;
     public static String NamaPoli;
     public static String KodeObat;
+    public static String id_jenis;
+    public static String namajenis;
+    public static String tarif;
  
 }

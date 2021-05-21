@@ -732,6 +732,11 @@ public class DataPasien extends javax.swing.JFrame {
         btnSubPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/subPendaftaran.png"))); // NOI18N
         btnSubPendaftaran.setBorder(null);
         btnSubPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubPendaftaranAktif.png"))); // NOI18N
+        btnSubPendaftaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubPendaftaranActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSubPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
 
         btnSubDataPasien.setBackground(new Color(0,0,0,0));
@@ -1257,6 +1262,12 @@ public class DataPasien extends javax.swing.JFrame {
     private void btnSubDataPasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubDataPasienActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubDataPasienActionPerformed
+
+    private void btnSubPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubPendaftaranActionPerformed
+        // TODO add your handling code here:
+        new Pendaftaran.DataPendaftaran().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSubPendaftaranActionPerformed
 
     /**
      * @param args the command line arguments

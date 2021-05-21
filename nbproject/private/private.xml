@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/MenuPegawai/MenuPegawai.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/MenuObat/MenuObat.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/MenuUtama/MenuUtama.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/MenuPoli/MenuPoli.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/Login/Login.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/Dokter/MenuDokter.java</file>
-            <file>file:/D:/NetBeansProjects/Poliklinik/SistemInformasiPoliklinik/src/Pendaftaran/DataPasien.java</file>
+            <file>file:/C:/Users/Nurul%20Kafi/Documents/NetBeansProjects/Klinik/src/Dokter/MenuDokter.java</file>
+            <file>file:/C:/Users/Nurul%20Kafi/Documents/NetBeansProjects/Klinik/src/Login/Login.java</file>
+            <file>file:/C:/Users/Nurul%20Kafi/Documents/NetBeansProjects/Klinik/src/MenuUtama/MenuUtama.java</file>
+            <file>file:/C:/Users/Nurul%20Kafi/Documents/NetBeansProjects/Klinik/src/MenuPegawai/MenuPegawai.java</file>
+            <file>file:/C:/Users/Nurul%20Kafi/Documents/NetBeansProjects/Klinik/src/Koneksi/GlobalVar.java</file>
         </group>
     </open-files>
 </project-private>
