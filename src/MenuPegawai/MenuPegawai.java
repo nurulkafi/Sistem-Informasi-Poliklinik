@@ -87,6 +87,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         txtAlamatEdit = new javax.swing.JTextArea();
         alamat1 = new javax.swing.JLabel();
         pilihanTglLhrEdit = new com.toedter.calendar.JDateChooser();
+        lock = new javax.swing.JLabel();
         Tgllahir1 = new javax.swing.JLabel();
         txtTelpEdit = new javax.swing.JTextField();
         Telepon1 = new javax.swing.JLabel();
@@ -424,6 +425,9 @@ public class MenuPegawai extends javax.swing.JFrame {
         });
         editData.getContentPane().add(pilihanTglLhrEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, -1));
 
+        lock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/lock.png"))); // NOI18N
+        editData.getContentPane().add(lock, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 95, -1, -1));
+
         Tgllahir1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Tgllahir1.setForeground(new java.awt.Color(30, 174, 152));
         Tgllahir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/Group.png"))); // NOI18N
@@ -479,6 +483,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         editData.getContentPane().add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
         txtNIPEdit.setEditable(false);
+        txtNIPEdit.setBackground(new java.awt.Color(204, 204, 204));
         txtNIPEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNIPEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtNIPEdit.setToolTipText("Username");
@@ -884,7 +889,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         lakiedit.setActionCommand("L");
         PerempuanEdit.setActionCommand("P");
         
-        String nipedit = txtNIPEdit.getText();
+        String nipedit = NIPegawai;
         String namaedit = txtNamaEdit.getText();
         String jnsklmedit = buttonGroup1.getSelection().getActionCommand();
         String tlpedit = txtTelpEdit.getText();
@@ -893,10 +898,10 @@ public class MenuPegawai extends javax.swing.JFrame {
                  
         Connection connect = Koneksi.Koneksi.getKoneksi();
         
-            String query2 = "UPDATE pegawai SET NIP = '"+nipedit+"', NamaPeg = '"+namaedit+"', AlmPeg = '"+alamatedit+"', `TelpPeg` = '"+tlpedit+"', `TglLhrPeg` = '"+TGL_Lahir1+"', `JnsKelPeg` = '"+jnsklmedit+"' "
-                    + "WHERE NIP = '"+NIPegawai+"';";
-            String query3 = "INSERT INTO login (id_user, UserName, Password, TypeUser ) "
-                         + "VALUES ('"+nipedit+"', '"+namaedit+"','"+namaedit+"', '"+"Pegawai"+"')";
+            String query2 = "UPDATE pegawai SET NamaPeg = '"+namaedit+"', AlmPeg = '"+alamatedit+"', `TelpPeg` = '"+tlpedit+"', `TglLhrPeg` = '"+TGL_Lahir1+"', `JnsKelPeg` = '"+jnsklmedit+"' "
+                    + "WHERE NIP = '"+nipedit+"';";
+            String query3 = "UPDATE login SET UserName = '"+namaedit+"', Password = '"+namaedit+"', TypeUser = '"+"Pegawai"+"' "
+                         + "WHERE id_user = '"+nipedit+"';";
 
             try{
                 PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
@@ -914,7 +919,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 buttonGroup1.clearSelection();
                 txtTelpEdit.setText(null);
                 txtAlamatEdit.setText(null);
-                tampilData();
+              
             }
     }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
@@ -929,6 +934,8 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void btnPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendaftaranActionPerformed
         // TODO add your handling code here:
+       new Pendaftaran.DataPasien().setVisible(true);
+       dispose();
     }//GEN-LAST:event_btnPendaftaranActionPerformed
 
     private void btnPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegawaiActionPerformed
@@ -1210,6 +1217,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel jnsKelamin;
     private javax.swing.JLabel jnsKelamin1;
     private javax.swing.JRadioButton lakiedit;
+    private javax.swing.JLabel lock;
     private javax.swing.JLabel nama;
     private javax.swing.JLabel nama1;
     private javax.swing.JLabel navi;

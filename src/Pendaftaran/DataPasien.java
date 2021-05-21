@@ -31,6 +31,7 @@ public class DataPasien extends javax.swing.JFrame {
      * Creates new form MenuUtama
      */
     String NoPasien;
+    String tglREGISTRASI;
     DefaultTableModel table = new DefaultTableModel();
     public DataPasien() {
         initComponents();
@@ -72,7 +73,8 @@ public class DataPasien extends javax.swing.JFrame {
         jnsKelamin = new javax.swing.JLabel();
         txtNama = new javax.swing.JTextField();
         nama = new javax.swing.JLabel();
-        txtNIP = new javax.swing.JTextField();
+        lock = new javax.swing.JLabel();
+        txtNopas = new javax.swing.JTextField();
         NIP = new javax.swing.JLabel();
         header1 = new javax.swing.JLabel();
         bg1 = new javax.swing.JLabel();
@@ -88,14 +90,17 @@ public class DataPasien extends javax.swing.JFrame {
         txtAlamat1 = new javax.swing.JScrollPane();
         txtAlamatEdit = new javax.swing.JTextArea();
         alamat1 = new javax.swing.JLabel();
+        txtRegis = new javax.swing.JTextField();
+        TglRegis = new javax.swing.JLabel();
         pilihanTglLhrEdit = new com.toedter.calendar.JDateChooser();
         Tgllahir1 = new javax.swing.JLabel();
         txtTelpEdit = new javax.swing.JTextField();
         Telepon1 = new javax.swing.JLabel();
         jnsKelamin1 = new javax.swing.JLabel();
+        lock1 = new javax.swing.JLabel();
         txtNamaEdit = new javax.swing.JTextField();
         nama1 = new javax.swing.JLabel();
-        txtNIPEdit = new javax.swing.JTextField();
+        txtNopasEdit = new javax.swing.JTextField();
         NIP1 = new javax.swing.JLabel();
         header2 = new javax.swing.JLabel();
         bg2 = new javax.swing.JLabel();
@@ -199,7 +204,8 @@ public class DataPasien extends javax.swing.JFrame {
         txtAlamat.setColumns(20);
         txtAlamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtAlamat.setRows(5);
-        txtAlamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtAlamat.setToolTipText("Alamat Pasien");
+        txtAlamat.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtAlamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtAlamatscroll.setViewportView(txtAlamat);
 
@@ -211,6 +217,7 @@ public class DataPasien extends javax.swing.JFrame {
         alamat.setText("Alamat");
         tambahDataPasien.getContentPane().add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
 
+        pilihanTglLhr.setToolTipText("Tanggal Lahir Pasien");
         pilihanTglLhr.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 pilihanTglLhrPropertyChange(evt);
@@ -226,10 +233,10 @@ public class DataPasien extends javax.swing.JFrame {
 
         txtTelp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtTelp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtTelp.setToolTipText("Username");
+        txtTelp.setToolTipText("Telepon Pasien");
         txtTelp.setAlignmentX(1.0F);
         txtTelp.setAlignmentY(1.0F);
-        txtTelp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtTelp.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtTelp.setCaretColor(new java.awt.Color(30, 174, 152));
         txtTelp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtTelp.addActionListener(new java.awt.event.ActionListener() {
@@ -275,10 +282,10 @@ public class DataPasien extends javax.swing.JFrame {
 
         txtNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNama.setToolTipText("Username");
+        txtNama.setToolTipText("Nama Pasien");
         txtNama.setAlignmentX(1.0F);
         txtNama.setAlignmentY(1.0F);
-        txtNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtNama.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtNama.setCaretColor(new java.awt.Color(30, 174, 152));
         txtNama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtNama.addActionListener(new java.awt.event.ActionListener() {
@@ -291,32 +298,39 @@ public class DataPasien extends javax.swing.JFrame {
         nama.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nama.setForeground(new java.awt.Color(30, 174, 152));
         nama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/mdi_account.png"))); // NOI18N
-        nama.setText("Nama Pegawai");
+        nama.setText("Nama Pasien");
         tambahDataPasien.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
-        txtNIP.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtNIP.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNIP.setToolTipText("Username");
-        txtNIP.setAlignmentX(1.0F);
-        txtNIP.setAlignmentY(1.0F);
-        txtNIP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        txtNIP.setCaretColor(new java.awt.Color(30, 174, 152));
-        txtNIP.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNIP.addActionListener(new java.awt.event.ActionListener() {
+        lock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/lock.png"))); // NOI18N
+        tambahDataPasien.getContentPane().add(lock, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 95, -1, -1));
+
+        txtNopas.setEditable(false);
+        txtNopas.setBackground(new java.awt.Color(204, 204, 204));
+        txtNopas.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtNopas.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNopas.setToolTipText("Nomor Pasien");
+        txtNopas.setActionCommand("<Not Set>");
+        txtNopas.setAlignmentX(1.0F);
+        txtNopas.setAlignmentY(1.0F);
+        txtNopas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        txtNopas.setCaretColor(new java.awt.Color(30, 174, 152));
+        txtNopas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNopas.setSelectedTextColor(new java.awt.Color(255, 204, 0));
+        txtNopas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNIPActionPerformed(evt);
+                txtNopasActionPerformed(evt);
             }
         });
-        tambahDataPasien.getContentPane().add(txtNIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
+        tambahDataPasien.getContentPane().add(txtNopas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
 
         NIP.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         NIP.setForeground(new java.awt.Color(30, 174, 152));
-        NIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_v-card.png"))); // NOI18N
-        NIP.setText("Nomor Induk Pegawai");
+        NIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/nopasIcon.png"))); // NOI18N
+        NIP.setText("Nomor Pasien");
         tambahDataPasien.getContentPane().add(NIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
 
         header1.setBackground(new Color(0,0,0,0));
-        header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/headertambah.png"))); // NOI18N
+        header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/headerTambah.png"))); // NOI18N
         tambahDataPasien.getContentPane().add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         bg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
@@ -378,7 +392,7 @@ public class DataPasien extends javax.swing.JFrame {
                 btnBatal1ActionPerformed(evt);
             }
         });
-        editDataPas.getContentPane().add(btnBatal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, -1));
+        editDataPas.getContentPane().add(btnBatal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 130, -1));
 
         btnSimpan1.setBackground(new Color (0,0,0,0));
         btnSimpan1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -392,7 +406,7 @@ public class DataPasien extends javax.swing.JFrame {
                 btnSimpan1ActionPerformed(evt);
             }
         });
-        editDataPas.getContentPane().add(btnSimpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 130, -1));
+        editDataPas.getContentPane().add(btnSimpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 130, -1));
 
         buttonGroup1.add(PerempuanEdit);
         PerempuanEdit.setText("Perempuan");
@@ -410,7 +424,8 @@ public class DataPasien extends javax.swing.JFrame {
         txtAlamatEdit.setColumns(20);
         txtAlamatEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtAlamatEdit.setRows(5);
-        txtAlamatEdit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtAlamatEdit.setToolTipText("Alamat Pasien");
+        txtAlamatEdit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtAlamatEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtAlamat1.setViewportView(txtAlamatEdit);
 
@@ -422,6 +437,28 @@ public class DataPasien extends javax.swing.JFrame {
         alamat1.setText("Alamat");
         editDataPas.getContentPane().add(alamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
 
+        txtRegis.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtRegis.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtRegis.setToolTipText("Username");
+        txtRegis.setAlignmentX(1.0F);
+        txtRegis.setAlignmentY(1.0F);
+        txtRegis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtRegis.setCaretColor(new java.awt.Color(30, 174, 152));
+        txtRegis.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtRegis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRegisActionPerformed(evt);
+            }
+        });
+        editDataPas.getContentPane().add(txtRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 280, 30));
+
+        TglRegis.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        TglRegis.setForeground(new java.awt.Color(30, 174, 152));
+        TglRegis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/tglregisicon.png"))); // NOI18N
+        TglRegis.setText("Tanggal Registrasi");
+        editDataPas.getContentPane().add(TglRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 170, -1));
+
+        pilihanTglLhrEdit.setToolTipText("Tanggal Lahir Pasien");
         pilihanTglLhrEdit.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 pilihanTglLhrEditPropertyChange(evt);
@@ -462,12 +499,15 @@ public class DataPasien extends javax.swing.JFrame {
         jnsKelamin1.setText("Jenis Kelamin");
         editDataPas.getContentPane().add(jnsKelamin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
+        lock1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/lock.png"))); // NOI18N
+        editDataPas.getContentPane().add(lock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 95, -1, -1));
+
         txtNamaEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNamaEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNamaEdit.setToolTipText("Username");
+        txtNamaEdit.setToolTipText("Nama Pasie");
         txtNamaEdit.setAlignmentX(1.0F);
         txtNamaEdit.setAlignmentY(1.0F);
-        txtNamaEdit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        txtNamaEdit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtNamaEdit.setCaretColor(new java.awt.Color(30, 174, 152));
         txtNamaEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtNamaEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -480,33 +520,34 @@ public class DataPasien extends javax.swing.JFrame {
         nama1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nama1.setForeground(new java.awt.Color(30, 174, 152));
         nama1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/mdi_account.png"))); // NOI18N
-        nama1.setText("Nama Pegawai");
+        nama1.setText("Nama Pasien");
         editDataPas.getContentPane().add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
-        txtNIPEdit.setEditable(false);
-        txtNIPEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtNIPEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNIPEdit.setToolTipText("Username");
-        txtNIPEdit.setAlignmentX(1.0F);
-        txtNIPEdit.setAlignmentY(1.0F);
-        txtNIPEdit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        txtNIPEdit.setCaretColor(new java.awt.Color(30, 174, 152));
-        txtNIPEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNIPEdit.addActionListener(new java.awt.event.ActionListener() {
+        txtNopasEdit.setEditable(false);
+        txtNopasEdit.setBackground(new java.awt.Color(204, 204, 204));
+        txtNopasEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtNopasEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNopasEdit.setToolTipText("Nomor Pasien");
+        txtNopasEdit.setAlignmentX(1.0F);
+        txtNopasEdit.setAlignmentY(1.0F);
+        txtNopasEdit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        txtNopasEdit.setCaretColor(new java.awt.Color(30, 174, 152));
+        txtNopasEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNopasEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNIPEditActionPerformed(evt);
+                txtNopasEditActionPerformed(evt);
             }
         });
-        editDataPas.getContentPane().add(txtNIPEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
+        editDataPas.getContentPane().add(txtNopasEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
 
         NIP1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         NIP1.setForeground(new java.awt.Color(30, 174, 152));
-        NIP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_v-card.png"))); // NOI18N
-        NIP1.setText("Nomor Induk Pegawai");
+        NIP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/nopasIcon.png"))); // NOI18N
+        NIP1.setText("Nomor Pasien");
         editDataPas.getContentPane().add(NIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
 
         header2.setBackground(new Color(0,0,0,0));
-        header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/headerEdit.png"))); // NOI18N
+        header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/headerEdit.png"))); // NOI18N
         editDataPas.getContentPane().add(header2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
@@ -686,15 +727,22 @@ public class DataPasien extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
+        btnSubPendaftaran.setBackground(new Color(0,0,0,0));
         btnSubPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/subPendaftaran.png"))); // NOI18N
         btnSubPendaftaran.setBorder(null);
         btnSubPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubPendaftaranAktif.png"))); // NOI18N
         getContentPane().add(btnSubPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
 
+        btnSubDataPasien.setBackground(new Color(0,0,0,0));
         btnSubDataPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasien.png"))); // NOI18N
         btnSubDataPasien.setBorder(null);
         btnSubDataPasien.setSelected(true);
         btnSubDataPasien.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasienAktif.png"))); // NOI18N
+        btnSubDataPasien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubDataPasienActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSubDataPasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 147, -1, 40));
 
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/titledatapasien.png"))); // NOI18N
@@ -721,6 +769,11 @@ public class DataPasien extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableDataPasien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableDataPasienMouseClicked(evt);
+            }
+        });
         Table.setViewportView(TableDataPasien);
 
         getContentPane().add(Table, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 187, 830, 480));
@@ -812,31 +865,43 @@ public class DataPasien extends javax.swing.JFrame {
         jk_Laki.setActionCommand("L");
         jk_perempuan.setActionCommand("P");
         
-        String nip = txtNIP.getText();
+        String nopas = txtNopas.getText();
         String nama = txtNama.getText();
         String jnsklm = btngroupJK.getSelection().getActionCommand();
         String tlp = txtTelp.getText();
         String tgllhr = pilihanTglLhr.getDateFormatString();
         String alamat = txtAlamat.getText();
         
-        Connection connect = Koneksi.Koneksi.getKoneksi();
-        String query = "INSERT INTO pegawai (NIP, NamaPeg, AlmPeg, TelpPeg, TglLhrPeg, JnsKelPeg ) "
-                         + "VALUES ('"+nip+"', '"+nama+"','"+alamat+"', '"+tlp+"', '"+TGL_Lahir+"', '"+jnsklm+"')";
         
-        String query2 = "INSERT INTO login (id_user, UserName, Password, TypeUser ) "
-                         + "VALUES ('"+nip+"', '"+nama+"','"+nama+"', '"+"Pegawai"+"')";
-                
+        Connection connect = Koneksi.Koneksi.getKoneksi();
+        String tglRegis = "SELECT DATE_FORMAT(NOW(), '%Y-%m-%d') AS tanggal";
+        try{
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(tglRegis);//menjalanakn query
+            
+            while (rslt.next()){
+                //menampung data sementara
+                   
+                    tglREGISTRASI = rslt.getString("tanggal");
+                                    
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+        String query = "INSERT INTO pasien (NoPasien, NamaPas, AlmPas, TelpPas, TglLahirPas, JenisKelPas, TglRegistrasi ) "
+                         + "VALUES ('"+nopas+"', '"+nama+"','"+alamat+"', '"+tlp+"', '"+TGL_Lahir+"', '"+jnsklm+"', '"+tglREGISTRASI+"')";
+        
+                       
         try{
             PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
             ps.executeUpdate(query);
-            PreparedStatement ps2 = (PreparedStatement) connect.prepareStatement(query2);
-            ps2.executeUpdate(query2);
             JOptionPane.showMessageDialog(null,"Data Berhasil Disimpan");
         }catch(Exception e){
             System.out.println(e);
         }finally{
             tambahDataPasien.dispose();
-            txtNIP.setText(null);
+            txtNopas.setText(null);
             txtNama.setText(null);
             btngroupJK.clearSelection();
             txtTelp.setText(null);
@@ -879,9 +944,9 @@ public class DataPasien extends javax.swing.JFrame {
                 String tlp = rslt.getString("TelpPas");
                 String tgllhr = rslt.getString("TglLahirPas");
                 String jnskel = rslt.getString("JenisKelPas");
-                String tglregis = rslt.getString("TglRegistrasi");
+                String tglRegis = rslt.getString("TglRegistrasi");
                 
-                txtNIPEdit.setText(nopas);
+                txtNopasEdit.setText(nopas);
                 txtNamaEdit.setText(namapas);
                 txtTelpEdit.setText(tlp);
 //              pilihanTglLhrEdit.setDate(tgllhr);
@@ -891,6 +956,8 @@ public class DataPasien extends javax.swing.JFrame {
                 }else{
                     PerempuanEdit.setSelected(true);
                 }
+                txtRegis.setText(tglRegis);
+                txtRegis.setEditable(false);
             } 
         }catch(Exception e){
             
@@ -902,38 +969,70 @@ public class DataPasien extends javax.swing.JFrame {
         lakiedit.setActionCommand("L");
         PerempuanEdit.setActionCommand("P");
         
-        String nipedit = txtNIPEdit.getText();
+        String nopasedit = NoPasien;
         String namaedit = txtNamaEdit.getText();
         String jnsklmedit = buttonGroup1.getSelection().getActionCommand();
         String tlpedit = txtTelpEdit.getText();
         String tgllhredit = pilihanTglLhrEdit.getDateFormatString();
         String alamatedit = txtAlamatEdit.getText();
+        String tglRegis = txtRegis.getText();
+        txtRegis.setEditable(false);
                  
         Connection connect = Koneksi.Koneksi.getKoneksi();
         
-            String query2 = "UPDATE pegawai SET NIP = '"+nipedit+"', NamaPeg = '"+namaedit+"', AlmPeg = '"+alamatedit+"', `TelpPeg` = '"+tlpedit+"', `TglLhrPeg` = '"+TGL_Lahir1+"', `JnsKelPeg` = '"+jnsklmedit+"' "
-                    + "WHERE NIP = '"+NIPegawai+"';";
-            String query3 = "INSERT INTO login (id_user, UserName, Password, TypeUser ) "
-                         + "VALUES ('"+nipedit+"', '"+namaedit+"','"+namaedit+"', '"+"Pegawai"+"')";
+            String query2 = "UPDATE pasien SET NoPasien = '"+nopasedit+"', NamaPas = '"+namaedit+"', AlmPas = '"+alamatedit+"', `TelpPas` = '"+tlpedit+"', `TglLahirPas` = '"+TGL_Lahir1+"', `JenisKelPas` = '"+jnsklmedit+"', `TglRegistrasi` = '"+tglRegis+"' "
+                    + "WHERE NoPasien = '"+nopasedit+"';";
+            
 
             try{
                 PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
                 ps.executeUpdate(query2);
-                PreparedStatement ps2 = (PreparedStatement) connect.prepareStatement(query3);
-                ps2.executeUpdate(query3);
                 JOptionPane.showMessageDialog(null , "Data  Berhasil diUpdate");
             }catch(SQLException | HeadlessException e){
                 System.out.println(e);
                 JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
             }finally{
                 editDataPas.dispose();
-                txtNIPEdit.setText(null);
+                txtNopasEdit.setText(null);
                 txtNamaEdit.setText(null);
                 buttonGroup1.clearSelection();
                 txtTelpEdit.setText(null);
                 txtAlamatEdit.setText(null);
+                txtRegis.setText(null);
+                
                 tampilData();
             }
+    }
+    
+    private void kodepasienotomatis(){
+        String query = "SELECT * FROM pasien ORDER BY NoPasien DESC ";
+        try{
+            Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            if (rslt.next()){
+                String Nopas = rslt.getString("NoPasien").substring(1);
+                String AN = "" + (Integer.parseInt(Nopas)+1);
+                String NOL = "";
+                if(AN.length()==1){
+                    NOL = "000";
+                }else if(AN.length()==2){
+                    NOL = "00";
+                }else if(AN.length()==3){
+                    NOL = "0";
+                }else if(AN.length()==4){
+                    NOL = "";
+                }
+                txtNopas.setText("P" + NOL + AN);
+            }else{
+                txtNopas.setText("P0001");
+            }
+        rslt.close();
+        connect.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
@@ -947,6 +1046,9 @@ public class DataPasien extends javax.swing.JFrame {
 
     private void btnPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendaftaranActionPerformed
         // TODO add your handling code here:
+        new Pendaftaran.DataPasien().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_btnPendaftaranActionPerformed
 
     private void btnPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegawaiActionPerformed
@@ -1061,9 +1163,9 @@ public class DataPasien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNamaActionPerformed
 
-    private void txtNIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNIPActionPerformed
+    private void txtNopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNopasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNIPActionPerformed
+    }//GEN-LAST:event_txtNopasActionPerformed
 
     private void tambahDataPasienWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataPasienWindowOpened
         // TODO add your handling code here:
@@ -1100,10 +1202,10 @@ public class DataPasien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNamaEditActionPerformed
 
-    private void txtNIPEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNIPEditActionPerformed
+    private void txtNopasEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNopasEditActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_txtNIPEditActionPerformed
+    }//GEN-LAST:event_txtNopasEditActionPerformed
 
     private void pilihanTglLhrEditPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_pilihanTglLhrEditPropertyChange
         // TODO add your handling code here:
@@ -1136,7 +1238,22 @@ public class DataPasien extends javax.swing.JFrame {
         // TODO add your handling code here:
         tambahDataPasien.setVisible(true);
         tambahDataPasien.setBounds(380, 120, 600, 520);
+        kodepasienotomatis();
     }//GEN-LAST:event_btnInputActionPerformed
+
+    private void txtRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRegisActionPerformed
+
+    private void TableDataPasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableDataPasienMouseClicked
+        // TODO add your handling code here:
+        String kode = table.getValueAt(TableDataPasien.getSelectedRow(),0).toString();
+        NoPasien = kode;
+    }//GEN-LAST:event_TableDataPasienMouseClicked
+
+    private void btnSubDataPasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubDataPasienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubDataPasienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1195,6 +1312,7 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JTable TableDataPasien;
     private javax.swing.JLabel Telepon;
     private javax.swing.JLabel Telepon1;
+    private javax.swing.JLabel TglRegis;
     private javax.swing.JLabel Tgllahir;
     private javax.swing.JLabel Tgllahir1;
     private javax.swing.JLabel Title;
@@ -1232,6 +1350,8 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JLabel jnsKelamin;
     private javax.swing.JLabel jnsKelamin1;
     private javax.swing.JRadioButton lakiedit;
+    private javax.swing.JLabel lock;
+    private javax.swing.JLabel lock1;
     private javax.swing.JLabel nama;
     private javax.swing.JLabel nama1;
     private javax.swing.JLabel navi;
@@ -1242,10 +1362,11 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JScrollPane txtAlamat1;
     private javax.swing.JTextArea txtAlamatEdit;
     private javax.swing.JScrollPane txtAlamatscroll;
-    private javax.swing.JTextField txtNIP;
-    private javax.swing.JTextField txtNIPEdit;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtNamaEdit;
+    private javax.swing.JTextField txtNopas;
+    private javax.swing.JTextField txtNopasEdit;
+    private javax.swing.JTextField txtRegis;
     private javax.swing.JTextField txtTelp;
     private javax.swing.JTextField txtTelpEdit;
     private javax.swing.JLabel userPanel;

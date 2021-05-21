@@ -256,6 +256,8 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendaftaranActionPerformed
         // TODO add your handling code here:
+        new Pendaftaran.DataPasien().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPendaftaranActionPerformed
 
     private void btnPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegawaiActionPerformed
