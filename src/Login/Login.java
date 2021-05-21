@@ -26,6 +26,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
     }
     
 
@@ -93,32 +94,33 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(30, 174, 152));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("L O G I N");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 150, 320, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/Header (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/fluent_password-24-filled.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, 40));
 
         Username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Username.setToolTipText("Username");
         Username.setAlignmentX(1.0F);
         Username.setAlignmentY(1.0F);
-        Username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        Username.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         Username.setCaretColor(new java.awt.Color(30, 174, 152));
         Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 330, 40));
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 330, 40));
 
         Password.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         Password.setToolTipText("Password");
-        Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 330, 40));
+        Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 330, 40));
 
         jButton1.setBackground(new java.awt.Color(30, 174, 152));
         jButton1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -131,7 +133,7 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 330, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 330, 40));
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/LOGIN.png"))); // NOI18N
         getContentPane().add(BG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

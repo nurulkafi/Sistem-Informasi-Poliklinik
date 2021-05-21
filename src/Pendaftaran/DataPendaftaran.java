@@ -54,6 +54,8 @@ public class DataPendaftaran extends javax.swing.JFrame {
         table3.addColumn("Id");
         table3.addColumn("Nama Jenis Biaya");
         table3.addColumn("Tarif");
+        this.setBackground(new Color(0,0,0,0));
+        txtUser.setText("Hi!, " + GlobalVar.nama);
     }
 
     /**
@@ -97,7 +99,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
         btnJadwalPraktek = new javax.swing.JButton();
@@ -110,6 +111,8 @@ public class DataPendaftaran extends javax.swing.JFrame {
         btnSubDataPasien = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
+        btnUser = new javax.swing.JButton();
+        txtUser = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         userPanel = new javax.swing.JLabel();
         Table = new javax.swing.JScrollPane();
@@ -122,7 +125,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
         tambahData.setMinimumSize(new java.awt.Dimension(874, 520));
         tambahData.setUndecorated(true);
         tambahData.setOpacity(0.0F);
-        tambahData.setPreferredSize(new java.awt.Dimension(874, 520));
         tambahData.setSize(new java.awt.Dimension(874, 520));
         tambahData.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -136,24 +138,26 @@ public class DataPendaftaran extends javax.swing.JFrame {
         CLOSE2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         CLOSE2.setBorderPainted(false);
         CLOSE2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/deleteaktif.png"))); // NOI18N
         CLOSE2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CLOSE2ActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(CLOSE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 50, 50));
+        tambahData.getContentPane().add(CLOSE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 180, 100, 90));
 
         CLOSE3.setBackground(new Color(0,0,0,0));
         CLOSE3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/input.png"))); // NOI18N
         CLOSE3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         CLOSE3.setBorderPainted(false);
         CLOSE3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/inputaktif.png"))); // NOI18N
         CLOSE3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CLOSE3ActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, 50, 50));
+        tambahData.getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 100, 90));
 
         MIN1.setBackground(new Color(0,0,0,0));
         MIN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -233,7 +237,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TableKeranjang);
 
-        tambahData.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 340, 140));
+        tambahData.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 340, 140));
 
         NoUrut.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
         NoUrut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -263,7 +267,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         NIP1.setForeground(new java.awt.Color(30, 174, 152));
         NIP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/Vector (5).png"))); // NOI18N
         NIP1.setText("Biaya");
-        tambahData.getContentPane().add(NIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 180, -1));
+        tambahData.getContentPane().add(NIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 180, -1));
 
         NIP2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         NIP2.setForeground(new java.awt.Color(30, 174, 152));
@@ -275,6 +279,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/Tambah Data (2).png"))); // NOI18N
         tambahData.getContentPane().add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 30));
 
+        bg1.setBackground(new Color(0,0,0,0));
         bg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/Tambah.png"))); // NOI18N
         bg1.setToolTipText("");
         tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
@@ -360,8 +365,10 @@ public class DataPendaftaran extends javax.swing.JFrame {
         Biaya.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
         setOpacity(0.0F);
+        setPreferredSize(new java.awt.Dimension(1280, 730));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -409,17 +416,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnLogout.setBackground(new Color(0,0,0,0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
-        btnLogout.setBorder(null);
-        btnLogout.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/LogoutAktif.png"))); // NOI18N
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 664, -1, -1));
 
         btnPembayaran.setBackground(new Color(0,0,0,0));
         btnPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/pembayaran.png"))); // NOI18N
@@ -510,12 +506,14 @@ public class DataPendaftaran extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
+        btnSubPendaftaran.setBackground(new Color(0,0,0,0));
         btnSubPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/subPendaftaran.png"))); // NOI18N
         btnSubPendaftaran.setBorder(null);
         btnSubPendaftaran.setSelected(true);
         btnSubPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubPendaftaranAktif.png"))); // NOI18N
         getContentPane().add(btnSubPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
 
+        btnSubDataPasien.setBackground(new Color (0,0,0,0));
         btnSubDataPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasien.png"))); // NOI18N
         btnSubDataPasien.setBorder(null);
         btnSubDataPasien.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasienAktif.png"))); // NOI18N
@@ -531,6 +529,24 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        btnUser.setBackground(new Color(0,0,0,0));
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun.png"))); // NOI18N
+        btnUser.setToolTipText("Log Out");
+        btnUser.setBorder(null);
+        btnUser.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun1.png"))); // NOI18N
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
+
+        txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
+        txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtUser.setText("Hi!, User");
+        getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
 
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -790,15 +806,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
-        if (opsi == JOptionPane.YES_OPTION){
-            new Login.Login().setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         for(double i = 0.0; i <= 1.0; i = i + 0.1){
@@ -908,7 +915,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
         // TODO add your handling code here:
         tambahData.setVisible(true);
-        tambahData.setBounds(380, 120, 874, 520);
+        tambahData.setBounds(360, 120, 874, 520);
         KodePendaftaranOtomatis();
         AntrianOtomatis();
         TampilComboBox();
@@ -929,9 +936,9 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
     private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
         // TODO add your handling code here:
-        
         Biaya.setVisible(true);
-        Biaya.setBounds(380, 120, 600, 520);
+        Biaya.setBounds(450, 120, 600, 520);
+        tambahData.setVisible(false);
         
     }//GEN-LAST:event_CLOSE3ActionPerformed
 
@@ -963,6 +970,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private void btnPilihBiayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilihBiayaActionPerformed
         // TODO add your handling code here:
         table2.addRow(new Object[]{Koneksi.GlobalVar.id_jenis,Koneksi.GlobalVar.namajenis,Koneksi.GlobalVar.tarif});
+        tambahData.setVisible(true);
         Biaya.dispose();
     }//GEN-LAST:event_btnPilihBiayaActionPerformed
 
@@ -980,6 +988,15 @@ public class DataPendaftaran extends javax.swing.JFrame {
         new Pendaftaran.DataPasien().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSubDataPasienActionPerformed
+
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+        // TODO add your handling code here:
+        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
+        if (opsi == JOptionPane.YES_OPTION){
+            new Login.Login().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1054,7 +1071,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnInput;
     private javax.swing.JButton btnJadwalPraktek;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
     private javax.swing.JButton btnPembayaran;
@@ -1065,6 +1081,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSubDataPasien;
     private javax.swing.JButton btnSubPendaftaran;
+    private javax.swing.JButton btnUser;
     private javax.swing.ButtonGroup btngroupJK;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel editDataPasien;
@@ -1075,6 +1092,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel navi;
     private javax.swing.JDialog tambahData;
+    private javax.swing.JLabel txtUser;
     private javax.swing.JLabel userPanel;
     // End of variables declaration//GEN-END:variables
 }

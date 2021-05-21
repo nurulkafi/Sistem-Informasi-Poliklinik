@@ -39,7 +39,8 @@ public class MenuDokter extends javax.swing.JFrame {
         table.addColumn("Alamat");
         table.addColumn("No Hp");
         tampilData();
-
+        txtUser.setText("Hi!, " + GlobalVar.nama);
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -90,7 +91,6 @@ public class MenuDokter extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
         btnJadwalPraktek = new javax.swing.JButton();
@@ -104,6 +104,8 @@ public class MenuDokter extends javax.swing.JFrame {
         CLOSE1 = new javax.swing.JButton();
         CLOSE2 = new javax.swing.JButton();
         CLOSE3 = new javax.swing.JButton();
+        btnUser = new javax.swing.JButton();
+        txtUser = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
@@ -404,6 +406,7 @@ public class MenuDokter extends javax.swing.JFrame {
         editData.getContentPane().add(kodedokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
         setOpacity(0.0F);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -443,17 +446,6 @@ public class MenuDokter extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnLogout.setBackground(new Color(0,0,0,0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
-        btnLogout.setBorder(null);
-        btnLogout.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/LogoutAktif.png"))); // NOI18N
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 664, -1, -1));
 
         btnPembayaran.setBackground(new Color(0,0,0,0));
         btnPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/pembayaran.png"))); // NOI18N
@@ -601,6 +593,24 @@ public class MenuDokter extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 150, 90, 80));
+
+        btnUser.setBackground(new Color(0,0,0,0));
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun.png"))); // NOI18N
+        btnUser.setToolTipText("Log Out");
+        btnUser.setBorder(null);
+        btnUser.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun1.png"))); // NOI18N
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
+
+        txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
+        txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtUser.setText("Hi!, User");
+        getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
         jLabel1.setToolTipText("");
@@ -900,15 +910,6 @@ public class MenuDokter extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
-        if (opsi == JOptionPane.YES_OPTION){
-            new Login.Login().setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:'
         hapusData();
@@ -1037,6 +1038,15 @@ public class MenuDokter extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editDataWindowOpened
 
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+        // TODO add your handling code here:
+        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
+        if (opsi == JOptionPane.YES_OPTION){
+            new Login.Login().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1099,7 +1109,6 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JButton btnBatal1;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
     private javax.swing.JButton btnPembayaran;
@@ -1108,6 +1117,7 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSimpan1;
+    private javax.swing.JButton btnUser;
     private javax.swing.JDialog editData;
     private javax.swing.JLabel header;
     private javax.swing.JLabel header1;
@@ -1133,5 +1143,6 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JDialog tambahData;
     private javax.swing.JTextField telp;
     private javax.swing.JTextField telp1;
+    private javax.swing.JLabel txtUser;
     // End of variables declaration//GEN-END:variables
 }

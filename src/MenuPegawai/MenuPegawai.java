@@ -41,6 +41,8 @@ public class MenuPegawai extends javax.swing.JFrame {
         table.addColumn("Jenis Kelamin");
         table.addColumn("Alamat");
         tampilData();
+        txtUser.setText("Hi!, " + GlobalVar.nama);
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -105,7 +107,6 @@ public class MenuPegawai extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
         btnJadwalPraktek = new javax.swing.JButton();
@@ -116,6 +117,8 @@ public class MenuPegawai extends javax.swing.JFrame {
         btnPendaftaran = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePegawai = new javax.swing.JTable();
+        btnUser = new javax.swing.JButton();
+        txtUser = new javax.swing.JLabel();
         userPanel = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         panel = new javax.swing.JLabel();
@@ -514,8 +517,10 @@ public class MenuPegawai extends javax.swing.JFrame {
         editData.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
         setOpacity(0.0F);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -585,17 +590,6 @@ public class MenuPegawai extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnLogout.setBackground(new Color(0,0,0,0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
-        btnLogout.setBorder(null);
-        btnLogout.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/LogoutAktif.png"))); // NOI18N
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 664, -1, -1));
 
         btnPembayaran.setBackground(new Color(0,0,0,0));
         btnPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/pembayaran.png"))); // NOI18N
@@ -706,6 +700,24 @@ public class MenuPegawai extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 840, 490));
 
+        btnUser.setBackground(new Color(0,0,0,0));
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun.png"))); // NOI18N
+        btnUser.setToolTipText("Log Out");
+        btnUser.setBorder(null);
+        btnUser.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun1.png"))); // NOI18N
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
+
+        txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
+        txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtUser.setText("Hi!, User");
+        getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
+
         userPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
         userPanel.setToolTipText("");
         getContentPane().add(userPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 27, -1, -1));
@@ -806,13 +818,14 @@ public class MenuPegawai extends javax.swing.JFrame {
         String tlp = txtTelp.getText();
         String tgllhr = pilihanTglLhr.getDateFormatString();
         String alamat = txtAlamat.getText();
+        String pass = "123456";
         
         Connection connect = Koneksi.Koneksi.getKoneksi();
         String query = "INSERT INTO pegawai (NIP, NamaPeg, AlmPeg, TelpPeg, TglLhrPeg, JnsKelPeg ) "
                          + "VALUES ('"+nip+"', '"+nama+"','"+alamat+"', '"+tlp+"', '"+TGL_Lahir+"', '"+jnsklm+"')";
         
         String query2 = "INSERT INTO login (id_user, UserName, Password, TypeUser ) "
-                         + "VALUES ('"+nip+"', '"+nama+"','"+nama+"', '"+"Pegawai"+"')";
+                         + "VALUES ('"+nip+"', '"+nama+"','"+pass+"', '"+"Pegawai"+"')";
                 
         try{
             PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
@@ -895,12 +908,13 @@ public class MenuPegawai extends javax.swing.JFrame {
         String tlpedit = txtTelpEdit.getText();
         String tgllhredit = pilihanTglLhrEdit.getDateFormatString();
         String alamatedit = txtAlamatEdit.getText();
+        String pass = "123456";
                  
         Connection connect = Koneksi.Koneksi.getKoneksi();
         
             String query2 = "UPDATE pegawai SET NamaPeg = '"+namaedit+"', AlmPeg = '"+alamatedit+"', `TelpPeg` = '"+tlpedit+"', `TglLhrPeg` = '"+TGL_Lahir1+"', `JnsKelPeg` = '"+jnsklmedit+"' "
                     + "WHERE NIP = '"+nipedit+"';";
-            String query3 = "UPDATE login SET UserName = '"+namaedit+"', Password = '"+namaedit+"', TypeUser = '"+"Pegawai"+"' "
+            String query3 = "UPDATE login SET UserName = '"+namaedit+"', Password = '"+pass+"', TypeUser = '"+"Pegawai"+"' "
                          + "WHERE id_user = '"+nipedit+"';";
 
             try{
@@ -973,15 +987,6 @@ public class MenuPegawai extends javax.swing.JFrame {
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPembayaranActionPerformed
-
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
-        if (opsi == JOptionPane.YES_OPTION){
-            new Login.Login().setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
         // TODO add your handling code here:
@@ -1134,6 +1139,15 @@ public class MenuPegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editDataWindowOpened
 
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+        // TODO add your handling code here:
+        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
+        if (opsi == JOptionPane.YES_OPTION){
+            new Login.Login().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1200,7 +1214,6 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnInput;
     private javax.swing.JButton btnJadwalPraktek;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
     private javax.swing.JButton btnPembayaran;
@@ -1209,6 +1222,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSimpan1;
+    private javax.swing.JButton btnUser;
     private javax.swing.ButtonGroup btngroupJK;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog editData;
@@ -1240,6 +1254,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JTextField txtNamaEdit;
     private javax.swing.JTextField txtTelp;
     private javax.swing.JTextField txtTelpEdit;
+    private javax.swing.JLabel txtUser;
     private javax.swing.JLabel userPanel;
     // End of variables declaration//GEN-END:variables
 }

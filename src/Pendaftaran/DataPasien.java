@@ -45,6 +45,8 @@ public class DataPasien extends javax.swing.JFrame {
         table.addColumn("Jenis Kelamin");
         table.addColumn("Tanggal Registrasi");
         tampilData();
+        txtUser.setText("Hi!, "+ GlobalVar.nama);
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -112,7 +114,6 @@ public class DataPasien extends javax.swing.JFrame {
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
         btnJadwalPraktek = new javax.swing.JButton();
@@ -126,6 +127,8 @@ public class DataPasien extends javax.swing.JFrame {
         Title = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
+        btnUser = new javax.swing.JButton();
+        txtUser = new javax.swing.JLabel();
         userPanel = new javax.swing.JLabel();
         Table = new javax.swing.JScrollPane();
         TableDataPasien = new javax.swing.JTable();
@@ -338,6 +341,7 @@ public class DataPasien extends javax.swing.JFrame {
         bg1.setToolTipText("");
         tambahDataPasien.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
+        editDataPas.setBackground(new java.awt.Color(255, 255, 255));
         editDataPas.setUndecorated(true);
         editDataPas.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -556,8 +560,10 @@ public class DataPasien extends javax.swing.JFrame {
         editDataPas.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 730));
         setUndecorated(true);
         setOpacity(0.0F);
+        setPreferredSize(new java.awt.Dimension(1280, 730));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -627,17 +633,6 @@ public class DataPasien extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 30, 30));
-
-        btnLogout.setBackground(new Color(0,0,0,0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
-        btnLogout.setBorder(null);
-        btnLogout.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/LogoutAktif.png"))); // NOI18N
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 664, -1, -1));
 
         btnPembayaran.setBackground(new Color(0,0,0,0));
         btnPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/pembayaran.png"))); // NOI18N
@@ -760,6 +755,26 @@ public class DataPasien extends javax.swing.JFrame {
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        btnUser.setBackground(new Color(0,0,0,0));
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun.png"))); // NOI18N
+        btnUser.setToolTipText("Log Out");
+        btnUser.setBorder(null);
+        btnUser.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun1.png"))); // NOI18N
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
+
+        txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
+        txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtUser.setText("Hi!, User");
+        getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
+
+        userPanel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        userPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
         userPanel.setToolTipText("");
         getContentPane().add(userPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 27, -1, -1));
@@ -1095,19 +1110,10 @@ public class DataPasien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
-        if (opsi == JOptionPane.YES_OPTION){
-            new Login.Login().setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
         editDataPas.setVisible(true);
-        editDataPas.setBounds(380, 120, 600, 520);
+        editDataPas.setBounds(450, 120, 600, 520);
         LoadData();
     }//GEN-LAST:event_btnEditActionPerformed
 
@@ -1247,7 +1253,7 @@ public class DataPasien extends javax.swing.JFrame {
     private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
         // TODO add your handling code here:
         tambahDataPasien.setVisible(true);
-        tambahDataPasien.setBounds(380, 120, 600, 520);
+        tambahDataPasien.setBounds(450, 120, 600, 520);
         kodepasienotomatis();
     }//GEN-LAST:event_btnInputActionPerformed
 
@@ -1270,6 +1276,15 @@ public class DataPasien extends javax.swing.JFrame {
         new Pendaftaran.DataPendaftaran().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSubPendaftaranActionPerformed
+
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
+        // TODO add your handling code here:
+        int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
+        if (opsi == JOptionPane.YES_OPTION){
+            new Login.Login().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1343,7 +1358,6 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnInput;
     private javax.swing.JButton btnJadwalPraktek;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
     private javax.swing.JButton btnPembayaran;
@@ -1354,6 +1368,7 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JButton btnSimpan1;
     private javax.swing.JButton btnSubDataPasien;
     private javax.swing.JButton btnSubPendaftaran;
+    private javax.swing.JButton btnUser;
     private javax.swing.ButtonGroup btngroupJK;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog editDataPas;
@@ -1385,6 +1400,7 @@ public class DataPasien extends javax.swing.JFrame {
     private javax.swing.JTextField txtRegis;
     private javax.swing.JTextField txtTelp;
     private javax.swing.JTextField txtTelpEdit;
+    private javax.swing.JLabel txtUser;
     private javax.swing.JLabel userPanel;
     // End of variables declaration//GEN-END:variables
 }

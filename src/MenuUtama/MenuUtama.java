@@ -25,6 +25,7 @@ public class MenuUtama extends javax.swing.JFrame {
         initComponents();
         Time();
         username.setText(GlobalVar.nama.toUpperCase());
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -40,7 +41,6 @@ public class MenuUtama extends javax.swing.JFrame {
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
         btnUser = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
         btnJadwalPraktek = new javax.swing.JButton();
@@ -98,24 +98,15 @@ public class MenuUtama extends javax.swing.JFrame {
 
         btnUser.setBackground(new Color(0,0,0,0));
         btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/user.png"))); // NOI18N
+        btnUser.setToolTipText("LogOut");
         btnUser.setBorder(null);
+        btnUser.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akunbig.png"))); // NOI18N
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUserActionPerformed(evt);
             }
         });
         getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 47, -1, -1));
-
-        btnLogout.setBackground(new Color(0,0,0,0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Logout.png"))); // NOI18N
-        btnLogout.setBorder(null);
-        btnLogout.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/LogoutAktif.png"))); // NOI18N
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 664, -1, -1));
 
         btnPembayaran.setBackground(new Color(0,0,0,0));
         btnPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/pembayaran.png"))); // NOI18N
@@ -300,17 +291,13 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
         // TODO add your handling code here:
         int opsi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar?", "Log out!", JOptionPane.YES_NO_OPTION);
         if (opsi == JOptionPane.YES_OPTION){
             new Login.Login().setVisible(true);
             dispose();
         }
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnUserActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -369,7 +356,6 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnJadwalPraktek;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
     private javax.swing.JButton btnPembayaran;
