@@ -890,6 +890,8 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObatActionPerformed
         // TODO add your handling code here:
+        new MenuObat.MenuObat().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnObatActionPerformed
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed

@@ -6,6 +6,7 @@
 package MenuUtama;
 
 import Koneksi.GlobalVar;
+import MenuObat.MenuObat;
 import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
@@ -289,6 +290,8 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObatActionPerformed
         // TODO add your handling code here:
+        new MenuObat().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnObatActionPerformed
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
