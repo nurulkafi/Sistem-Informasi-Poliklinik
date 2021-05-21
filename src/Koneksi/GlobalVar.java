@@ -20,5 +20,6 @@ public class GlobalVar {
     public static String hak_akses;
     public static String KodePoli;
     public static String NamaPoli;
+    public static String KodeObat;
  
 }

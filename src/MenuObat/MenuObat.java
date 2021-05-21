@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuPoli;
+package MenuObat;
 
+import MenuPoli.*;
 import MenuUtama.*;
 import Koneksi.GlobalVar;
 import Koneksi.Koneksi;
@@ -23,16 +24,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author donih
  */
-public class MenuPoli extends javax.swing.JFrame {
+public class MenuObat extends javax.swing.JFrame {
     /**
      * Creates new form MenuUtama
      */
     DefaultTableModel table = new DefaultTableModel();
-    public MenuPoli() {
+    public MenuObat() {
         initComponents();
-        TabelPoli.setModel(table);
-        table.addColumn("Kode Poli");
-        table.addColumn("Nama Poli");
+        TabelObat.setModel(table);
+        table.addColumn("Kode Obat");
+        table.addColumn("Nama Obat");
+        table.addColumn("Merk");
+        table.addColumn("Stock");
+        table.addColumn("Harga Jual");
         tampilData();
     }
 
@@ -46,33 +50,45 @@ public class MenuPoli extends javax.swing.JFrame {
     private void initComponents() {
 
         tambahData = new javax.swing.JDialog();
+        HargaJual = new javax.swing.JTextField();
+        Harga = new javax.swing.JLabel();
+        StockObat = new javax.swing.JTextField();
+        Stock = new javax.swing.JLabel();
+        MerkObat = new javax.swing.JTextField();
+        Merk = new javax.swing.JLabel();
         MIN1 = new javax.swing.JButton();
         MAX1 = new javax.swing.JButton();
         CLOSE1 = new javax.swing.JButton();
         Batal = new javax.swing.JButton();
         Simpan = new javax.swing.JButton();
-        IsiNama = new javax.swing.JTextField();
-        NamaPoli = new javax.swing.JLabel();
-        IsiKode = new javax.swing.JTextField();
-        KodePoli = new javax.swing.JLabel();
+        NamaObat = new javax.swing.JTextField();
+        Nama = new javax.swing.JLabel();
+        KodeObat = new javax.swing.JTextField();
+        Kode = new javax.swing.JLabel();
         header1 = new javax.swing.JLabel();
         bg1 = new javax.swing.JLabel();
         editData = new javax.swing.JDialog();
+        HargaJual1 = new javax.swing.JTextField();
+        Harga1 = new javax.swing.JLabel();
+        StockObat1 = new javax.swing.JTextField();
+        Stock1 = new javax.swing.JLabel();
+        MerkObat1 = new javax.swing.JTextField();
+        Merk1 = new javax.swing.JLabel();
+        NamaObat1 = new javax.swing.JTextField();
+        Nama1 = new javax.swing.JLabel();
+        KodeObat1 = new javax.swing.JTextField();
+        Kode1 = new javax.swing.JLabel();
         MIN2 = new javax.swing.JButton();
         MAX2 = new javax.swing.JButton();
         CLOSE2 = new javax.swing.JButton();
         Batal1 = new javax.swing.JButton();
         Simpan1 = new javax.swing.JButton();
-        IsiNama1 = new javax.swing.JTextField();
-        NamaPoli1 = new javax.swing.JLabel();
-        IsiKode1 = new javax.swing.JTextField();
-        KodePoli1 = new javax.swing.JLabel();
         header2 = new javax.swing.JLabel();
         bg2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelObat = new javax.swing.JTable();
         Cari = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TabelPoli = new javax.swing.JTable();
         Delete = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
         Input = new javax.swing.JButton();
@@ -103,6 +119,69 @@ public class MenuPoli extends javax.swing.JFrame {
             }
         });
         tambahData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        HargaJual.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        HargaJual.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        HargaJual.setToolTipText("Username");
+        HargaJual.setAlignmentX(1.0F);
+        HargaJual.setAlignmentY(1.0F);
+        HargaJual.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        HargaJual.setCaretColor(new java.awt.Color(30, 174, 152));
+        HargaJual.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        HargaJual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HargaJualActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(HargaJual, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 280, 30));
+
+        Harga.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Harga.setForeground(new java.awt.Color(30, 174, 152));
+        Harga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/HargaObat.png"))); // NOI18N
+        Harga.setText("Harga Jual");
+        tambahData.getContentPane().add(Harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 150, 30));
+
+        StockObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        StockObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        StockObat.setToolTipText("Username");
+        StockObat.setAlignmentX(1.0F);
+        StockObat.setAlignmentY(1.0F);
+        StockObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        StockObat.setCaretColor(new java.awt.Color(30, 174, 152));
+        StockObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        StockObat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StockObatActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(StockObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 280, 30));
+
+        Stock.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Stock.setForeground(new java.awt.Color(30, 174, 152));
+        Stock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/StockObat.png"))); // NOI18N
+        Stock.setText("Stock Obat");
+        tambahData.getContentPane().add(Stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, 30));
+
+        MerkObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MerkObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MerkObat.setToolTipText("Username");
+        MerkObat.setAlignmentX(1.0F);
+        MerkObat.setAlignmentY(1.0F);
+        MerkObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        MerkObat.setCaretColor(new java.awt.Color(30, 174, 152));
+        MerkObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MerkObat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MerkObatActionPerformed(evt);
+            }
+        });
+        tambahData.getContentPane().add(MerkObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 280, 30));
+
+        Merk.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Merk.setForeground(new java.awt.Color(30, 174, 152));
+        Merk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/MerkObat.png"))); // NOI18N
+        Merk.setText("Merk Obat");
+        tambahData.getContentPane().add(Merk, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, 30));
 
         MIN1.setBackground(new Color(0,0,0,0));
         MIN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -146,7 +225,7 @@ public class MenuPoli extends javax.swing.JFrame {
                 BatalActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 130, -1));
+        tambahData.getContentPane().add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 130, -1));
 
         Simpan.setBackground(new Color (0,0,0,0));
         Simpan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -160,50 +239,49 @@ public class MenuPoli extends javax.swing.JFrame {
                 SimpanActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 130, -1));
+        tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 130, -1));
 
-        IsiNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        IsiNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        IsiNama.setToolTipText("Username");
-        IsiNama.setAlignmentX(1.0F);
-        IsiNama.setAlignmentY(1.0F);
-        IsiNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        IsiNama.setCaretColor(new java.awt.Color(30, 174, 152));
-        IsiNama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        IsiNama.addActionListener(new java.awt.event.ActionListener() {
+        NamaObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        NamaObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        NamaObat.setToolTipText("Username");
+        NamaObat.setAlignmentX(1.0F);
+        NamaObat.setAlignmentY(1.0F);
+        NamaObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        NamaObat.setCaretColor(new java.awt.Color(30, 174, 152));
+        NamaObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        NamaObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IsiNamaActionPerformed(evt);
+                NamaObatActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(IsiNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 280, 30));
+        tambahData.getContentPane().add(NamaObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 280, 30));
 
-        NamaPoli.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        NamaPoli.setForeground(new java.awt.Color(30, 174, 152));
-        NamaPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/NamaPoli.png"))); // NOI18N
-        NamaPoli.setText("Nama Poli");
-        tambahData.getContentPane().add(NamaPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 140, 30));
+        Nama.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Nama.setForeground(new java.awt.Color(30, 174, 152));
+        Nama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/NamaObat.png"))); // NOI18N
+        Nama.setText("Nama Obat");
+        tambahData.getContentPane().add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 140, 30));
 
-        IsiKode.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        IsiKode.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        IsiKode.setToolTipText("Username");
-        IsiKode.setAlignmentX(1.0F);
-        IsiKode.setAlignmentY(1.0F);
-        IsiKode.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        IsiKode.setCaretColor(new java.awt.Color(30, 174, 152));
-        IsiKode.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        IsiKode.setEnabled(false);
-        IsiKode.addActionListener(new java.awt.event.ActionListener() {
+        KodeObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        KodeObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        KodeObat.setToolTipText("Username");
+        KodeObat.setAlignmentX(1.0F);
+        KodeObat.setAlignmentY(1.0F);
+        KodeObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        KodeObat.setCaretColor(new java.awt.Color(30, 174, 152));
+        KodeObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        KodeObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IsiKodeActionPerformed(evt);
+                KodeObatActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(IsiKode, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 280, 30));
+        tambahData.getContentPane().add(KodeObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 280, 30));
 
-        KodePoli.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        KodePoli.setForeground(new java.awt.Color(30, 174, 152));
-        KodePoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/KodePoli.png"))); // NOI18N
-        KodePoli.setText("Kode Poli");
-        tambahData.getContentPane().add(KodePoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 30));
+        Kode.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Kode.setForeground(new java.awt.Color(30, 174, 152));
+        Kode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/KodePoli.png"))); // NOI18N
+        Kode.setText("Kode Obat");
+        tambahData.getContentPane().add(Kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 150, 30));
 
         header1.setBackground(new Color(0,0,0,0));
         header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/Tambah Data (1).png"))); // NOI18N
@@ -211,7 +289,7 @@ public class MenuPoli extends javax.swing.JFrame {
 
         bg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
         bg1.setToolTipText("");
-        tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
+        tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 600, 520));
 
         editData.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         editData.setUndecorated(true);
@@ -223,6 +301,112 @@ public class MenuPoli extends javax.swing.JFrame {
             }
         });
         editData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        HargaJual1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        HargaJual1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        HargaJual1.setToolTipText("Username");
+        HargaJual1.setAlignmentX(1.0F);
+        HargaJual1.setAlignmentY(1.0F);
+        HargaJual1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        HargaJual1.setCaretColor(new java.awt.Color(30, 174, 152));
+        HargaJual1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        HargaJual1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HargaJual1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(HargaJual1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 280, 30));
+
+        Harga1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Harga1.setForeground(new java.awt.Color(30, 174, 152));
+        Harga1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/HargaObat.png"))); // NOI18N
+        Harga1.setText("Harga Jual");
+        editData.getContentPane().add(Harga1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 150, 30));
+
+        StockObat1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        StockObat1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        StockObat1.setToolTipText("Username");
+        StockObat1.setAlignmentX(1.0F);
+        StockObat1.setAlignmentY(1.0F);
+        StockObat1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        StockObat1.setCaretColor(new java.awt.Color(30, 174, 152));
+        StockObat1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        StockObat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StockObat1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(StockObat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 280, 30));
+
+        Stock1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Stock1.setForeground(new java.awt.Color(30, 174, 152));
+        Stock1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/StockObat.png"))); // NOI18N
+        Stock1.setText("Stock Obat");
+        editData.getContentPane().add(Stock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, 30));
+
+        MerkObat1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MerkObat1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MerkObat1.setToolTipText("Username");
+        MerkObat1.setAlignmentX(1.0F);
+        MerkObat1.setAlignmentY(1.0F);
+        MerkObat1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        MerkObat1.setCaretColor(new java.awt.Color(30, 174, 152));
+        MerkObat1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MerkObat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MerkObat1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(MerkObat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 280, 30));
+
+        Merk1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Merk1.setForeground(new java.awt.Color(30, 174, 152));
+        Merk1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/MerkObat.png"))); // NOI18N
+        Merk1.setText("Merk Obat");
+        editData.getContentPane().add(Merk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, 30));
+
+        NamaObat1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        NamaObat1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        NamaObat1.setToolTipText("Username");
+        NamaObat1.setAlignmentX(1.0F);
+        NamaObat1.setAlignmentY(1.0F);
+        NamaObat1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        NamaObat1.setCaretColor(new java.awt.Color(30, 174, 152));
+        NamaObat1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        NamaObat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamaObat1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(NamaObat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 280, 30));
+
+        Nama1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Nama1.setForeground(new java.awt.Color(30, 174, 152));
+        Nama1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/NamaObat.png"))); // NOI18N
+        Nama1.setText("Nama Obat");
+        editData.getContentPane().add(Nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 140, 30));
+
+        KodeObat1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        KodeObat1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        KodeObat1.setToolTipText("Username");
+        KodeObat1.setAlignmentX(1.0F);
+        KodeObat1.setAlignmentY(1.0F);
+        KodeObat1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
+        KodeObat1.setCaretColor(new java.awt.Color(30, 174, 152));
+        KodeObat1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        KodeObat1.setEnabled(false);
+        KodeObat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KodeObat1ActionPerformed(evt);
+            }
+        });
+        editData.getContentPane().add(KodeObat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 280, 30));
+
+        Kode1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Kode1.setForeground(new java.awt.Color(30, 174, 152));
+        Kode1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/KodePoli.png"))); // NOI18N
+        Kode1.setText("Kode Obat");
+        editData.getContentPane().add(Kode1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 150, 30));
 
         MIN2.setBackground(new Color(0,0,0,0));
         MIN2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -266,7 +450,7 @@ public class MenuPoli extends javax.swing.JFrame {
                 Batal1ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(Batal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 130, -1));
+        editData.getContentPane().add(Batal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 130, -1));
 
         Simpan1.setBackground(new Color (0,0,0,0));
         Simpan1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -280,50 +464,7 @@ public class MenuPoli extends javax.swing.JFrame {
                 Simpan1ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 130, -1));
-
-        IsiNama1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        IsiNama1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        IsiNama1.setToolTipText("Username");
-        IsiNama1.setAlignmentX(1.0F);
-        IsiNama1.setAlignmentY(1.0F);
-        IsiNama1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        IsiNama1.setCaretColor(new java.awt.Color(30, 174, 152));
-        IsiNama1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        IsiNama1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IsiNama1ActionPerformed(evt);
-            }
-        });
-        editData.getContentPane().add(IsiNama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 280, 30));
-
-        NamaPoli1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        NamaPoli1.setForeground(new java.awt.Color(30, 174, 152));
-        NamaPoli1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/NamaPoli.png"))); // NOI18N
-        NamaPoli1.setText("Nama Poli");
-        editData.getContentPane().add(NamaPoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 140, 30));
-
-        IsiKode1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        IsiKode1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        IsiKode1.setToolTipText("Username");
-        IsiKode1.setAlignmentX(1.0F);
-        IsiKode1.setAlignmentY(1.0F);
-        IsiKode1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
-        IsiKode1.setCaretColor(new java.awt.Color(30, 174, 152));
-        IsiKode1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        IsiKode1.setEnabled(false);
-        IsiKode1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IsiKode1ActionPerformed(evt);
-            }
-        });
-        editData.getContentPane().add(IsiKode1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 280, 30));
-
-        KodePoli1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        KodePoli1.setForeground(new java.awt.Color(30, 174, 152));
-        KodePoli1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/KodePoli.png"))); // NOI18N
-        KodePoli1.setText("Kode Poli");
-        editData.getContentPane().add(KodePoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 30));
+        editData.getContentPane().add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 130, -1));
 
         header2.setBackground(new Color(0,0,0,0));
         header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/edit data.png"))); // NOI18N
@@ -342,6 +483,26 @@ public class MenuPoli extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TabelObat.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+            }
+        ));
+        TabelObat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelObatMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TabelObat);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 860, 460));
+
         Cari.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         Cari.setText("Cari");
         getContentPane().add(Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, -1, -1));
@@ -352,26 +513,6 @@ public class MenuPoli extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, 120, -1));
-
-        TabelPoli.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "KodePoli", "NamaPoli"
-            }
-        ));
-        TabelPoli.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TabelPoliMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(TabelPoli);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 880, 470));
 
         Delete.setBackground(new Color(0,0,0,0));
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/delete.png"))); // NOI18N
@@ -406,7 +547,7 @@ public class MenuPoli extends javax.swing.JFrame {
         });
         getContentPane().add(Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 170, 90, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/Text.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuObat/Asset/TextObat.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 75, -1, -1));
 
         MIN.setBackground(new Color(0,0,0,0));
@@ -464,6 +605,7 @@ public class MenuPoli extends javax.swing.JFrame {
         btnObat.setBackground(new Color(0,0,0,0));
         btnObat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Obat.png"))); // NOI18N
         btnObat.setBorder(null);
+        btnObat.setSelected(true);
         btnObat.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/ObatAktif.png"))); // NOI18N
         btnObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -497,7 +639,6 @@ public class MenuPoli extends javax.swing.JFrame {
         btnPoli.setBackground(new Color(0,0,0,0));
         btnPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Poli.png"))); // NOI18N
         btnPoli.setBorder(null);
-        btnPoli.setSelected(true);
         btnPoli.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PoliAktif.png"))); // NOI18N
         btnPoli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -554,13 +695,13 @@ public class MenuPoli extends javax.swing.JFrame {
 
      private void tampilData(){
         //untuk mengahapus baris setelah input
-        int row = TabelPoli.getRowCount();
+        int row = TabelObat.getRowCount();
         for(int a = 0 ; a < row ; a++){
             table.removeRow(0);
         }
         
         String query = 
-                "SELECT * FROM poli ";
+                "SELECT * FROM obat ";
         
         try{
             Connection connect = Koneksi.getKoneksi();//memanggil koneksi
@@ -569,17 +710,18 @@ public class MenuPoli extends javax.swing.JFrame {
             
             while (rslt.next()){
                 //menampung data sementara
-                   
-                    String kode = rslt.getString("KodePoli");
-                    String nama = rslt.getString("NamaPoli");
-                    
-                //masukan semua data kedalam array
-                String[] data = {kode,nama};
+               Object[ ] obj = new Object[6];
+                obj[0] = rslt.getString("KodeObat");
+                obj[1] = rslt.getString("NmObat");
+                obj[2] = rslt.getString("Merk");
+                obj[3] = rslt.getInt("Stock");
+                obj[4] = rslt.getInt("HargaJual");
+                  
                 //menambahakan baris sesuai dengan data yang tersimpan diarray
-                table.addRow(data);
+                table.addRow(obj);
             }
                 //mengeset nilai yang ditampung agar muncul di table
-                TabelPoli.setModel(table);
+                TabelObat.setModel(table);
             
         }catch(Exception e){
             System.out.println(e);
@@ -590,11 +732,11 @@ public class MenuPoli extends javax.swing.JFrame {
         //ambill data no pendaftaran
            
         Connection connect = Koneksi.getKoneksi();
-        int baris = TabelPoli.getSelectedRow();
+        int baris = TabelObat.getSelectedRow();
         int jawab;
         String kode = table.getValueAt(baris,0).toString();
         
-        String query = "DELETE FROM poli WHERE KodePoli = '"+kode+"';";
+        String query = "DELETE FROM obat WHERE KodeObat = '"+kode+"';";
         try{
             if ((jawab = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
             PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
@@ -610,7 +752,7 @@ public class MenuPoli extends javax.swing.JFrame {
         
     }
             private void LoadData(){      
-        String query = "SELECT * FROM poli WHERE KodePoli = '"+GlobalVar.KodePoli+"' ";
+        String query = "SELECT * FROM obat WHERE KodeObat = '"+GlobalVar.KodeObat+"' ";
         
         try{
             Connection connect = Koneksi.getKoneksi();//memanggil koneksi
@@ -618,10 +760,16 @@ public class MenuPoli extends javax.swing.JFrame {
             ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
             
             while (rslt.next()){
-                String Nama = rslt.getString("NamaPoli");
-                String Kode = rslt.getString("KodePoli");
-                IsiKode1.setText(Kode);
-                IsiNama1.setText(Nama);
+                String Kode = rslt.getString("KodeObat");
+                String Nama = rslt.getString("NmObat");
+                String Merk = rslt.getString("Merk");
+                String Stock = rslt.getString("Stock");
+                String Harga = rslt.getString("HargaJual");
+                KodeObat1.setText(Kode);
+                NamaObat1.setText(Nama);
+                MerkObat1.setText(Merk);
+                StockObat1.setText(Stock);
+                HargaJual1.setText(Harga);
             } 
         }catch(Exception e){
             
@@ -630,12 +778,15 @@ public class MenuPoli extends javax.swing.JFrame {
     }
         private void UpdateData(){
         
-        String Kode = GlobalVar.KodePoli;
-        String Nama = IsiNama1.getText();
+        String Kode = GlobalVar.KodeObat;
+        String Nama = NamaObat1.getText();
+        String Merk = MerkObat1.getText();
+        String Stock = StockObat1.getText();
+        String Harga = HargaJual1.getText();
                         //panggil koneksi
             Connection connect = Koneksi.getKoneksi();
         
-            String query2 = "UPDATE poli SET NamaPoli = '"+Nama+"' WHERE KodePoli = '"+Kode+"'";
+            String query2 = "UPDATE obat SET NmObat = '"+Nama+"', Merk = '"+Merk+"', Stock = '"+Stock+"', HargaJual = '"+Harga+"' WHERE KodeObat = '"+Kode+"'";
 
             try{
                 PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
@@ -646,11 +797,44 @@ public class MenuPoli extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
             }finally{
                 editData.dispose();
-                IsiKode1.setText(null);
-                IsiNama1.setText(null);
+                KodeObat1.setText(null);
+                NamaObat1.setText(null);
+                MerkObat1.setText(null);
+                StockObat1.setText(null);
+                HargaJual1.setText(null);
                 tampilData();
             }
         }
+        private void kodeotomatis(){
+        String query = "SELECT * FROM obat ORDER BY KodeObat DESC ";
+        try{
+            Connection connect = Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+            
+            if (rslt.next()){
+                String kode_obat = rslt.getString("KodeObat").substring(1);
+                String AN = "" + (Integer.parseInt(kode_obat)+1);
+                String NOL = "";
+                if(AN.length()==1){
+                    NOL = "000";
+                }else if(AN.length()==2){
+                    NOL = "00";
+                }else if(AN.length()==3){
+                    NOL = "0";
+                }else if(AN.length()==4){
+                    NOL = "";
+                }
+                KodeObat.setText("O" + NOL + AN);
+            }else{
+                KodeObat.setText("O0001");
+            }
+        rslt.close();
+        connect.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
@@ -680,6 +864,8 @@ public class MenuPoli extends javax.swing.JFrame {
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
         // TODO add your handling code here:
+        new MenuPoli().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPoliActionPerformed
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
@@ -692,8 +878,6 @@ public class MenuPoli extends javax.swing.JFrame {
 
     private void btnObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObatActionPerformed
         // TODO add your handling code here:
-        new MenuObat.MenuObat().setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnObatActionPerformed
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
@@ -732,12 +916,6 @@ public class MenuPoli extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void TabelPoliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelPoliMouseClicked
-        // TODO add your handling code here:
-        String kode = table.getValueAt(TabelPoli.getSelectedRow(),0).toString();
-        GlobalVar.KodePoli = kode;
-    }//GEN-LAST:event_TabelPoliMouseClicked
-
     private void MIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN1ActionPerformed
         // TODO add your handling code here:
 
@@ -759,13 +937,13 @@ public class MenuPoli extends javax.swing.JFrame {
         tampilData();
     }//GEN-LAST:event_SimpanActionPerformed
 
-    private void IsiNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsiNamaActionPerformed
+    private void NamaObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaObatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IsiNamaActionPerformed
+    }//GEN-LAST:event_NamaObatActionPerformed
 
-    private void IsiKodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsiKodeActionPerformed
+    private void KodeObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeObatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IsiKodeActionPerformed
+    }//GEN-LAST:event_KodeObatActionPerformed
 
     private void tambahDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataWindowOpened
         // TODO add your handling code here:
@@ -801,14 +979,6 @@ public class MenuPoli extends javax.swing.JFrame {
         UpdateData();
     }//GEN-LAST:event_Simpan1ActionPerformed
 
-    private void IsiNama1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsiNama1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IsiNama1ActionPerformed
-
-    private void IsiKode1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsiKode1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IsiKode1ActionPerformed
-
     private void editDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataWindowOpened
         // TODO add your handling code here:
                 for(double i = 0.0; i <= 1.0; i = i + 0.1){
@@ -837,12 +1007,54 @@ public class MenuPoli extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void MerkObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MerkObatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MerkObatActionPerformed
+
+    private void StockObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockObatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StockObatActionPerformed
+
+    private void HargaJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HargaJualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HargaJualActionPerformed
+
+    private void TabelObatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelObatMouseClicked
+        // TODO add your handling code here:
+        String kode = table.getValueAt(TabelObat.getSelectedRow(),0).toString();
+        GlobalVar.KodeObat = kode;
+
+    }//GEN-LAST:event_TabelObatMouseClicked
+
+    private void KodeObat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeObat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KodeObat1ActionPerformed
+
+    private void NamaObat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaObat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamaObat1ActionPerformed
+
+    private void MerkObat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MerkObat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MerkObat1ActionPerformed
+
+    private void StockObat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockObat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StockObat1ActionPerformed
+
+    private void HargaJual1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HargaJual1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HargaJual1ActionPerformed
         private void InputData(){
-        String Kode = IsiKode.getText();
-        String Nama = IsiNama.getText();
+        String Kode = KodeObat.getText();
+        String Nama = NamaObat.getText();
+        String Merkk = MerkObat.getText();
+        String Stockk = StockObat.getText();
+        String Harga = HargaJual.getText();
             Connection connect = Koneksi.getKoneksi();
             //query untuk memasukan data
-            String query2 = "INSERT INTO poli (KodePoli, NamaPoli) "+"VALUES ('"+Kode+"','"+Nama+"')";
+            String query2 = "INSERT INTO obat (KodeObat, NmObat, Merk, Stock, HargaJual) "+"VALUES ('"+Kode+"','"+Nama+"','"+Merkk+"','"+Stockk+"','"+Harga+"')";
 
             try{
                 //menyiapkan statement untuk di eksekusi
@@ -857,40 +1069,13 @@ public class MenuPoli extends javax.swing.JFrame {
 
             }finally{
                 tambahData.dispose();
-                IsiKode.setText(null);
-                IsiNama.setText(null);
+                KodeObat.setText(null);
+                NamaObat.setText(null);
+                MerkObat.setText(null);
+                StockObat.setText(null);
+                HargaJual.setText(null);
                 tampilData();
             }
-    }
-        private void kodeotomatis(){
-        String query = "SELECT * FROM poli ORDER BY KodePoli DESC ";
-        try{
-            Connection connect = Koneksi.getKoneksi();//memanggil koneksi
-            Statement sttmnt = connect.createStatement();//membuat statement
-            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
-            
-            if (rslt.next()){
-                String kode_poli = rslt.getString("KodePoli").substring(1);
-                String AN = "" + (Integer.parseInt(kode_poli)+1);
-                String NOL = "";
-                if(AN.length()==1){
-                    NOL = "000";
-                }else if(AN.length()==2){
-                    NOL = "00";
-                }else if(AN.length()==3){
-                    NOL = "0";
-                }else if(AN.length()==4){
-                    NOL = "";
-                }
-                IsiKode.setText("P" + NOL + AN);
-            }else{
-                IsiKode.setText("P0001");
-            }
-        rslt.close();
-        connect.close();
-        }catch(Exception e){
-            System.out.println(e);
-        }
     }
     /**
      * @param args the command line arguments
@@ -909,21 +1094,23 @@ public class MenuPoli extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPoli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuObat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPoli().setVisible(true);
+                new MenuObat().setVisible(true);
             }
         });
     }
@@ -937,24 +1124,36 @@ public class MenuPoli extends javax.swing.JFrame {
     private javax.swing.JButton Cari;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Edit;
+    private javax.swing.JLabel Harga;
+    private javax.swing.JLabel Harga1;
+    private javax.swing.JTextField HargaJual;
+    private javax.swing.JTextField HargaJual1;
     private javax.swing.JButton Input;
-    private javax.swing.JTextField IsiKode;
-    private javax.swing.JTextField IsiKode1;
-    private javax.swing.JTextField IsiNama;
-    private javax.swing.JTextField IsiNama1;
-    private javax.swing.JLabel KodePoli;
-    private javax.swing.JLabel KodePoli1;
+    private javax.swing.JLabel Kode;
+    private javax.swing.JLabel Kode1;
+    private javax.swing.JTextField KodeObat;
+    private javax.swing.JTextField KodeObat1;
     private javax.swing.JButton MAX;
     private javax.swing.JButton MAX1;
     private javax.swing.JButton MAX2;
     private javax.swing.JButton MIN;
     private javax.swing.JButton MIN1;
     private javax.swing.JButton MIN2;
-    private javax.swing.JLabel NamaPoli;
-    private javax.swing.JLabel NamaPoli1;
+    private javax.swing.JLabel Merk;
+    private javax.swing.JLabel Merk1;
+    private javax.swing.JTextField MerkObat;
+    private javax.swing.JTextField MerkObat1;
+    private javax.swing.JLabel Nama;
+    private javax.swing.JLabel Nama1;
+    private javax.swing.JTextField NamaObat;
+    private javax.swing.JTextField NamaObat1;
     private javax.swing.JButton Simpan;
     private javax.swing.JButton Simpan1;
-    private javax.swing.JTable TabelPoli;
+    private javax.swing.JLabel Stock;
+    private javax.swing.JLabel Stock1;
+    private javax.swing.JTextField StockObat;
+    private javax.swing.JTextField StockObat1;
+    private javax.swing.JTable TabelObat;
     private javax.swing.JLabel bg;
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
