@@ -24,5 +24,6 @@ public class GlobalVar {
     public static String id_jenis;
     public static String namajenis;
     public static String tarif;
+    public static String KodeJadwal;
  
 }

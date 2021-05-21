@@ -1081,6 +1081,8 @@ public class DataPasien extends javax.swing.JFrame {
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed
         // TODO add your handling code here:
+        new MenuJadwal.MenuJadwal().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnJadwalPraktekActionPerformed
 
     private void btnObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObatActionPerformed
