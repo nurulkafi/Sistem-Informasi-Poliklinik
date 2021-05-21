@@ -951,7 +951,7 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void CLOSE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE4ActionPerformed
         // TODO add your handling code here:
-        editData.dispose();
+        tambahData.dispose();
     }//GEN-LAST:event_CLOSE4ActionPerformed
 
     private void tambahDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataWindowOpened
@@ -994,6 +994,7 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void CLOSE5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE5ActionPerformed
         // TODO add your handling code here:
+        editData.dispose();
     }//GEN-LAST:event_CLOSE5ActionPerformed
 
     private void Poli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poli1ActionPerformed
@@ -1008,6 +1009,7 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnBatal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatal1ActionPerformed
         // TODO add your handling code here:
+        editData.dispose();
     }//GEN-LAST:event_btnBatal1ActionPerformed
 
     private void kodedokter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodedokter1ActionPerformed

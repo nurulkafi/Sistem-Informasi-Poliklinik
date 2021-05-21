@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuPegawai;
+package Pendaftaran;
 
+import MenuPegawai.*;
 import MenuUtama.*;
 import Koneksi.GlobalVar;
 import java.awt.Color;
@@ -24,22 +25,23 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author donih
  */
-public class MenuPegawai extends javax.swing.JFrame {
+public class DataPasien extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
-    String NIPegawai;
+    String NoPasien;
     DefaultTableModel table = new DefaultTableModel();
-    public MenuPegawai() {
+    public DataPasien() {
         initComponents();
-        tablePegawai.setModel(table);
-        table.addColumn("NIP");
-        table.addColumn("Nama Pegawai");
+        TableDataPasien.setModel(table);
+        table.addColumn("No Pasien");
+        table.addColumn("Nama Pasien");
+        table.addColumn("Alamat");
         table.addColumn("Telepon");
         table.addColumn("Tanggal Lahir");
         table.addColumn("Jenis Kelamin");
-        table.addColumn("Alamat");
+        table.addColumn("Tanggal Registrasi");
         tampilData();
     }
 
@@ -52,7 +54,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tambahData = new javax.swing.JDialog();
+        tambahDataPasien = new javax.swing.JDialog();
         MIN1 = new javax.swing.JButton();
         MAX1 = new javax.swing.JButton();
         CLOSE1 = new javax.swing.JButton();
@@ -75,7 +77,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         header1 = new javax.swing.JLabel();
         bg1 = new javax.swing.JLabel();
         btngroupJK = new javax.swing.ButtonGroup();
-        editData = new javax.swing.JDialog();
+        editDataPas = new javax.swing.JDialog();
         MIN3 = new javax.swing.JButton();
         MAX3 = new javax.swing.JButton();
         CLOSE3 = new javax.swing.JButton();
@@ -113,25 +115,28 @@ public class MenuPegawai extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablePegawai = new javax.swing.JTable();
-        userPanel = new javax.swing.JLabel();
+        btnSubPendaftaran = new javax.swing.JButton();
+        btnSubDataPasien = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
-        panel = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
-        bg = new javax.swing.JLabel();
+        userPanel = new javax.swing.JLabel();
+        Table = new javax.swing.JScrollPane();
+        TableDataPasien = new javax.swing.JTable();
+        BgPanel = new javax.swing.JLabel();
+        BgSubMenu = new javax.swing.JLabel();
+        editDataPasien = new javax.swing.JLabel();
 
-        tambahData.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        tambahData.setUndecorated(true);
-        tambahData.setOpacity(0.0F);
-        tambahData.setSize(new java.awt.Dimension(600, 600));
-        tambahData.addWindowListener(new java.awt.event.WindowAdapter() {
+        tambahDataPasien.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        tambahDataPasien.setUndecorated(true);
+        tambahDataPasien.setOpacity(0.0F);
+        tambahDataPasien.setSize(new java.awt.Dimension(600, 600));
+        tambahDataPasien.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
-                tambahDataWindowOpened(evt);
+                tambahDataPasienWindowOpened(evt);
             }
         });
-        tambahData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tambahDataPasien.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MIN1.setBackground(new Color(0,0,0,0));
         MIN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -142,13 +147,13 @@ public class MenuPegawai extends javax.swing.JFrame {
                 MIN1ActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(MIN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
+        tambahDataPasien.getContentPane().add(MIN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
 
         MAX1.setBackground(new Color(0,0,0,0));
         MAX1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/maxOff.png"))); // NOI18N
         MAX1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         MAX1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Max.png"))); // NOI18N
-        tambahData.getContentPane().add(MAX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
+        tambahDataPasien.getContentPane().add(MAX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
 
         CLOSE1.setBackground(new Color(0,0,0,0));
         CLOSE1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/xOff.png"))); // NOI18N
@@ -161,7 +166,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 CLOSE1ActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(CLOSE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
+        tambahDataPasien.getContentPane().add(CLOSE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
 
         btnBatal.setBackground(new Color (0,0,0,0));
         btnBatal.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -175,7 +180,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnBatalActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, -1));
+        tambahDataPasien.getContentPane().add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, -1));
 
         btnSimpan.setBackground(new Color (0,0,0,0));
         btnSimpan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -189,7 +194,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnSimpanActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 130, -1));
+        tambahDataPasien.getContentPane().add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 130, -1));
 
         txtAlamat.setColumns(20);
         txtAlamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -198,26 +203,26 @@ public class MenuPegawai extends javax.swing.JFrame {
         txtAlamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtAlamatscroll.setViewportView(txtAlamat);
 
-        tambahData.getContentPane().add(txtAlamatscroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 100));
+        tambahDataPasien.getContentPane().add(txtAlamatscroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 100));
 
         alamat.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         alamat.setForeground(new java.awt.Color(30, 174, 152));
         alamat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_address.png"))); // NOI18N
         alamat.setText("Alamat");
-        tambahData.getContentPane().add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
+        tambahDataPasien.getContentPane().add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
 
         pilihanTglLhr.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 pilihanTglLhrPropertyChange(evt);
             }
         });
-        tambahData.getContentPane().add(pilihanTglLhr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, -1));
+        tambahDataPasien.getContentPane().add(pilihanTglLhr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, -1));
 
         Tgllahir.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Tgllahir.setForeground(new java.awt.Color(30, 174, 152));
         Tgllahir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/Group.png"))); // NOI18N
         Tgllahir.setText("Tanggal Lahir");
-        tambahData.getContentPane().add(Tgllahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
+        tambahDataPasien.getContentPane().add(Tgllahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
 
         txtTelp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtTelp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -232,13 +237,13 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtTelpActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(txtTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
+        tambahDataPasien.getContentPane().add(txtTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
 
         Telepon.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Telepon.setForeground(new java.awt.Color(30, 174, 152));
         Telepon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/bi_telephone-fill.png"))); // NOI18N
         Telepon.setText("Telepon");
-        tambahData.getContentPane().add(Telepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 140, -1));
+        tambahDataPasien.getContentPane().add(Telepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 140, -1));
 
         jk_perempuan.setBackground(new Color(0,0,0,0));
         btngroupJK.add(jk_perempuan);
@@ -249,7 +254,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 jk_perempuanActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(jk_perempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
+        tambahDataPasien.getContentPane().add(jk_perempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
         jk_Laki.setBackground(new Color(0,0,0,0));
         btngroupJK.add(jk_Laki);
@@ -260,13 +265,13 @@ public class MenuPegawai extends javax.swing.JFrame {
                 jk_LakiActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(jk_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+        tambahDataPasien.getContentPane().add(jk_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
         jnsKelamin.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jnsKelamin.setForeground(new java.awt.Color(30, 174, 152));
         jnsKelamin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/fa-solid_transgender.png"))); // NOI18N
         jnsKelamin.setText("Jenis Kelamin");
-        tambahData.getContentPane().add(jnsKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
+        tambahDataPasien.getContentPane().add(jnsKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         txtNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -281,13 +286,13 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtNamaActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
+        tambahDataPasien.getContentPane().add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
 
         nama.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nama.setForeground(new java.awt.Color(30, 174, 152));
         nama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/mdi_account.png"))); // NOI18N
         nama.setText("Nama Pegawai");
-        tambahData.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
+        tambahDataPasien.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
         txtNIP.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNIP.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -302,29 +307,29 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtNIPActionPerformed(evt);
             }
         });
-        tambahData.getContentPane().add(txtNIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
+        tambahDataPasien.getContentPane().add(txtNIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
 
         NIP.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         NIP.setForeground(new java.awt.Color(30, 174, 152));
         NIP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_v-card.png"))); // NOI18N
         NIP.setText("Nomor Induk Pegawai");
-        tambahData.getContentPane().add(NIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
+        tambahDataPasien.getContentPane().add(NIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
 
         header1.setBackground(new Color(0,0,0,0));
-        header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/headerTambah.png"))); // NOI18N
-        tambahData.getContentPane().add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
+        header1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/headertambah.png"))); // NOI18N
+        tambahDataPasien.getContentPane().add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         bg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
         bg1.setToolTipText("");
-        tambahData.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
+        tambahDataPasien.getContentPane().add(bg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
-        editData.setUndecorated(true);
-        editData.addWindowListener(new java.awt.event.WindowAdapter() {
+        editDataPas.setUndecorated(true);
+        editDataPas.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
-                editDataWindowOpened(evt);
+                editDataPasWindowOpened(evt);
             }
         });
-        editData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        editDataPas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MIN3.setBackground(new Color(0,0,0,0));
         MIN3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -335,7 +340,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 MIN3ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(MIN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
+        editDataPas.getContentPane().add(MIN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 30, 30));
 
         MAX3.setBackground(new Color(0,0,0,0));
         MAX3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/maxOff.png"))); // NOI18N
@@ -346,7 +351,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 MAX3ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(MAX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
+        editDataPas.getContentPane().add(MAX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 30, 30));
 
         CLOSE3.setBackground(new Color(0,0,0,0));
         CLOSE3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/xOff.png"))); // NOI18N
@@ -359,7 +364,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 CLOSE3ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
+        editDataPas.getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 30, 30));
 
         btnBatal1.setBackground(new Color (0,0,0,0));
         btnBatal1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -373,7 +378,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnBatal1ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(btnBatal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, -1));
+        editDataPas.getContentPane().add(btnBatal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, -1));
 
         btnSimpan1.setBackground(new Color (0,0,0,0));
         btnSimpan1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -387,11 +392,11 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnSimpan1ActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(btnSimpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 130, -1));
+        editDataPas.getContentPane().add(btnSimpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 130, -1));
 
         buttonGroup1.add(PerempuanEdit);
         PerempuanEdit.setText("Perempuan");
-        editData.getContentPane().add(PerempuanEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
+        editDataPas.getContentPane().add(PerempuanEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
         buttonGroup1.add(lakiedit);
         lakiedit.setText("Laki - Laki");
@@ -400,7 +405,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 lakieditActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(lakiedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+        editDataPas.getContentPane().add(lakiedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
         txtAlamatEdit.setColumns(20);
         txtAlamatEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -409,26 +414,26 @@ public class MenuPegawai extends javax.swing.JFrame {
         txtAlamatEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtAlamat1.setViewportView(txtAlamatEdit);
 
-        editData.getContentPane().add(txtAlamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 100));
+        editDataPas.getContentPane().add(txtAlamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 100));
 
         alamat1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         alamat1.setForeground(new java.awt.Color(30, 174, 152));
         alamat1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_address.png"))); // NOI18N
         alamat1.setText("Alamat");
-        editData.getContentPane().add(alamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
+        editDataPas.getContentPane().add(alamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, -1));
 
         pilihanTglLhrEdit.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 pilihanTglLhrEditPropertyChange(evt);
             }
         });
-        editData.getContentPane().add(pilihanTglLhrEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, -1));
+        editDataPas.getContentPane().add(pilihanTglLhrEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 280, -1));
 
         Tgllahir1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Tgllahir1.setForeground(new java.awt.Color(30, 174, 152));
         Tgllahir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/Group.png"))); // NOI18N
         Tgllahir1.setText("Tanggal Lahir");
-        editData.getContentPane().add(Tgllahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
+        editDataPas.getContentPane().add(Tgllahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
 
         txtTelpEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtTelpEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -443,19 +448,19 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtTelpEditActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(txtTelpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
+        editDataPas.getContentPane().add(txtTelpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
 
         Telepon1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Telepon1.setForeground(new java.awt.Color(30, 174, 152));
         Telepon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/bi_telephone-fill.png"))); // NOI18N
         Telepon1.setText("Telepon");
-        editData.getContentPane().add(Telepon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 140, -1));
+        editDataPas.getContentPane().add(Telepon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 140, -1));
 
         jnsKelamin1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jnsKelamin1.setForeground(new java.awt.Color(30, 174, 152));
         jnsKelamin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/fa-solid_transgender.png"))); // NOI18N
         jnsKelamin1.setText("Jenis Kelamin");
-        editData.getContentPane().add(jnsKelamin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
+        editDataPas.getContentPane().add(jnsKelamin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         txtNamaEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtNamaEdit.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -470,13 +475,13 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtNamaEditActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(txtNamaEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
+        editDataPas.getContentPane().add(txtNamaEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
 
         nama1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nama1.setForeground(new java.awt.Color(30, 174, 152));
         nama1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/mdi_account.png"))); // NOI18N
         nama1.setText("Nama Pegawai");
-        editData.getContentPane().add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
+        editDataPas.getContentPane().add(nama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
         txtNIPEdit.setEditable(false);
         txtNIPEdit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -492,21 +497,21 @@ public class MenuPegawai extends javax.swing.JFrame {
                 txtNIPEditActionPerformed(evt);
             }
         });
-        editData.getContentPane().add(txtNIPEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
+        editDataPas.getContentPane().add(txtNIPEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 280, 30));
 
         NIP1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         NIP1.setForeground(new java.awt.Color(30, 174, 152));
         NIP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/entypo_v-card.png"))); // NOI18N
         NIP1.setText("Nomor Induk Pegawai");
-        editData.getContentPane().add(NIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
+        editDataPas.getContentPane().add(NIP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 180, -1));
 
         header2.setBackground(new Color(0,0,0,0));
-        header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/headerEdit.png"))); // NOI18N
-        editData.getContentPane().add(header2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
+        header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/headerEdit.png"))); // NOI18N
+        editDataPas.getContentPane().add(header2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
         bg2.setToolTipText("");
-        editData.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
+        editDataPas.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -527,7 +532,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 290, 90, 80));
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 350, 90, 80));
 
         btnEdit.setBackground(new Color(0,0,0,0));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/edit.png"))); // NOI18N
@@ -538,7 +543,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnEditActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 210, 90, 80));
+        getContentPane().add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 270, 90, 80));
 
         btnInput.setBackground(new Color(0,0,0,0));
         btnInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/input.png"))); // NOI18N
@@ -549,7 +554,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 btnInputActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 130, 90, 80));
+        getContentPane().add(btnInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 190, 90, 80));
 
         MIN.setBackground(new Color(0,0,0,0));
         MIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/-Off.png"))); // NOI18N
@@ -661,7 +666,6 @@ public class MenuPegawai extends javax.swing.JFrame {
         btnPegawai.setBackground(new Color(0,0,0,0));
         btnPegawai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Pegawai.png"))); // NOI18N
         btnPegawai.setBorder(null);
-        btnPegawai.setSelected(true);
         btnPegawai.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PegawaiAktif.png"))); // NOI18N
         btnPegawai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -673,6 +677,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         btnPendaftaran.setBackground(new Color(0,0,0,0));
         btnPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Pendaftaran.png"))); // NOI18N
         btnPendaftaran.setBorder(null);
+        btnPendaftaran.setSelected(true);
         btnPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PendaftaranAktif.png"))); // NOI18N
         btnPendaftaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,7 +686,31 @@ public class MenuPegawai extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tablePegawai.setModel(new javax.swing.table.DefaultTableModel(
+        btnSubPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/subPendaftaran.png"))); // NOI18N
+        btnSubPendaftaran.setBorder(null);
+        btnSubPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubPendaftaranAktif.png"))); // NOI18N
+        getContentPane().add(btnSubPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
+
+        btnSubDataPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasien.png"))); // NOI18N
+        btnSubDataPasien.setBorder(null);
+        btnSubDataPasien.setSelected(true);
+        btnSubDataPasien.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubDatapasienAktif.png"))); // NOI18N
+        getContentPane().add(btnSubDataPasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 147, -1, 40));
+
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/titledatapasien.png"))); // NOI18N
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 93, -1, -1));
+
+        navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
+        getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        userPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
+        userPanel.setToolTipText("");
+        getContentPane().add(userPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 27, -1, -1));
+
+        TableDataPasien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -692,36 +721,22 @@ public class MenuPegawai extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tablePegawai.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablePegawaiMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablePegawai);
+        Table.setViewportView(TableDataPasien);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 840, 490));
+        getContentPane().add(Table, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 187, 830, 480));
 
-        userPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Acc (1).png"))); // NOI18N
-        userPanel.setToolTipText("");
-        getContentPane().add(userPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 27, -1, -1));
+        BgPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/panel.png"))); // NOI18N
+        BgPanel.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(BgPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 171, 980, -1));
 
-        Title.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/TITLE.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 80, -1, -1));
+        BgSubMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BgSubMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubMenu.png"))); // NOI18N
+        BgSubMenu.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        BgSubMenu.setPreferredSize(new java.awt.Dimension(150, 651));
+        getContentPane().add(BgSubMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 65, 160, 650));
 
-        panel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/panel.png"))); // NOI18N
-        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 980, -1));
-
-        navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
-        getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
-
-        header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
-        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/bgmenupegawai.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        editDataPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/bgmenupegawai.png"))); // NOI18N
+        getContentPane().add(editDataPasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
         setLocationRelativeTo(null);
@@ -729,13 +744,13 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void tampilData(){
         //untuk mengahapus baris setelah input
-        int row = tablePegawai.getRowCount();
+        int row = TableDataPasien.getRowCount();
         for(int a = 0 ; a < row ; a++){
             table.removeRow(0);
         }
         
         String query = 
-                "SELECT NIP,NamaPeg,TelpPeg,TglLhrPeg,JnsKelPeg,AlmPeg FROM pegawai ORDER BY NIP";
+                "SELECT NoPasien,NamaPas,AlmPas,TelpPas,TglLahirPas,JenisKelPas,TglRegistrasi FROM pasien ORDER BY NoPasien";
                 
         
         try{
@@ -746,20 +761,22 @@ public class MenuPegawai extends javax.swing.JFrame {
             while (rslt.next()){
                 //menampung data sementara
                    
-                    String nip = rslt.getString("NIP");
-                    String namapegawai = rslt.getString("NamaPeg");
-                    String tlp = rslt.getString("TelpPeg");
-                    String tgllhr = rslt.getString("TglLhrPeg");
-                    String jnskel = rslt.getString("JnsKelPeg");
-                    String alamat = rslt.getString("AlmPeg");
+                    String noPas = rslt.getString("NoPasien");
+                    String namapas = rslt.getString("NamaPas");
+                    String alamat = rslt.getString("AlmPas");
+                    String tlp = rslt.getString("TelpPas");
+                    String tgllhr = rslt.getString("TglLahirPas");
+                    String jnskel = rslt.getString("JenisKelPas");
+                    String tglregis = rslt.getString("TglRegistrasi");
+                    
                     
                 //masukan semua data kedalam array
-                String[] data = {nip,namapegawai,tlp,tgllhr,jnskel,alamat};
+                String[] data = {noPas,namapas,alamat,tlp,tgllhr,jnskel,tglregis};
                 //menambahakan baris sesuai dengan data yang tersimpan diarray
                 table.addRow(data);
             }
                 //mengeset nilai yang ditampung agar muncul di table
-                tablePegawai.setModel(table);
+                TableDataPasien.setModel(table);
             
         }catch(Exception e){
             System.out.println(e);
@@ -771,11 +788,11 @@ public class MenuPegawai extends javax.swing.JFrame {
         //ambill data no pendaftaran
            
         Connection connect = Koneksi.Koneksi.getKoneksi();
-        int baris = tablePegawai.getSelectedRow();
+        int baris = TableDataPasien.getSelectedRow();
         int jawab;
         String kode = table.getValueAt(baris,0).toString();
         
-        String query = "DELETE FROM pegawai WHERE NIP = '"+kode+"';";
+        String query = "DELETE FROM pasien WHERE NoPasien = '"+kode+"';";
         try{
             if ((jawab = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
             PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
@@ -818,7 +835,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println(e);
         }finally{
-            tambahData.dispose();
+            tambahDataPasien.dispose();
             txtNIP.setText(null);
             txtNama.setText(null);
             btngroupJK.clearSelection();
@@ -848,7 +865,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     }
     
     private void LoadData(){      
-        String query = "SELECT * FROM pegawai WHERE NIP = '"+NIPegawai+"' ";
+        String query = "SELECT * FROM pasien WHERE NoPasien = '"+NoPasien+"' ";
         
         try{
             Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
@@ -856,15 +873,16 @@ public class MenuPegawai extends javax.swing.JFrame {
             ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
             
             while (rslt.next()){
-                String nip = rslt.getString("NIP");
-                String namapegawai = rslt.getString("NamaPeg");
-                String tlp = rslt.getString("TelpPeg");
-                String tgllhr = rslt.getString("TglLhrPeg");
-                String jnskel = rslt.getString("JnsKelPeg");
-                String alamat = rslt.getString("AlmPeg");
+                String nopas = rslt.getString("NoPasien");
+                String namapas = rslt.getString("NamaPas");
+                String alamat = rslt.getString("AlmPas");
+                String tlp = rslt.getString("TelpPas");
+                String tgllhr = rslt.getString("TglLahirPas");
+                String jnskel = rslt.getString("JenisKelPas");
+                String tglregis = rslt.getString("TglRegistrasi");
                 
-                txtNIPEdit.setText(nip);
-                txtNamaEdit.setText(namapegawai);
+                txtNIPEdit.setText(nopas);
+                txtNamaEdit.setText(namapas);
                 txtTelpEdit.setText(tlp);
 //              pilihanTglLhrEdit.setDate(tgllhr);
                 txtAlamatEdit.setText(alamat);
@@ -879,7 +897,7 @@ public class MenuPegawai extends javax.swing.JFrame {
             System.out.println(e);
         } 
     }
-    
+  
     private void UpdateData(){
         lakiedit.setActionCommand("L");
         PerempuanEdit.setActionCommand("P");
@@ -908,7 +926,7 @@ public class MenuPegawai extends javax.swing.JFrame {
                 System.out.println(e);
                 JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
             }finally{
-                editData.dispose();
+                editDataPas.dispose();
                 txtNIPEdit.setText(null);
                 txtNamaEdit.setText(null);
                 buttonGroup1.clearSelection();
@@ -933,6 +951,8 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void btnPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegawaiActionPerformed
         // TODO add your handling code here:
+        new MenuPegawai().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPegawaiActionPerformed
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
@@ -972,16 +992,10 @@ public class MenuPegawai extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
-        // TODO add your handling code here:
-       tambahData.setVisible(true);
-       tambahData.setBounds(380, 120, 600, 520);
-    }//GEN-LAST:event_btnInputActionPerformed
-
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
-        editData.setVisible(true);
-        editData.setBounds(380, 120, 600, 520);
+        editDataPas.setVisible(true);
+        editDataPas.setBounds(380, 120, 600, 520);
         LoadData();
     }//GEN-LAST:event_btnEditActionPerformed
 
@@ -1011,12 +1025,12 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
-        tambahData.dispose();
+        tambahDataPasien.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         // TODO add your handling code here:
-        tambahData.dispose();
+        tambahDataPasien.dispose();
     }//GEN-LAST:event_btnBatalActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
@@ -1051,31 +1065,31 @@ public class MenuPegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNIPActionPerformed
 
-    private void tambahDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataWindowOpened
+    private void tambahDataPasienWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataPasienWindowOpened
         // TODO add your handling code here:
         for(double i = 0.0; i <= 1.0; i = i + 0.1){
             String val = i+ "";
             float f = Float.valueOf(val);
 //            this.setOpacity(f);
-            tambahData.setOpacity(f);
+            tambahDataPasien.setOpacity(f);
             try{
                 Thread.sleep(20);
             }
            catch(Exception e){
             }
         }
-    }//GEN-LAST:event_tambahDataWindowOpened
+    }//GEN-LAST:event_tambahDataPasienWindowOpened
 
     private void btnBatal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatal1ActionPerformed
         // TODO add your handling code here:
-        editData.dispose();
+        editDataPas.dispose();
     }//GEN-LAST:event_btnBatal1ActionPerformed
 
     private void btnSimpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan1ActionPerformed
         // TODO add your handling code here:
         UpdateData();
         tampilData();
-        editData.dispose();
+        editDataPas.dispose();
     }//GEN-LAST:event_btnSimpan1ActionPerformed
 
     private void txtTelpEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelpEditActionPerformed
@@ -1091,11 +1105,6 @@ public class MenuPegawai extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtNIPEditActionPerformed
 
-    private void tablePegawaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePegawaiMouseClicked
-        // TODO add your handling code here:
-        NIPegawai = table.getValueAt(tablePegawai.getSelectedRow(),0).toString();
-    }//GEN-LAST:event_tablePegawaiMouseClicked
-
     private void pilihanTglLhrEditPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_pilihanTglLhrEditPropertyChange
         // TODO add your handling code here:
         tanggal2();
@@ -1108,7 +1117,7 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
         // TODO add your handling code here:
-        editData.dispose();
+        editDataPas.dispose();
     }//GEN-LAST:event_CLOSE3ActionPerformed
 
     private void MAX3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAX3ActionPerformed
@@ -1119,9 +1128,15 @@ public class MenuPegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lakieditActionPerformed
 
-    private void editDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataWindowOpened
+    private void editDataPasWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataPasWindowOpened
         // TODO add your handling code here:
-    }//GEN-LAST:event_editDataWindowOpened
+    }//GEN-LAST:event_editDataPasWindowOpened
+
+    private void btnInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputActionPerformed
+        // TODO add your handling code here:
+        tambahDataPasien.setVisible(true);
+        tambahDataPasien.setBounds(380, 120, 600, 520);
+    }//GEN-LAST:event_btnInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1140,26 +1155,30 @@ public class MenuPegawai extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataPasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataPasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataPasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DataPasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPegawai().setVisible(true);
+                new DataPasien().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BgPanel;
+    private javax.swing.JLabel BgSubMenu;
     private javax.swing.JButton CLOSE;
     private javax.swing.JButton CLOSE1;
     private javax.swing.JButton CLOSE3;
@@ -1172,6 +1191,8 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel NIP;
     private javax.swing.JLabel NIP1;
     private javax.swing.JRadioButton PerempuanEdit;
+    private javax.swing.JScrollPane Table;
+    private javax.swing.JTable TableDataPasien;
     private javax.swing.JLabel Telepon;
     private javax.swing.JLabel Telepon1;
     private javax.swing.JLabel Tgllahir;
@@ -1179,7 +1200,6 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JLabel alamat;
     private javax.swing.JLabel alamat1;
-    private javax.swing.JLabel bg;
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
     private javax.swing.JButton btnBatal;
@@ -1198,13 +1218,15 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSimpan1;
+    private javax.swing.JButton btnSubDataPasien;
+    private javax.swing.JButton btnSubPendaftaran;
     private javax.swing.ButtonGroup btngroupJK;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JDialog editData;
+    private javax.swing.JDialog editDataPas;
+    private javax.swing.JLabel editDataPasien;
     private javax.swing.JLabel header;
     private javax.swing.JLabel header1;
     private javax.swing.JLabel header2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton jk_Laki;
     private javax.swing.JRadioButton jk_perempuan;
     private javax.swing.JLabel jnsKelamin;
@@ -1213,11 +1235,9 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel nama;
     private javax.swing.JLabel nama1;
     private javax.swing.JLabel navi;
-    private javax.swing.JLabel panel;
     private com.toedter.calendar.JDateChooser pilihanTglLhr;
     private com.toedter.calendar.JDateChooser pilihanTglLhrEdit;
-    private javax.swing.JTable tablePegawai;
-    private javax.swing.JDialog tambahData;
+    private javax.swing.JDialog tambahDataPasien;
     private javax.swing.JTextArea txtAlamat;
     private javax.swing.JScrollPane txtAlamat1;
     private javax.swing.JTextArea txtAlamatEdit;
