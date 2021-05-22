@@ -317,6 +317,8 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
         // TODO add your handling code here:
+        new MenuPemeriksaan.Pemeriksaan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPemeriksaanActionPerformed
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed

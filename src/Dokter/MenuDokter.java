@@ -655,7 +655,6 @@ public class MenuDokter extends javax.swing.JFrame {
         getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
 
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUser.setText("Hi!, User");
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
@@ -940,6 +939,8 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
         // TODO add your handling code here:
+        new MenuPemeriksaan.Pemeriksaan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPemeriksaanActionPerformed
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed

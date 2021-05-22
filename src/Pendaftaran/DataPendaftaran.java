@@ -56,6 +56,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         table3.addColumn("Tarif");
         this.setBackground(new Color(0,0,0,0));
         txtUser.setText("Hi!, " + GlobalVar.nama);
+        
     }
 
     /**
@@ -555,7 +556,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
         getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
 
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUser.setText("Hi!, User");
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
@@ -802,6 +802,8 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
         // TODO add your handling code here:
+        new MenuPemeriksaan.Pemeriksaan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPemeriksaanActionPerformed
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed
@@ -892,6 +894,9 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
         tambahData.dispose();
+        for(int i = 0; i < TableBiaya.getRowCount();i++){
+            table3.removeRow(i);
+        }
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
@@ -944,14 +949,13 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
     private void CLOSE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE2ActionPerformed
         // TODO add your handling code here:
+        table2.removeRow(TableKeranjang.getSelectedRow());
     }//GEN-LAST:event_CLOSE2ActionPerformed
 
     private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
         // TODO add your handling code here:
         Biaya.setVisible(true);
-        Biaya.setBounds(450, 120, 600, 520);
-        tambahData.setVisible(false);
-        
+        Biaya.setBounds(450, 120, 600, 520);        
     }//GEN-LAST:event_CLOSE3ActionPerformed
 
     private void MIN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN2ActionPerformed
@@ -983,6 +987,10 @@ public class DataPendaftaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         table2.addRow(new Object[]{Koneksi.GlobalVar.id_jenis,Koneksi.GlobalVar.namajenis,Koneksi.GlobalVar.tarif});
         tambahData.setVisible(true);
+        int row = TableBiaya.getRowCount();
+        for(int a = 0 ; a < row ; a++){
+            table.removeRow(0);
+        }
         Biaya.dispose();
     }//GEN-LAST:event_btnPilihBiayaActionPerformed
 

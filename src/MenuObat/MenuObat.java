@@ -729,7 +729,6 @@ public class MenuObat extends javax.swing.JFrame {
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
 
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUser.setText("Hi!, User");
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 200, 20));
@@ -944,6 +943,8 @@ public class MenuObat extends javax.swing.JFrame {
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
         // TODO add your handling code here:
+        new MenuPemeriksaan.Pemeriksaan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPemeriksaanActionPerformed
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed
@@ -1188,7 +1189,7 @@ public class MenuObat extends javax.swing.JFrame {
         // TODO add your handling code here:
         HargaJual.setForeground(new Color(102,102,102));
     }//GEN-LAST:event_HargaJualFocusLost
-        private void InputData(){
+    private void InputData(){
         String Kode = KodeObat.getText();
         String Nama = NamaObat.getText();
         String Merkk = MerkObat.getText();

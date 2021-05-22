@@ -20,10 +20,14 @@ public class GlobalVar {
     public static String hak_akses;
     public static String KodePoli;
     public static String NamaPoli;
-    public static String KodeObat;
     public static String id_jenis;
     public static String namajenis;
     public static String tarif;
     public static String KodeJadwal;
+    public static String KodeObat;
+    public static String NamaObat;
+    public static String Merk;
+    public static String Stock;
+    public static String Harga;
  
 }
