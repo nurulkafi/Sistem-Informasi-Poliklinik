@@ -29,5 +29,6 @@ public class GlobalVar {
     public static String Merk;
     public static String Stock;
     public static String Harga;
+    public static String idbiaya;
  
 }
