@@ -106,6 +106,7 @@ public class MenuObat extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         txtUser = new javax.swing.JLabel();
         btnUser = new javax.swing.JButton();
         userPanel = new javax.swing.JLabel();
@@ -125,13 +126,23 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HargaJual.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        HargaJual.setForeground(new java.awt.Color(102, 102, 102));
         HargaJual.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        HargaJual.setToolTipText("Username");
+        HargaJual.setText("Masukan Harga Jual...");
+        HargaJual.setToolTipText("Harga Jual");
         HargaJual.setAlignmentX(1.0F);
         HargaJual.setAlignmentY(1.0F);
         HargaJual.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         HargaJual.setCaretColor(new java.awt.Color(30, 174, 152));
         HargaJual.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        HargaJual.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HargaJualFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                HargaJualFocusLost(evt);
+            }
+        });
         HargaJual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HargaJualActionPerformed(evt);
@@ -146,13 +157,23 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 150, 30));
 
         StockObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        StockObat.setForeground(new java.awt.Color(102, 102, 102));
         StockObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        StockObat.setToolTipText("Username");
+        StockObat.setText("Masukan Stock Obat...");
+        StockObat.setToolTipText("Stock Obat");
         StockObat.setAlignmentX(1.0F);
         StockObat.setAlignmentY(1.0F);
         StockObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         StockObat.setCaretColor(new java.awt.Color(30, 174, 152));
         StockObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        StockObat.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                StockObatFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                StockObatFocusLost(evt);
+            }
+        });
         StockObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StockObatActionPerformed(evt);
@@ -167,13 +188,23 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, 30));
 
         MerkObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MerkObat.setForeground(new java.awt.Color(102, 102, 102));
         MerkObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        MerkObat.setToolTipText("Username");
+        MerkObat.setText("Masukan Merk Obat...");
+        MerkObat.setToolTipText("Merk Obat");
         MerkObat.setAlignmentX(1.0F);
         MerkObat.setAlignmentY(1.0F);
         MerkObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         MerkObat.setCaretColor(new java.awt.Color(30, 174, 152));
         MerkObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MerkObat.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MerkObatFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                MerkObatFocusLost(evt);
+            }
+        });
         MerkObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MerkObatActionPerformed(evt);
@@ -246,13 +277,23 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 130, -1));
 
         NamaObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        NamaObat.setForeground(new java.awt.Color(102, 102, 102));
         NamaObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        NamaObat.setToolTipText("Username");
+        NamaObat.setText("Masukan Nama Obat...");
+        NamaObat.setToolTipText("Nama Obat");
         NamaObat.setAlignmentX(1.0F);
         NamaObat.setAlignmentY(1.0F);
         NamaObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         NamaObat.setCaretColor(new java.awt.Color(30, 174, 152));
         NamaObat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        NamaObat.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                NamaObatFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                NamaObatFocusLost(evt);
+            }
+        });
         NamaObat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NamaObatActionPerformed(evt);
@@ -268,7 +309,7 @@ public class MenuObat extends javax.swing.JFrame {
 
         KodeObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         KodeObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        KodeObat.setToolTipText("Username");
+        KodeObat.setToolTipText("Kode Obat");
         KodeObat.setAlignmentX(1.0F);
         KodeObat.setAlignmentY(1.0F);
         KodeObat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
@@ -676,6 +717,17 @@ public class MenuObat extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
+
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -938,11 +990,19 @@ public class MenuObat extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
+        NamaObat.setText("Masukan Nama Obat...");
+        MerkObat.setText("Masukan Merk Obat...");
+        StockObat.setText("Masukan Stock Obat...");
+        HargaJual.setText("Masukan Harga Jual...");
         tambahData.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void BatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalActionPerformed
         // TODO add your handling code here:
+        NamaObat.setText("Masukan Nama Obat...");
+        MerkObat.setText("Masukan Merk Obat...");
+        StockObat.setText("Masukan Stock Obat...");
+        HargaJual.setText("Masukan Harga Jual...");
         tambahData.dispose();
     }//GEN-LAST:event_BatalActionPerformed
 
@@ -1070,6 +1130,64 @@ public class MenuObat extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void NamaObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NamaObatFocusGained
+        // TODO add your handling code here:
+        if(NamaObat.getText().equals("Masukan Nama Obat..."));{
+            NamaObat.setText(null);
+            NamaObat.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_NamaObatFocusGained
+
+    private void NamaObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NamaObatFocusLost
+        // TODO add your handling code here:
+        NamaObat.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_NamaObatFocusLost
+
+    private void MerkObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MerkObatFocusGained
+        // TODO add your handling code here:
+        if(MerkObat.getText().equals("Masukan Merk Obat..."));{
+            MerkObat.setText(null);
+            MerkObat.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_MerkObatFocusGained
+
+    private void MerkObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MerkObatFocusLost
+        // TODO add your handling code here:
+         MerkObat.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_MerkObatFocusLost
+
+    private void StockObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StockObatFocusGained
+        // TODO add your handling code here:
+        if(StockObat.getText().equals("Masukan Stock Obat..."));{
+            StockObat.setText(null);
+            StockObat.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_StockObatFocusGained
+
+    private void StockObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StockObatFocusLost
+        // TODO add your handling code here:
+        StockObat.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_StockObatFocusLost
+
+    private void HargaJualFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HargaJualFocusGained
+        // TODO add your handling code here:
+        if(HargaJual.getText().equals("Masukan Harga Jual..."));{
+            HargaJual.setText(null);
+            HargaJual.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_HargaJualFocusGained
+
+    private void HargaJualFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HargaJualFocusLost
+        // TODO add your handling code here:
+        HargaJual.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_HargaJualFocusLost
         private void InputData(){
         String Kode = KodeObat.getText();
         String Nama = NamaObat.getText();
@@ -1182,6 +1300,7 @@ public class MenuObat extends javax.swing.JFrame {
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;

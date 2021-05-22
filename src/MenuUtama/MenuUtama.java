@@ -9,8 +9,11 @@ import Koneksi.GlobalVar;
 import MenuObat.MenuObat;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import java.util.*;
+import javax.swing.Timer;
 
 /**
  *
@@ -23,7 +26,8 @@ public class MenuUtama extends javax.swing.JFrame {
      */
     public MenuUtama() {
         initComponents();
-        Time();
+        Tampil_Tanggal();
+        Tampil_Jam();
         username.setText(GlobalVar.nama.toUpperCase());
         this.setBackground(new Color(0,0,0,0));
     }
@@ -49,9 +53,10 @@ public class MenuUtama extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         tgl = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
-        jam = new javax.swing.JLabel();
+        txtjam = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         header = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -196,18 +201,33 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        tgl.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
+
+        tgl.setFont(new java.awt.Font("SansSerif", 2, 24)); // NOI18N
+        tgl.setForeground(new java.awt.Color(51, 51, 51));
+        tgl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tgl.setText("19 Mei 2021");
-        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        getContentPane().add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 50, 240, -1));
 
         username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         username.setText("User");
         getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 180, -1));
 
-        jam.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jam.setText("17:18:9");
-        getContentPane().add(jam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        txtjam.setFont(new java.awt.Font("Digital-7 Mono", 1, 25)); // NOI18N
+        txtjam.setForeground(new java.awt.Color(51, 51, 51));
+        txtjam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtjam.setText("17:18:09");
+        getContentPane().add(txtjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 572, 110, 40));
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
@@ -215,7 +235,7 @@ public class MenuUtama extends javax.swing.JFrame {
         header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/header.png"))); // NOI18N
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/background.png"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/bgMenuHome.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
@@ -226,20 +246,44 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_MINActionPerformed
-    private void Time(){
+    private void Tampil_Tanggal(){
         int detik, menit, jam, hari, bulan, tahun;
         GregorianCalendar date = new GregorianCalendar();
+        java.util.Date dateTime = new java.util.Date();
         String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
+        String namahariarr[] = {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
+        int harinama = dateTime.getDay();
+        String namahari = namahariarr[harinama];
         hari = date.get(Calendar.DAY_OF_MONTH);
         bulan = date.get(Calendar.MONTH);
         tahun = date.get(Calendar.YEAR);
         int test = date.get(Calendar.DAY_OF_WEEK);
         
-        tgl.setText(hari+" "+namabulan[bulan]+" "+tahun);
-        this.jam.setText(jam+":"+menit+":"+detik);
+        tgl.setText(namahari + ", "+ hari+" "+namabulan[bulan]+" "+tahun);
+    }
+    
+    private void Tampil_Jam(){
+        ActionListener taskPerformer = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+               String nol_jam = "", nol_menit = "", nol_detik = "";
+               
+               java.util.Date dateTime = new java.util.Date();
+               int nilai_jam = dateTime.getHours();
+               int nilai_menit = dateTime.getMinutes();
+               int nilai_detik = dateTime.getSeconds();
+                              
+               if (nilai_jam <= 9) nol_jam = "0";
+               if (nilai_menit <= 9) nol_menit = "0";
+               if (nilai_detik <= 9) nol_detik = "0";
+               
+               String jam = nol_jam + Integer.toString(nilai_jam);
+               String menit = nol_menit + Integer.toString(nilai_menit);
+               String detik = nol_detik + Integer.toString(nilai_detik);
+               txtjam.setText(jam + ":" + menit + ":" + detik + "");
+            }
+        };
+        new Timer (1000, taskPerformer).start();
     }
     private void CLOSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEActionPerformed
         // TODO add your handling code here:
@@ -314,6 +358,12 @@ public class MenuUtama extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -355,6 +405,7 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton MIN;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;
@@ -364,9 +415,9 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnUser;
     private javax.swing.JLabel header;
-    private javax.swing.JLabel jam;
     private javax.swing.JLabel navi;
     private javax.swing.JLabel tgl;
+    private javax.swing.JLabel txtjam;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

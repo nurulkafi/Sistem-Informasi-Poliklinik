@@ -108,6 +108,7 @@ public class MenuJadwal extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         txtUser = new javax.swing.JLabel();
         btnUser = new javax.swing.JButton();
         userPanel = new javax.swing.JLabel();
@@ -134,13 +135,23 @@ public class MenuJadwal extends javax.swing.JFrame {
         tambahData.getContentPane().add(NamaDokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 162, 280, 30));
 
         JamSelesai.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JamSelesai.setForeground(new java.awt.Color(102, 102, 102));
         JamSelesai.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        JamSelesai.setText("Masukan Jam Selesai...");
         JamSelesai.setToolTipText("Username");
         JamSelesai.setAlignmentX(1.0F);
         JamSelesai.setAlignmentY(1.0F);
         JamSelesai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         JamSelesai.setCaretColor(new java.awt.Color(30, 174, 152));
         JamSelesai.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        JamSelesai.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JamSelesaiFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JamSelesaiFocusLost(evt);
+            }
+        });
         JamSelesai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JamSelesaiActionPerformed(evt);
@@ -155,13 +166,23 @@ public class MenuJadwal extends javax.swing.JFrame {
         tambahData.getContentPane().add(Jselesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 150, 30));
 
         JamMulai.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JamMulai.setForeground(new java.awt.Color(102, 102, 102));
         JamMulai.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        JamMulai.setText("Masukan Jam Mulai...");
         JamMulai.setToolTipText("Username");
         JamMulai.setAlignmentX(1.0F);
         JamMulai.setAlignmentY(1.0F);
         JamMulai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         JamMulai.setCaretColor(new java.awt.Color(30, 174, 152));
         JamMulai.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        JamMulai.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JamMulaiFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JamMulaiFocusLost(evt);
+            }
+        });
         JamMulai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JamMulaiActionPerformed(evt);
@@ -176,13 +197,23 @@ public class MenuJadwal extends javax.swing.JFrame {
         tambahData.getContentPane().add(Jmulai, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 150, 30));
 
         Hari.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        Hari.setForeground(new java.awt.Color(102, 102, 102));
         Hari.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Hari.setText("Masukan Hari...");
         Hari.setToolTipText("Username");
         Hari.setAlignmentX(1.0F);
         Hari.setAlignmentY(1.0F);
         Hari.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         Hari.setCaretColor(new java.awt.Color(30, 174, 152));
         Hari.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Hari.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HariFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                HariFocusLost(evt);
+            }
+        });
         Hari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HariActionPerformed(evt);
@@ -662,6 +693,17 @@ public class MenuJadwal extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
+
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -923,11 +965,17 @@ public class MenuJadwal extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
+        Hari.setText("Masukan Hari...");
+        JamMulai.setText("Masukan Jam Mulai...");
+        JamSelesai.setText("Masukan Jam Selesai...");
         tambahData.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void BatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalActionPerformed
         // TODO add your handling code here:
+        Hari.setText("Masukan Hari...");
+        JamMulai.setText("Masukan Jam Mulai...");
+        JamSelesai.setText("Masukan Jam Selesai...");
         tambahData.dispose();
     }//GEN-LAST:event_BatalActionPerformed
 
@@ -1055,6 +1103,51 @@ public class MenuJadwal extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void HariFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HariFocusGained
+        // TODO add your handling code here:
+        if(Hari.getText().equals("Masukan Hari..."));{
+            Hari.setText(null);
+            Hari.setForeground(Color.BLACK);
+        } 
+    }//GEN-LAST:event_HariFocusGained
+
+    private void HariFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HariFocusLost
+        // TODO add your handling code here:
+        Hari.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_HariFocusLost
+
+    private void JamMulaiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JamMulaiFocusGained
+        // TODO add your handling code here:
+        if(JamMulai.getText().equals("Masukan Jam Mulai..."));{
+            JamMulai.setText(null);
+            JamMulai.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_JamMulaiFocusGained
+
+    private void JamMulaiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JamMulaiFocusLost
+        // TODO add your handling code here:
+        JamMulai.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_JamMulaiFocusLost
+
+    private void JamSelesaiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JamSelesaiFocusGained
+        // TODO add your handling code here:
+        if(JamSelesai.getText().equals("Masukan Jam Selesai..."));{
+            JamSelesai.setText(null);
+            JamSelesai.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_JamSelesaiFocusGained
+
+    private void JamSelesaiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JamSelesaiFocusLost
+        // TODO add your handling code here:
+        JamSelesai.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_JamSelesaiFocusLost
         private void InputData(){
         String Kode = KodeJadwal.getText();
         String Nama = NamaDokter.getActionCommand();
@@ -1190,6 +1283,7 @@ public class MenuJadwal extends javax.swing.JFrame {
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;

@@ -27,6 +27,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setBackground(new Color(0,0,0,0));
+        
     }
     
 
@@ -115,11 +116,27 @@ public class Login extends javax.swing.JFrame {
         Username.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         Username.setCaretColor(new java.awt.Color(30, 174, 152));
         Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Username.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsernameMouseClicked(evt);
+            }
+        });
+        Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 330, 40));
 
         Password.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        Password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Password.setToolTipText("Password");
         Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordActionPerformed(evt);
+            }
+        });
         getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 330, 40));
 
         jButton1.setBackground(new java.awt.Color(30, 174, 152));
@@ -218,6 +235,19 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void UsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernameMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_UsernameMouseClicked
+
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameActionPerformed
+
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordActionPerformed
 
     /**
      * @param args the command line arguments

@@ -109,6 +109,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         btnPendaftaran = new javax.swing.JButton();
         btnSubPendaftaran = new javax.swing.JButton();
         btnSubDataPasien = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         navi = new javax.swing.JLabel();
         btnUser = new javax.swing.JButton();
@@ -523,6 +524,17 @@ public class DataPendaftaran extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSubDataPasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 147, -1, 40));
+
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
 
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/DATA PENDAFTARAN.png"))); // NOI18N
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
@@ -998,6 +1010,12 @@ public class DataPendaftaran extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUserActionPerformed
 
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1069,6 +1087,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private javax.swing.JLabel bg2;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnInput;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;

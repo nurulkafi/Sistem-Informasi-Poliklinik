@@ -84,12 +84,13 @@ public class MenuPoli extends javax.swing.JFrame {
         CLOSE = new javax.swing.JButton();
         btnPembayaran = new javax.swing.JButton();
         btnObat = new javax.swing.JButton();
-        btnJadwalPraktek = new javax.swing.JButton();
         btnPemeriksaan = new javax.swing.JButton();
         btnPoli = new javax.swing.JButton();
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
+        btnJadwalPraktek = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         txtUser = new javax.swing.JLabel();
         btnUser = new javax.swing.JButton();
         userPanel = new javax.swing.JLabel();
@@ -167,13 +168,23 @@ public class MenuPoli extends javax.swing.JFrame {
         tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 130, -1));
 
         IsiNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        IsiNama.setForeground(new java.awt.Color(102, 102, 102));
         IsiNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        IsiNama.setText("Masukan Nama Poli...");
         IsiNama.setToolTipText("Username");
         IsiNama.setAlignmentX(1.0F);
         IsiNama.setAlignmentY(1.0F);
         IsiNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         IsiNama.setCaretColor(new java.awt.Color(30, 174, 152));
         IsiNama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        IsiNama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                IsiNamaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                IsiNamaFocusLost(evt);
+            }
+        });
         IsiNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IsiNamaActionPerformed(evt);
@@ -377,7 +388,7 @@ public class MenuPoli extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelPoli);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 880, 470));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 840, 450));
 
         Delete.setBackground(new Color(0,0,0,0));
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/delete.png"))); // NOI18N
@@ -467,17 +478,6 @@ public class MenuPoli extends javax.swing.JFrame {
         });
         getContentPane().add(btnObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 514, -1, -1));
 
-        btnJadwalPraktek.setBackground(new Color(0,0,0,0));
-        btnJadwalPraktek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/JadwalPraktek.png"))); // NOI18N
-        btnJadwalPraktek.setBorder(null);
-        btnJadwalPraktek.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/JadwalPraktekAktif.png"))); // NOI18N
-        btnJadwalPraktek.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnJadwalPraktekActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnJadwalPraktek, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 440, -1, -1));
-
         btnPemeriksaan.setBackground(new Color(0,0,0,0));
         btnPemeriksaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Pemeriksaan.png"))); // NOI18N
         btnPemeriksaan.setBorder(null);
@@ -533,6 +533,28 @@ public class MenuPoli extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
+
+        btnJadwalPraktek.setBackground(new Color(0,0,0,0));
+        btnJadwalPraktek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/JadwalPraktek.png"))); // NOI18N
+        btnJadwalPraktek.setBorder(null);
+        btnJadwalPraktek.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/JadwalPraktekAktif.png"))); // NOI18N
+        btnJadwalPraktek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJadwalPraktekActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnJadwalPraktek, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 440, -1, -1));
+
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
 
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtUser.setForeground(new java.awt.Color(0, 0, 0));
@@ -759,11 +781,13 @@ public class MenuPoli extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
+        IsiNama.setText("Masukan Nama Poli...");
         tambahData.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void BatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalActionPerformed
         // TODO add your handling code here:
+        IsiNama.setText("Masukan Nama Poli...");
         tambahData.dispose();
     }//GEN-LAST:event_BatalActionPerformed
 
@@ -860,6 +884,25 @@ public class MenuPoli extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void IsiNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_IsiNamaFocusGained
+        // TODO add your handling code here:
+        if(IsiNama.getText().equals("Masukan Nama Poli..."));{
+            IsiNama.setText(null);
+            IsiNama.setForeground(Color.BLACK);
+        } 
+    }//GEN-LAST:event_IsiNamaFocusGained
+
+    private void IsiNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_IsiNamaFocusLost
+        // TODO add your handling code here:
+        IsiNama.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_IsiNamaFocusLost
         private void InputData(){
         String Kode = IsiKode.getText();
         String Nama = IsiNama.getText();
@@ -982,6 +1025,7 @@ public class MenuPoli extends javax.swing.JFrame {
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;

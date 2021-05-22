@@ -104,6 +104,7 @@ public class MenuDokter extends javax.swing.JFrame {
         CLOSE1 = new javax.swing.JButton();
         CLOSE2 = new javax.swing.JButton();
         CLOSE3 = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         btnUser = new javax.swing.JButton();
         txtUser = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -159,13 +160,23 @@ public class MenuDokter extends javax.swing.JFrame {
         tambahData.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         nama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nama.setForeground(new java.awt.Color(102, 102, 102));
         nama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nama.setText("Masukan Nama Dokter...");
         nama.setToolTipText("Username");
         nama.setAlignmentX(1.0F);
         nama.setAlignmentY(1.0F);
         nama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         nama.setCaretColor(new java.awt.Color(30, 174, 152));
         nama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        nama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                namaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                namaFocusLost(evt);
+            }
+        });
         tambahData.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 270, 30));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -190,11 +201,27 @@ public class MenuDokter extends javax.swing.JFrame {
         jLabel7.setText("Alamat");
         tambahData.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
+        jScrollPane2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jScrollPane2FocusGained(evt);
+            }
+        });
+
         alamat.setColumns(20);
         alamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        alamat.setForeground(new java.awt.Color(102, 102, 102));
         alamat.setRows(5);
+        alamat.setText("Masukan Alamat Dokter...");
         alamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         alamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        alamat.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                alamatFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                alamatFocusLost(evt);
+            }
+        });
         jScrollPane2.setViewportView(alamat);
 
         tambahData.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, 100));
@@ -206,13 +233,23 @@ public class MenuDokter extends javax.swing.JFrame {
         tambahData.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
         telp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        telp.setForeground(new java.awt.Color(102, 102, 102));
         telp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        telp.setText("Masukan Nomor Telepon...");
         telp.setToolTipText("Username");
         telp.setAlignmentX(1.0F);
         telp.setAlignmentY(1.0F);
         telp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         telp.setCaretColor(new java.awt.Color(30, 174, 152));
         telp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        telp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                telpFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                telpFocusLost(evt);
+            }
+        });
         tambahData.getContentPane().add(telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 270, 30));
 
         btnSimpan.setBackground(new Color (0,0,0,0));
@@ -553,7 +590,7 @@ public class MenuDokter extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableDokter);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 870, 460));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 190, 840, 460));
 
         CLOSE1.setBackground(new Color(0,0,0,0));
         CLOSE1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokter/Asset/Group 11.png"))); // NOI18N
@@ -593,6 +630,17 @@ public class MenuDokter extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CLOSE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 150, 90, 80));
+
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
 
         btnUser.setBackground(new Color(0,0,0,0));
         btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/akun.png"))); // NOI18N
@@ -958,6 +1006,9 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void CLOSE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE4ActionPerformed
         // TODO add your handling code here:
+        nama.setText(null);
+        alamat.setText(null);
+        telp.setText(null);
         tambahData.dispose();
     }//GEN-LAST:event_CLOSE4ActionPerformed
 
@@ -988,6 +1039,9 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         // TODO add your handling code here:
+        nama.setText(null);
+        alamat.setText(null);
+        telp.setText(null);
         tambahData.dispose();
     }//GEN-LAST:event_btnBatalActionPerformed
 
@@ -1046,6 +1100,59 @@ public class MenuDokter extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btnUserActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama.MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void namaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFocusGained
+        // TODO add your handling code here:
+         if(nama.getText().equals("Masukan Nama Dokter..."));{
+            nama.setText(null);
+            nama.setForeground(Color.BLACK);
+        } 
+    }//GEN-LAST:event_namaFocusGained
+
+    private void namaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFocusLost
+        // TODO add your handling code here:
+        nama.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_namaFocusLost
+
+    private void jScrollPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane2FocusGained
+        // TODO add your handling code here:
+        if(alamat.getText().equals("Masukan Alamat Dokter..."));{
+            alamat.setText(null);
+            alamat.setForeground(Color.BLACK);
+        } 
+    }//GEN-LAST:event_jScrollPane2FocusGained
+
+    private void alamatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_alamatFocusLost
+        // TODO add your handling code here:
+        alamat.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_alamatFocusLost
+
+    private void telpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telpFocusGained
+        // TODO add your handling code here:
+        if(telp.getText().equals("Masukan Nomor Telepon..."));{
+            telp.setText(null);
+            telp.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_telpFocusGained
+
+    private void telpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telpFocusLost
+        // TODO add your handling code here:
+        telp.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_telpFocusLost
+
+    private void alamatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_alamatFocusGained
+        // TODO add your handling code here:
+        if(alamat.getText().equals("Masukan Alamat Dokter..."));{
+            alamat.setText(null);
+            alamat.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_alamatFocusGained
 
     /**
      * @param args the command line arguments
@@ -1108,6 +1215,7 @@ public class MenuDokter extends javax.swing.JFrame {
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnBatal1;
     private javax.swing.JButton btnDokter;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
     private javax.swing.JButton btnPegawai;

@@ -118,6 +118,7 @@ public class MenuPegawai extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePegawai = new javax.swing.JTable();
         btnUser = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         txtUser = new javax.swing.JLabel();
         userPanel = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
@@ -197,9 +198,19 @@ public class MenuPegawai extends javax.swing.JFrame {
 
         txtAlamat.setColumns(20);
         txtAlamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtAlamat.setForeground(new java.awt.Color(102, 102, 102));
         txtAlamat.setRows(5);
+        txtAlamat.setText("Masukan Alamat Pegawai...");
         txtAlamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         txtAlamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtAlamat.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtAlamatFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtAlamatFocusLost(evt);
+            }
+        });
         txtAlamatscroll.setViewportView(txtAlamat);
 
         tambahData.getContentPane().add(txtAlamatscroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 280, 100));
@@ -224,13 +235,23 @@ public class MenuPegawai extends javax.swing.JFrame {
         tambahData.getContentPane().add(Tgllahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
 
         txtTelp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtTelp.setForeground(new java.awt.Color(102, 102, 102));
         txtTelp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtTelp.setText("Masukan Nomor Telepon...");
         txtTelp.setToolTipText("Username");
         txtTelp.setAlignmentX(1.0F);
         txtTelp.setAlignmentY(1.0F);
         txtTelp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         txtTelp.setCaretColor(new java.awt.Color(30, 174, 152));
         txtTelp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtTelp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelpFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelpFocusLost(evt);
+            }
+        });
         txtTelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelpActionPerformed(evt);
@@ -273,13 +294,23 @@ public class MenuPegawai extends javax.swing.JFrame {
         tambahData.getContentPane().add(jnsKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         txtNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtNama.setForeground(new java.awt.Color(102, 102, 102));
         txtNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNama.setText("Masukan Nama Pegawai...");
         txtNama.setToolTipText("Username");
         txtNama.setAlignmentX(1.0F);
         txtNama.setAlignmentY(1.0F);
         txtNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         txtNama.setCaretColor(new java.awt.Color(30, 174, 152));
         txtNama.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNamaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNamaFocusLost(evt);
+            }
+        });
         txtNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNamaActionPerformed(evt);
@@ -294,13 +325,23 @@ public class MenuPegawai extends javax.swing.JFrame {
         tambahData.getContentPane().add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, -1));
 
         txtNIP.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtNIP.setForeground(new java.awt.Color(102, 102, 102));
         txtNIP.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNIP.setText("Masukan NIP...");
         txtNIP.setToolTipText("Username");
         txtNIP.setAlignmentX(1.0F);
         txtNIP.setAlignmentY(1.0F);
         txtNIP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         txtNIP.setCaretColor(new java.awt.Color(30, 174, 152));
         txtNIP.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNIP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNIPFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNIPFocusLost(evt);
+            }
+        });
         txtNIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNIPActionPerformed(evt);
@@ -712,6 +753,17 @@ public class MenuPegawai extends javax.swing.JFrame {
         });
         getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
 
+        btnHome.setBackground(new Color(0,0,0,0));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospital.png"))); // NOI18N
+        btnHome.setToolTipText("Home");
+        btnHome.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hospitalAktif.png"))); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
+
         txtUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -1027,11 +1079,21 @@ public class MenuPegawai extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
+        txtNIP.setText("Masukan NIP...");
+        txtNama.setText("Masukan Nama Pegawai...");
+        txtTelp.setText("Masukan Nomor Telepon...");
+        txtAlamat.setText("Masukan Alamat Pegawai...");
+        btngroupJK.clearSelection();
         tambahData.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         // TODO add your handling code here:
+        txtNIP.setText("Masukan NIP...");
+        txtNama.setText("Masukan Nama Pegawai...");
+        txtTelp.setText("Masukan Nomor Telepon...");
+        txtAlamat.setText("Masukan Alamat Pegawai...");
+        btngroupJK.clearSelection();
         tambahData.dispose();
     }//GEN-LAST:event_btnBatalActionPerformed
 
@@ -1148,6 +1210,64 @@ public class MenuPegawai extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUserActionPerformed
 
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        new MenuUtama().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void txtNIPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNIPFocusGained
+        // TODO add your handling code here:
+        if(txtNIP.getText().equals("Masukan NIP..."));{
+            txtNIP.setText(null);
+            txtNIP.setForeground(Color.BLACK);
+        }   
+    }//GEN-LAST:event_txtNIPFocusGained
+
+    private void txtNIPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNIPFocusLost
+        // TODO add your handling code here:
+        txtNIP.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_txtNIPFocusLost
+
+    private void txtNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNamaFocusGained
+        // TODO add your handling code here:
+        if(txtNama.getText().equals("Masukan Nama Pegawai..."));{
+            txtNama.setText(null);
+            txtNama.setForeground(Color.BLACK);
+        } 
+    }//GEN-LAST:event_txtNamaFocusGained
+
+    private void txtNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNamaFocusLost
+        // TODO add your handling code here:
+        txtNama.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_txtNamaFocusLost
+
+    private void txtTelpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusGained
+        // TODO add your handling code here:
+        if(txtTelp.getText().equals("Masukan Nomor Telepon..."));{
+            txtTelp.setText(null);
+            txtTelp.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_txtTelpFocusGained
+
+    private void txtTelpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusLost
+        // TODO add your handling code here:
+        txtTelp.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_txtTelpFocusLost
+
+    private void txtAlamatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAlamatFocusGained
+        // TODO add your handling code here:
+        if(txtAlamat.getText().equals("Masukan Alamat Pegawai..."));{
+            txtAlamat.setText(null);
+            txtAlamat.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_txtAlamatFocusGained
+
+    private void txtAlamatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAlamatFocusLost
+        // TODO add your handling code here:
+        txtAlamat.setForeground(new Color(102,102,102));
+    }//GEN-LAST:event_txtAlamatFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -1212,6 +1332,7 @@ public class MenuPegawai extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnInput;
     private javax.swing.JButton btnJadwalPraktek;
     private javax.swing.JButton btnObat;
