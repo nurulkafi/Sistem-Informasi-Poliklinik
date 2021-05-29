@@ -374,88 +374,72 @@ public class Pembayaran extends javax.swing.JFrame {
         tambahPembayaran.getContentPane().add(totalPembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 350, 160, 30));
 
         titik4.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik4.setForeground(new java.awt.Color(0, 0, 0));
         titik4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik4.setText(":");
         tambahPembayaran.getContentPane().add(titik4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 10, -1));
 
         titik3.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik3.setForeground(new java.awt.Color(0, 0, 0));
         titik3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik3.setText(":");
         tambahPembayaran.getContentPane().add(titik3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 10, -1));
 
         titik2.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik2.setForeground(new java.awt.Color(0, 0, 0));
         titik2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik2.setText(":");
         tambahPembayaran.getContentPane().add(titik2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 10, -1));
 
         titik1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik1.setForeground(new java.awt.Color(0, 0, 0));
         titik1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik1.setText(":");
         tambahPembayaran.getContentPane().add(titik1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 10, -1));
 
         txtPoli.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtPoli.setForeground(new java.awt.Color(0, 0, 0));
         txtPoli.setText("Poli Mata");
         tambahPembayaran.getContentPane().add(txtPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 100, -1));
 
         titik6.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik6.setForeground(new java.awt.Color(0, 0, 0));
         titik6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik6.setText(":");
         tambahPembayaran.getContentPane().add(titik6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 10, -1));
 
         poli.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        poli.setForeground(new java.awt.Color(0, 0, 0));
         poli.setText("Poli");
         tambahPembayaran.getContentPane().add(poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 50, -1));
 
         txtdokter.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtdokter.setForeground(new java.awt.Color(0, 0, 0));
         txtdokter.setText("Hadimas Aprilian");
         tambahPembayaran.getContentPane().add(txtdokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 100, -1));
 
         dokter.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        dokter.setForeground(new java.awt.Color(0, 0, 0));
         dokter.setText("Dokter Pemeriksa");
         tambahPembayaran.getContentPane().add(dokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 100, -1));
 
         titik5.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik5.setForeground(new java.awt.Color(0, 0, 0));
         titik5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik5.setText(":");
         tambahPembayaran.getContentPane().add(titik5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 10, -1));
 
         txtAlamattambah.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtAlamattambah.setForeground(new java.awt.Color(0, 0, 0));
         txtAlamattambah.setText("Kp. Palalangon Rt.04 Rw.05");
         tambahPembayaran.getContentPane().add(txtAlamattambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 100, 230, -1));
 
         alamatPasientambah.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        alamatPasientambah.setForeground(new java.awt.Color(0, 0, 0));
         alamatPasientambah.setText("Alamat Pasien");
         tambahPembayaran.getContentPane().add(alamatPasientambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 80, -1));
 
         txtNopembayaran.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtNopembayaran.setForeground(new java.awt.Color(0, 0, 0));
         tambahPembayaran.getContentPane().add(txtNopembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 60, 110, 18));
 
         noPembayaran.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        noPembayaran.setForeground(new java.awt.Color(0, 0, 0));
         noPembayaran.setText("No Pembayaran");
         tambahPembayaran.getContentPane().add(noPembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 90, -1));
 
         txtNamatambah.setEditable(false);
         txtNamatambah.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        txtNamatambah.setForeground(new java.awt.Color(0, 0, 0));
         txtNamatambah.setBorder(null);
         tambahPembayaran.getContentPane().add(txtNamatambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 80, 110, 18));
 
         NamaPasienTambah.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        NamaPasienTambah.setForeground(new java.awt.Color(0, 0, 0));
         NamaPasienTambah.setText("Nama Pasien");
         tambahPembayaran.getContentPane().add(NamaPasienTambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 70, -1));
 
@@ -510,12 +494,10 @@ public class Pembayaran extends javax.swing.JFrame {
         tambahPembayaran.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 90));
 
         txtTgltambah.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtTgltambah.setForeground(new java.awt.Color(0, 0, 0));
         txtTgltambah.setText("31 desember 2020");
         tambahPembayaran.getContentPane().add(txtTgltambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 40, 100, -1));
 
         tglTambahdata.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        tglTambahdata.setForeground(new java.awt.Color(0, 0, 0));
         tglTambahdata.setText("Tanggal Pembayaran ");
         tambahPembayaran.getContentPane().add(tglTambahdata, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, -1));
 
@@ -727,12 +709,10 @@ public class Pembayaran extends javax.swing.JFrame {
         PopupFilter.getContentPane().add(inputtglawal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, -1));
 
         tglakhir.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        tglakhir.setForeground(new java.awt.Color(0, 0, 0));
         tglakhir.setText("Tanggal Akhir");
         PopupFilter.getContentPane().add(tglakhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, -1, 20));
 
         tglawal.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        tglawal.setForeground(new java.awt.Color(0, 0, 0));
         tglawal.setText("Tanggal Awal ");
         PopupFilter.getContentPane().add(tglawal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 20));
 
@@ -948,88 +928,72 @@ public class Pembayaran extends javax.swing.JFrame {
         PrintDetailInvoice.getContentPane().add(totalPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 160, 30));
 
         titik7.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik7.setForeground(new java.awt.Color(0, 0, 0));
         titik7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik7.setText(":");
         PrintDetailInvoice.getContentPane().add(titik7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 10, -1));
 
         titik8.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik8.setForeground(new java.awt.Color(0, 0, 0));
         titik8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik8.setText(":");
         PrintDetailInvoice.getContentPane().add(titik8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 10, -1));
 
         titik9.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik9.setForeground(new java.awt.Color(0, 0, 0));
         titik9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik9.setText(":");
         PrintDetailInvoice.getContentPane().add(titik9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 10, -1));
 
         titik10.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik10.setForeground(new java.awt.Color(0, 0, 0));
         titik10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik10.setText(":");
         PrintDetailInvoice.getContentPane().add(titik10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 10, -1));
 
         txtPoli1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtPoli1.setForeground(new java.awt.Color(0, 0, 0));
         txtPoli1.setText("Poli Mata");
         PrintDetailInvoice.getContentPane().add(txtPoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 100, -1));
 
         titik11.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik11.setForeground(new java.awt.Color(0, 0, 0));
         titik11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik11.setText(":");
         PrintDetailInvoice.getContentPane().add(titik11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 10, -1));
 
         poli1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        poli1.setForeground(new java.awt.Color(0, 0, 0));
         poli1.setText("Poli");
         PrintDetailInvoice.getContentPane().add(poli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 50, -1));
 
         txtdokter1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtdokter1.setForeground(new java.awt.Color(0, 0, 0));
         txtdokter1.setText("Hadimas Aprilian");
         PrintDetailInvoice.getContentPane().add(txtdokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 100, -1));
 
         dokter1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        dokter1.setForeground(new java.awt.Color(0, 0, 0));
         dokter1.setText("Dokter Pemeriksa");
         PrintDetailInvoice.getContentPane().add(dokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 100, -1));
 
         titik12.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        titik12.setForeground(new java.awt.Color(0, 0, 0));
         titik12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik12.setText(":");
         PrintDetailInvoice.getContentPane().add(titik12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 10, -1));
 
         txtAlamattambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtAlamattambah1.setForeground(new java.awt.Color(0, 0, 0));
         txtAlamattambah1.setText("Kp. Palalangon Rt.04 Rw.05");
         PrintDetailInvoice.getContentPane().add(txtAlamattambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 100, 230, -1));
 
         alamatPasientambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        alamatPasientambah1.setForeground(new java.awt.Color(0, 0, 0));
         alamatPasientambah1.setText("Alamat Pasien");
         PrintDetailInvoice.getContentPane().add(alamatPasientambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 80, -1));
 
         txtNopembayaran1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtNopembayaran1.setForeground(new java.awt.Color(0, 0, 0));
         PrintDetailInvoice.getContentPane().add(txtNopembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 60, 110, 18));
 
         noPembayaran1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        noPembayaran1.setForeground(new java.awt.Color(0, 0, 0));
         noPembayaran1.setText("No Pembayaran");
         PrintDetailInvoice.getContentPane().add(noPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 90, -1));
 
         txtNamatambah1.setEditable(false);
         txtNamatambah1.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        txtNamatambah1.setForeground(new java.awt.Color(0, 0, 0));
         txtNamatambah1.setBorder(null);
         PrintDetailInvoice.getContentPane().add(txtNamatambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 80, 110, 18));
 
         NamaPasienTambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        NamaPasienTambah1.setForeground(new java.awt.Color(0, 0, 0));
         NamaPasienTambah1.setText("Nama Pasien");
         PrintDetailInvoice.getContentPane().add(NamaPasienTambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 70, -1));
 
@@ -1109,12 +1073,10 @@ public class Pembayaran extends javax.swing.JFrame {
         PrintDetailInvoice.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 90));
 
         txtTgltambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtTgltambah1.setForeground(new java.awt.Color(0, 0, 0));
         txtTgltambah1.setText("31 desember 2020");
         PrintDetailInvoice.getContentPane().add(txtTgltambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 40, 100, -1));
 
         tglTambahdata1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        tglTambahdata1.setForeground(new java.awt.Color(0, 0, 0));
         tglTambahdata1.setText("Tanggal Pembayaran ");
         PrintDetailInvoice.getContentPane().add(tglTambahdata1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, -1));
 
@@ -1438,16 +1400,7 @@ public class Pembayaran extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    private String formatRupiah (int value){
-        DecimalFormat formater = (DecimalFormat) DecimalFormat.getCurrencyInstance();
-        DecimalFormatSymbols simbol = formater.getDecimalFormatSymbols();
-        
-        simbol.setCurrencySymbol("Rp. ");
-        simbol.setMonetaryDecimalSeparator(',');
-        simbol.setGroupingSeparator('.');
-            
-        return formater.format(value);
-    }
+ 
     
     private void Tampil_Tanggal(){
         int detik, menit, jam, hari, bulan, tahun;
@@ -1692,15 +1645,13 @@ public class Pembayaran extends javax.swing.JFrame {
                     String Obat = rslt.getString("NmObat");
                     String Jumlah = rslt.getString("Jumlah");
                     String Harga = rslt.getString("HargaJual");
-                    String curencyharga = this.formatRupiah(Integer.parseInt(Harga)).replace(".00", "");
                     String total = rslt.getString("Total");
-                    String curency = this.formatRupiah(Integer.parseInt(total)).replace(".00", "");
                     
                     
                 //masukan semua data kedalam array
                
                 
-                String[] data = {Obat,Jumlah,curencyharga,curency};
+                String[] data = {Obat,Jumlah,Harga,total};
                 //menambahakan baris sesuai dengan data yang tersimpan diarray
                 table2.addRow(data);
             }
@@ -1746,13 +1697,12 @@ public class Pembayaran extends javax.swing.JFrame {
                 //menampung data sementara
                     String biaya = rslt.getString("NamaBiaya");
                     String tarif = rslt.getString("Tarif");
-                    String curencytarif = this.formatRupiah(Integer.parseInt(tarif)).replace(".00", "");
                     
                     
                 //masukan semua data kedalam array
                
                 
-                String[] data = {biaya,curencytarif};
+                String[] data = {biaya,tarif};
                 //menambahakan baris sesuai dengan data yang tersimpan diarray
                 table3.addRow(data);
             }
@@ -1839,9 +1789,9 @@ public class Pembayaran extends javax.swing.JFrame {
         String noPemba = txtNopembayaran.getText();
         String noPemrik = Koneksi.GlobalVar.NoPemeriksaan;
         String noPendaf = Koneksi.GlobalVar.NoPen;
-        String totalpembayaran = txtTotalPembayaran.getText().replace("IDR", "");
-        String cash = txtcash.getText().replace("IDR", "");
-        String kembalian = txtKembalian.getText().replace("IDR", "");
+        String totalpembayaran = txtTotalPembayaran.getText();
+        String cash = txtcash.getText();
+        String kembalian = txtKembalian.getText();
         
         
         Connection connect = Koneksi.Koneksi.getKoneksi();
@@ -2254,8 +2204,7 @@ public class Pembayaran extends javax.swing.JFrame {
         int kembalian, totalpembayaran;
         String totalPem;
         totalpembayaran = Koneksi.GlobalVar.TotalObat + Koneksi.GlobalVar.TotalJenisBiaya;
-        totalPem = this.formatRupiah(totalpembayaran).replace(".00", "");
-        txtTotalPembayaran.setText(totalPem);
+        txtTotalPembayaran.setText(String.valueOf(totalpembayaran));
         txtcash.setText(null);
         txtKembalian.setText(null);
         
@@ -2273,14 +2222,16 @@ public class Pembayaran extends javax.swing.JFrame {
     private void txtcashFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcashFocusLost
         // TODO add your handling code here:
           cashTxt = txtcash.getText();
-          String txtBayar = formatRupiah(Integer.valueOf(cashTxt)).replace(".00", "");
-          txtcash.setText(txtBayar);
+          txtcash.setText(cashTxt);
           
-          String total = txtTotalPembayaran.getText().replace("IDR", "");
-          String cash = txtcash.getText().replace("IDR", ""); 
-          int kembalian = Integer.valueOf(cash.replace(",", "")) - Integer.valueOf(total.replace(",", ""));
-          String setKembalian = formatRupiah(kembalian).replace(".00", "");
-          txtKembalian.setText(setKembalian);
+          String total = txtTotalPembayaran.getText();
+          String cash = txtcash.getText(); 
+          int kembalian = Integer.parseInt(cash) - Integer.parseInt(total);
+        
+              String setKembalian = String.valueOf(kembalian);
+              txtKembalian.setText(setKembalian);
+         
+          
     }//GEN-LAST:event_txtcashFocusLost
 
     private void txtcashPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtcashPropertyChange
@@ -2303,15 +2254,20 @@ public class Pembayaran extends javax.swing.JFrame {
 
     private void bg1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bg1MouseClicked
         // TODO add your handling code here:
-        cashTxt = txtcash.getText();
-          String txtBayar = formatRupiah(Integer.valueOf(cashTxt)).replace(".00", "");
-          txtcash.setText(txtBayar);
+          cashTxt = txtcash.getText();
+          txtcash.setText(cashTxt);
           
-          String total = txtTotalPembayaran.getText().replace("IDR", "");
-          String cash = txtcash.getText().replace("IDR", ""); 
-          int kembalian = Integer.valueOf(cash.replace(",", "")) - Integer.valueOf(total.replace(",", ""));
-          String setKembalian = formatRupiah(kembalian).replace(".00", "");
-          txtKembalian.setText(setKembalian);
+          String total = txtTotalPembayaran.getText();
+          String cash = txtcash.getText(); 
+          int kembalian = Integer.parseInt(cash) - Integer.parseInt(total);
+          if(Integer.parseInt(total) > Integer.parseInt(cash)){
+              JOptionPane.showMessageDialog(null, "Pembayaran Kurang!", "Warning!", JOptionPane.WARNING_MESSAGE);
+              String setKembalian = String.valueOf(kembalian);
+              txtKembalian.setText(setKembalian);
+          }else{
+              String setKembalian = String.valueOf(kembalian);
+              txtKembalian.setText(setKembalian);
+          }
     }//GEN-LAST:event_bg1MouseClicked
 
     private void txtcashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcashMouseClicked

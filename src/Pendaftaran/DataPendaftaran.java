@@ -639,9 +639,9 @@ public class DataPendaftaran extends javax.swing.JFrame {
     }
     private void tampilDataBiaya(){
         //untuk mengahapus baris setelah input
-        int row = TableDataPasien.getRowCount();
+        int row = TableBiaya.getRowCount();
         for(int a = 0 ; a < row ; a++){
-            table.removeRow(0);
+            table3.removeRow(0);
         }
         
         String query = 
@@ -909,10 +909,11 @@ public class DataPendaftaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(TableKeranjang.getRowCount() == 0){
             JOptionPane.showMessageDialog(null, "Isi Tabel Biaya");
-        }else{
+        }else{            
             TambahData();
             tampilData();
         }
+        
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void tambahDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_tambahDataWindowOpened
@@ -937,6 +938,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         KodePendaftaranOtomatis();
         AntrianOtomatis();
         TampilComboBox();
+        
         tampilDataBiaya();
     }//GEN-LAST:event_btnInputActionPerformed
 
@@ -956,7 +958,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
     private void CLOSE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE3ActionPerformed
         // TODO add your handling code here:
         Biaya.setVisible(true);
-        Biaya.setBounds(450, 120, 600, 520);        
+        Biaya.setBounds(450, 120, 600, 520);
     }//GEN-LAST:event_CLOSE3ActionPerformed
 
     private void MIN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN2ActionPerformed
@@ -988,11 +990,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         Biaya.setVisible(false);
         table2.addRow(new Object[]{Koneksi.GlobalVar.id_jenis,Koneksi.GlobalVar.namajenis,Koneksi.GlobalVar.tarif});
-        tambahData.setVisible(true);
-        int row = TableBiaya.getRowCount();
-        for(int a = 0 ; a < row ; a++){
-            table.removeRow(0);
-        }
+        tambahData.setVisible(true); 
         
     }//GEN-LAST:event_btnPilihBiayaActionPerformed
 
