@@ -97,7 +97,7 @@ public class JenisBiaya extends javax.swing.JFrame {
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
-        btnSubPendaftaran = new javax.swing.JButton();
+        btnSubPembayaran = new javax.swing.JButton();
         btnSubJenisBiaya = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
@@ -124,10 +124,8 @@ public class JenisBiaya extends javax.swing.JFrame {
         tambahJenisBiaya.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tarifjenis.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        tarifjenis.setForeground(new java.awt.Color(102, 102, 102));
         tarifjenis.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tarifjenis.setText("Masukan Tarif...");
-        tarifjenis.setToolTipText("Nama Pasien");
+        tarifjenis.setToolTipText("Tarif");
         tarifjenis.setAlignmentX(1.0F);
         tarifjenis.setAlignmentY(1.0F);
         tarifjenis.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
@@ -213,10 +211,8 @@ public class JenisBiaya extends javax.swing.JFrame {
         tambahJenisBiaya.getContentPane().add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 140, 30));
 
         namajenis.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        namajenis.setForeground(new java.awt.Color(102, 102, 102));
         namajenis.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        namajenis.setText("Masukan Nama Biaya...");
-        namajenis.setToolTipText("Nama Pasien");
+        namajenis.setToolTipText("Nama Biaya");
         namajenis.setAlignmentX(1.0F);
         namajenis.setAlignmentY(1.0F);
         namajenis.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
@@ -610,16 +606,16 @@ public class JenisBiaya extends javax.swing.JFrame {
         });
         getContentPane().add(btnPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
 
-        btnSubPendaftaran.setBackground(new Color(0,0,0,0));
-        btnSubPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/LogoPembayar.png"))); // NOI18N
-        btnSubPendaftaran.setBorder(null);
-        btnSubPendaftaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/SubPendaftaranAktif.png"))); // NOI18N
-        btnSubPendaftaran.addActionListener(new java.awt.event.ActionListener() {
+        btnSubPembayaran.setBackground(new Color(0,0,0,0));
+        btnSubPembayaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/LogoPembayar.png"))); // NOI18N
+        btnSubPembayaran.setBorder(null);
+        btnSubPembayaran.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/PembayaranAktif.png"))); // NOI18N
+        btnSubPembayaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubPendaftaranActionPerformed(evt);
+                btnSubPembayaranActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
+        getContentPane().add(btnSubPembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 196, -1, 40));
 
         btnSubJenisBiaya.setBackground(new Color(0,0,0,0));
         btnSubJenisBiaya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/LogoJenis.png"))); // NOI18N
@@ -644,8 +640,8 @@ public class JenisBiaya extends javax.swing.JFrame {
         });
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, -1, -1));
 
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/DATA PEMBAYARAN.png"))); // NOI18N
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/JENIS BIAYA.png"))); // NOI18N
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 90, -1, -1));
 
         navi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/navi.png"))); // NOI18N
         getContentPane().add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
@@ -921,6 +917,8 @@ public class JenisBiaya extends javax.swing.JFrame {
 
     private void btnPemeriksaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPemeriksaanActionPerformed
         // TODO add your handling code here:
+        new MenuPemeriksaan.Pemeriksaan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPemeriksaanActionPerformed
 
     private void btnJadwalPraktekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalPraktekActionPerformed
@@ -1070,11 +1068,11 @@ public class JenisBiaya extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubJenisBiayaActionPerformed
 
-    private void btnSubPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubPendaftaranActionPerformed
-        // TODO add your handling code here:
-        new JenisBiaya().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnSubPendaftaranActionPerformed
+    private void btnSubPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubPembayaranActionPerformed
+        // TODO add your handling code here:        
+        new MenuPembayaran.Pembayaran().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSubPembayaranActionPerformed
 
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
         // TODO add your handling code here:
@@ -1093,26 +1091,22 @@ public class JenisBiaya extends javax.swing.JFrame {
 
     private void namajenisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namajenisFocusGained
         // TODO add your handling code here:
-        if(namajenis.getText().equals("Masukan Nama Biaya..."));{
-            namajenis.setText(null);
-            namajenis.setForeground(Color.BLACK);
+       
     }//GEN-LAST:event_namajenisFocusGained
-    }
+    
     private void namajenisFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namajenisFocusLost
         // TODO add your handling code here:
-        namajenis.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_namajenisFocusLost
 
     private void tarifjenisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tarifjenisFocusGained
         // TODO add your handling code here:
-        if(tarifjenis.getText().equals("Masukan Tarif..."));{
-        tarifjenis.setText(null);
-        tarifjenis.setForeground(Color.BLACK);
+       
     }//GEN-LAST:event_tarifjenisFocusGained
-    }
+   
     private void tarifjenisFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tarifjenisFocusLost
         // TODO add your handling code here:
-        tarifjenis.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_tarifjenisFocusLost
 
     private void tarifjenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarifjenisActionPerformed
@@ -1227,7 +1221,7 @@ public class JenisBiaya extends javax.swing.JFrame {
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSimpan1;
     private javax.swing.JButton btnSubJenisBiaya;
-    private javax.swing.JButton btnSubPendaftaran;
+    private javax.swing.JButton btnSubPembayaran;
     private javax.swing.JButton btnUser;
     private javax.swing.JLabel editDataPasien;
     private javax.swing.JDialog editJenisBiaya;

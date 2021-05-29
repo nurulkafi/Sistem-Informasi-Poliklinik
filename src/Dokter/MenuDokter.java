@@ -160,9 +160,7 @@ public class MenuDokter extends javax.swing.JFrame {
         tambahData.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         nama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        nama.setForeground(new java.awt.Color(102, 102, 102));
         nama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        nama.setText("Masukan Nama Dokter...");
         nama.setToolTipText("Username");
         nama.setAlignmentX(1.0F);
         nama.setAlignmentY(1.0F);
@@ -209,9 +207,7 @@ public class MenuDokter extends javax.swing.JFrame {
 
         alamat.setColumns(20);
         alamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        alamat.setForeground(new java.awt.Color(102, 102, 102));
         alamat.setRows(5);
-        alamat.setText("Masukan Alamat Dokter...");
         alamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
         alamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         alamat.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -233,9 +229,7 @@ public class MenuDokter extends javax.swing.JFrame {
         tambahData.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
         telp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        telp.setForeground(new java.awt.Color(102, 102, 102));
         telp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        telp.setText("Masukan Nomor Telepon...");
         telp.setToolTipText("Username");
         telp.setAlignmentX(1.0F);
         telp.setAlignmentY(1.0F);
@@ -957,6 +951,8 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
@@ -1110,49 +1106,37 @@ public class MenuDokter extends javax.swing.JFrame {
 
     private void namaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFocusGained
         // TODO add your handling code here:
-         if(nama.getText().equals("Masukan Nama Dokter..."));{
-            nama.setText(null);
-            nama.setForeground(Color.BLACK);
-        } 
+         
     }//GEN-LAST:event_namaFocusGained
 
     private void namaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFocusLost
         // TODO add your handling code here:
-        nama.setForeground(new Color(102,102,102));
+     
     }//GEN-LAST:event_namaFocusLost
 
     private void jScrollPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane2FocusGained
         // TODO add your handling code here:
-        if(alamat.getText().equals("Masukan Alamat Dokter..."));{
-            alamat.setText(null);
-            alamat.setForeground(Color.BLACK);
-        } 
+        
     }//GEN-LAST:event_jScrollPane2FocusGained
 
     private void alamatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_alamatFocusLost
         // TODO add your handling code here:
-        alamat.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_alamatFocusLost
 
     private void telpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telpFocusGained
         // TODO add your handling code here:
-        if(telp.getText().equals("Masukan Nomor Telepon..."));{
-            telp.setText(null);
-            telp.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_telpFocusGained
 
     private void telpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telpFocusLost
         // TODO add your handling code here:
-        telp.setForeground(new Color(102,102,102));
+       
     }//GEN-LAST:event_telpFocusLost
 
     private void alamatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_alamatFocusGained
         // TODO add your handling code here:
-        if(alamat.getText().equals("Masukan Alamat Dokter..."));{
-            alamat.setText(null);
-            alamat.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_alamatFocusGained
 
     /**

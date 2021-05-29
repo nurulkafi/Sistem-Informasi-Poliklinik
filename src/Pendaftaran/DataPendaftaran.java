@@ -303,7 +303,6 @@ public class DataPendaftaran extends javax.swing.JFrame {
         btnPilihBiaya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/tmblSimpanAktif.png"))); // NOI18N
         btnPilihBiaya.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnPilihBiaya.setBorderPainted(false);
-        btnPilihBiaya.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpanAktif.png"))); // NOI18N
         btnPilihBiaya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPilihBiayaActionPerformed(evt);
@@ -686,8 +685,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
             while (rslt.next()){
                 String nama = rslt.getString("NamaPas");
                 String kode = rslt.getString("NoPasien");
-                NoPas.addItem(nama);
-                NoPas.setActionCommand(kode);
+                NoPas.addItem(kode+ " " + nama);
             } 
         }catch(Exception e){
             
@@ -818,6 +816,8 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -835,7 +835,8 @@ public class DataPendaftaran extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
     private void TambahData(){
      
-    String NoPas = this.NoPas.getActionCommand();
+    String NoPas = this.NoPas.getSelectedItem().toString().substring(0,6);
+            
     
     
     String query = "SELECT DATE_FORMAT(NOW(), '%Y-%m-%d') AS tanggal";
@@ -985,13 +986,14 @@ public class DataPendaftaran extends javax.swing.JFrame {
 
     private void btnPilihBiayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilihBiayaActionPerformed
         // TODO add your handling code here:
+        Biaya.setVisible(false);
         table2.addRow(new Object[]{Koneksi.GlobalVar.id_jenis,Koneksi.GlobalVar.namajenis,Koneksi.GlobalVar.tarif});
         tambahData.setVisible(true);
         int row = TableBiaya.getRowCount();
         for(int a = 0 ; a < row ; a++){
             table.removeRow(0);
         }
-        Biaya.dispose();
+        
     }//GEN-LAST:event_btnPilihBiayaActionPerformed
 
     private void TableBiayaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBiayaMouseClicked

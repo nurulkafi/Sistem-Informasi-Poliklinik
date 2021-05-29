@@ -208,9 +208,7 @@ public class DataPasien extends javax.swing.JFrame {
 
         txtAlamat.setColumns(20);
         txtAlamat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtAlamat.setForeground(new java.awt.Color(102, 102, 102));
         txtAlamat.setRows(5);
-        txtAlamat.setText("Masukan Alamat Pasien...");
         txtAlamat.setToolTipText("Alamat Pasien");
         txtAlamat.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
         txtAlamat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -247,10 +245,8 @@ public class DataPasien extends javax.swing.JFrame {
         tambahDataPasien.getContentPane().add(Tgllahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
 
         txtTelp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtTelp.setForeground(new java.awt.Color(102, 102, 102));
         txtTelp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtTelp.setText("Masukan Nomor Telepon...");
-        txtTelp.setToolTipText("Telepon Pasien");
+        txtTelp.setToolTipText("Telepon");
         txtTelp.setAlignmentX(1.0F);
         txtTelp.setAlignmentY(1.0F);
         txtTelp.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
@@ -267,6 +263,11 @@ public class DataPasien extends javax.swing.JFrame {
         txtTelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelpActionPerformed(evt);
+            }
+        });
+        txtTelp.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                txtTelpPropertyChange(evt);
             }
         });
         tambahDataPasien.getContentPane().add(txtTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 280, 30));
@@ -306,9 +307,7 @@ public class DataPasien extends javax.swing.JFrame {
         tambahDataPasien.getContentPane().add(jnsKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         txtNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtNama.setForeground(new java.awt.Color(102, 102, 102));
         txtNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNama.setText("Masukan Nama Pasien...");
         txtNama.setToolTipText("Nama Pasien");
         txtNama.setAlignmentX(1.0F);
         txtNama.setAlignmentY(1.0F);
@@ -326,6 +325,11 @@ public class DataPasien extends javax.swing.JFrame {
         txtNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNamaActionPerformed(evt);
+            }
+        });
+        txtNama.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                txtNamaPropertyChange(evt);
             }
         });
         tambahDataPasien.getContentPane().add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 280, 30));
@@ -1074,7 +1078,7 @@ public class DataPasien extends javax.swing.JFrame {
             ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
             
             if (rslt.next()){
-                String Nopas = rslt.getString("NoPasien").substring(1);
+                String Nopas = rslt.getString("NoPasien").substring(3,6);
                 String AN = "" + (Integer.parseInt(Nopas)+1);
                 String NOL = "";
                 if(AN.length()==1){
@@ -1086,9 +1090,9 @@ public class DataPasien extends javax.swing.JFrame {
                 }else if(AN.length()==4){
                     NOL = "";
                 }
-                txtNopas.setText("P" + NOL + AN);
+                txtNopas.setText("PA" + NOL + AN);
             }else{
-                txtNopas.setText("P0001");
+                txtNopas.setText("PA0001");
             }
         rslt.close();
         connect.close();
@@ -1151,6 +1155,8 @@ public class DataPasien extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -1186,18 +1192,20 @@ public class DataPasien extends javax.swing.JFrame {
 
     private void CLOSE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE1ActionPerformed
         // TODO add your handling code here:
-        txtNama.setText("Masukan Nama Pasien...");
-        txtTelp.setText("Masukan Nomor Telepon...");
-        txtAlamat.setText("Masukan Alamat Pasien...");
+        txtNopas.setText(null);
+        txtNama.setText(null);
+        txtTelp.setText(null);
+        txtAlamat.setText(null);
         btngroupJK.clearSelection();
         tambahDataPasien.dispose();
     }//GEN-LAST:event_CLOSE1ActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         // TODO add your handling code here:
-        txtNama.setText("Masukan Nama Pasien...");
-        txtTelp.setText("Masukan Nomor Telepon...");
-        txtAlamat.setText("Masukan Alamat Pasien...");
+        txtNopas.setText(null);
+        txtNama.setText(null);
+        txtTelp.setText(null);
+        txtAlamat.setText(null);
         btngroupJK.clearSelection();
         tambahDataPasien.dispose();
     }//GEN-LAST:event_btnBatalActionPerformed
@@ -1213,10 +1221,6 @@ public class DataPasien extends javax.swing.JFrame {
         // TODO add your handling code here:
         tanggal();
     }//GEN-LAST:event_pilihanTglLhrPropertyChange
-
-    private void txtTelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelpActionPerformed
 
     private void jk_perempuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jk_perempuanActionPerformed
         // TODO add your handling code here:
@@ -1345,42 +1349,47 @@ public class DataPasien extends javax.swing.JFrame {
 
     private void txtNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNamaFocusGained
         // TODO add your handling code here:
-        if(txtNama.getText().equals("Masukan Nama Pasien..."));{
-            txtNama.setText(null);
-            txtNama.setForeground(Color.BLACK);
-        }
+        
+       
     }//GEN-LAST:event_txtNamaFocusGained
 
     private void txtNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNamaFocusLost
         // TODO add your handling code here:
-        txtNama.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_txtNamaFocusLost
-
-    private void txtTelpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusGained
-        // TODO add your handling code here:
-        if(txtTelp.getText().equals("Masukan Nomor Telepon..."));{
-            txtTelp.setText(null);
-            txtTelp.setForeground(Color.BLACK);
-        }
-    }//GEN-LAST:event_txtTelpFocusGained
-
-    private void txtTelpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusLost
-        // TODO add your handling code here:
-        txtTelp.setForeground(new Color(102,102,102));
-    }//GEN-LAST:event_txtTelpFocusLost
 
     private void txtAlamatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAlamatFocusGained
         // TODO add your handling code here:
-        if(txtAlamat.getText().equals("Masukan Alamat Pasien..."));{
-            txtAlamat.setText(null);
-            txtAlamat.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_txtAlamatFocusGained
 
     private void txtAlamatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAlamatFocusLost
         // TODO add your handling code here:
-        txtAlamat.setForeground(new Color(102,102,102));
+       
     }//GEN-LAST:event_txtAlamatFocusLost
+
+    private void txtNamaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtNamaPropertyChange
+        // TODO add your handling code here:
+//        txtNama.setText(txtNama.getText());
+    }//GEN-LAST:event_txtNamaPropertyChange
+
+    private void txtTelpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusGained
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtTelpFocusGained
+
+    private void txtTelpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelpFocusLost
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtTelpFocusLost
+
+    private void txtTelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelpActionPerformed
+
+    private void txtTelpPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtTelpPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelpPropertyChange
 
     /**
      * @param args the command line arguments

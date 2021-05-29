@@ -168,10 +168,8 @@ public class MenuPoli extends javax.swing.JFrame {
         tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 130, -1));
 
         IsiNama.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        IsiNama.setForeground(new java.awt.Color(102, 102, 102));
         IsiNama.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        IsiNama.setText("Masukan Nama Poli...");
-        IsiNama.setToolTipText("Username");
+        IsiNama.setToolTipText("Nama Poli");
         IsiNama.setAlignmentX(1.0F);
         IsiNama.setAlignmentY(1.0F);
         IsiNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 174, 152), 2));
@@ -744,6 +742,8 @@ public class MenuPoli extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputActionPerformed
@@ -894,15 +894,12 @@ public class MenuPoli extends javax.swing.JFrame {
 
     private void IsiNamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_IsiNamaFocusGained
         // TODO add your handling code here:
-        if(IsiNama.getText().equals("Masukan Nama Poli..."));{
-            IsiNama.setText(null);
-            IsiNama.setForeground(Color.BLACK);
-        } 
+         
     }//GEN-LAST:event_IsiNamaFocusGained
 
     private void IsiNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_IsiNamaFocusLost
         // TODO add your handling code here:
-        IsiNama.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_IsiNamaFocusLost
         private void InputData(){
         String Kode = IsiKode.getText();

@@ -96,7 +96,6 @@ public class Pemeriksaan extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         header2 = new javax.swing.JLabel();
-        bg2 = new javax.swing.JLabel();
         DetailRiwayat = new javax.swing.JDialog();
         MIN3 = new javax.swing.JButton();
         MAX3 = new javax.swing.JButton();
@@ -115,6 +114,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         header3 = new javax.swing.JLabel();
         bg3 = new javax.swing.JLabel();
+        bg2 = new javax.swing.JLabel();
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
         CLOSE = new javax.swing.JButton();
@@ -128,7 +128,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
         btnPendaftaran = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         btnUser = new javax.swing.JButton();
-        NoPendaftran = new javax.swing.JComboBox<>();
+        NoPendaftaran = new javax.swing.JComboBox<>();
         jScrollPane6 = new javax.swing.JScrollPane();
         Perawatan = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -315,10 +315,6 @@ public class Pemeriksaan extends javax.swing.JFrame {
         header2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pendaftaran/Asset/pilihdata.png"))); // NOI18N
         Obat.getContentPane().add(header2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 40));
 
-        bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
-        bg2.setToolTipText("");
-        Obat.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
-
         DetailRiwayat.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         DetailRiwayat.setUndecorated(true);
         DetailRiwayat.setOpacity(0.0F);
@@ -417,6 +413,9 @@ public class Pemeriksaan extends javax.swing.JFrame {
         bg3.setToolTipText("");
         DetailRiwayat.getContentPane().add(bg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
 
+        bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/BgEditPegawai.png"))); // NOI18N
+        bg2.setToolTipText("");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
@@ -494,6 +493,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
         btnPemeriksaan.setBackground(new Color(0,0,0,0));
         btnPemeriksaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Pemeriksaan.png"))); // NOI18N
         btnPemeriksaan.setBorder(null);
+        btnPemeriksaan.setSelected(true);
         btnPemeriksaan.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/PemeriksaanAktif.png"))); // NOI18N
         btnPemeriksaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,7 +516,6 @@ public class Pemeriksaan extends javax.swing.JFrame {
         btnDokter.setBackground(new Color(0,0,0,0));
         btnDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Dokter.png"))); // NOI18N
         btnDokter.setBorder(null);
-        btnDokter.setSelected(true);
         btnDokter.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/DokterAktif.png"))); // NOI18N
         btnDokter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -570,25 +569,25 @@ public class Pemeriksaan extends javax.swing.JFrame {
         });
         getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 34, -1, -1));
 
-        NoPendaftran.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        NoPendaftran.setBorder(null);
-        NoPendaftran.setPreferredSize(new java.awt.Dimension(5, 28));
-        NoPendaftran.addItemListener(new java.awt.event.ItemListener() {
+        NoPendaftaran.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        NoPendaftaran.setBorder(null);
+        NoPendaftaran.setPreferredSize(new java.awt.Dimension(5, 28));
+        NoPendaftaran.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                NoPendaftranItemStateChanged(evt);
+                NoPendaftaranItemStateChanged(evt);
             }
         });
-        NoPendaftran.addMouseListener(new java.awt.event.MouseAdapter() {
+        NoPendaftaran.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NoPendaftranMouseClicked(evt);
+                NoPendaftaranMouseClicked(evt);
             }
         });
-        NoPendaftran.addActionListener(new java.awt.event.ActionListener() {
+        NoPendaftaran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NoPendaftranActionPerformed(evt);
+                NoPendaftaranActionPerformed(evt);
             }
         });
-        getContentPane().add(NoPendaftran, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 250, 260, 30));
+        getContentPane().add(NoPendaftaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 250, 260, 30));
 
         jScrollPane6.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -910,7 +909,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void SimpanData(){
-        String NoPen = NoPendaftran.getSelectedItem().toString().substring(0,5);
+        String NoPen = NoPendaftaran.getSelectedItem().toString().substring(0,5);
         String Keluhan = this.Keluhan.getText();
         String diagn = Diagnosis.getText();
         String prwt = Perawatan.getText();
@@ -977,15 +976,15 @@ public class Pemeriksaan extends javax.swing.JFrame {
             while (rslt.next()){
                 String no = rslt.getString("NoPendaftaran");
                 String nama = rslt.getString("NamaPas");
-                NoPendaftran.addItem(no + " " + nama);
-                NoPendaftran.setActionCommand(no);
+                NoPendaftaran.addItem(no + " " + nama);
+                NoPendaftaran.setActionCommand(no);
             } 
         }catch(Exception e){
             
             System.out.println(e);
         } 
     }
-    private void tampilDataRiwayat(){
+    private void tampilDataRiwayat(){   
         //untuk mengahapus baris setelah input
         int row = TableRiwayat.getRowCount();
         for(int a = 0 ; a < row ; a++){
@@ -996,7 +995,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
                 "SELECT TglPendaftaran, NamaPas ,Keluhan, BeratBadan , TensiDiastolik ,TensiSistolik  FROM pemeriksaan\n" +
                 "INNER JOIN pendaftaran ON pemeriksaan.NoPendaftaran = pendaftaran.NoPendaftaran \n" +
                 "INNER JOIN pasien ON pendaftaran.NoPasien = pasien.NoPasien \n" +
-                "WHERE Pendaftaran.NoPasien = pasien.NoPasien AND pemeriksaan.NoPendaftaran = '"+NoPendaftran.getSelectedItem().toString().substring(0, 5)+"'";
+                "WHERE Pendaftaran.NoPasien = pasien.NoPasien AND pemeriksaan.NoPendaftaran = '"+NoPendaftaran.getSelectedItem().toString().substring(0, 5)+"'";
                 
         
         try{
@@ -1151,6 +1150,8 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
     private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         // TODO add your handling code here:
+        new MenuDokter().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnDokterActionPerformed
 
     private void btnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliActionPerformed
@@ -1177,6 +1178,8 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -1208,10 +1211,10 @@ public class Pemeriksaan extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
-    private void NoPendaftranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoPendaftranActionPerformed
+    private void NoPendaftaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoPendaftaranActionPerformed
         // TODO add your handling code here:
         tampilDataRiwayat();
-    }//GEN-LAST:event_NoPendaftranActionPerformed
+    }//GEN-LAST:event_NoPendaftaranActionPerformed
 
     private void KeluhanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_KeluhanFocusGained
         // TODO add your handling code here:
@@ -1446,15 +1449,15 @@ public class Pemeriksaan extends javax.swing.JFrame {
         SimpanData();
     }//GEN-LAST:event_btnSimpanActionPerformed
 
-    private void NoPendaftranItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_NoPendaftranItemStateChanged
+    private void NoPendaftaranItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_NoPendaftaranItemStateChanged
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_NoPendaftranItemStateChanged
+    }//GEN-LAST:event_NoPendaftaranItemStateChanged
 
-    private void NoPendaftranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoPendaftranMouseClicked
+    private void NoPendaftaranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoPendaftaranMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_NoPendaftranMouseClicked
+    }//GEN-LAST:event_NoPendaftaranMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1527,7 +1530,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
     private javax.swing.JButton MIN2;
     private javax.swing.JButton MIN3;
     private javax.swing.JLabel Namaa;
-    private javax.swing.JComboBox<String> NoPendaftran;
+    private javax.swing.JComboBox<String> NoPendaftaran;
     private javax.swing.JDialog Obat;
     private javax.swing.JTextArea Perawatan;
     private javax.swing.JRadioButton RBPerlu;

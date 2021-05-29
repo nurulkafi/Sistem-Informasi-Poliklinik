@@ -126,9 +126,7 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HargaJual.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        HargaJual.setForeground(new java.awt.Color(102, 102, 102));
         HargaJual.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        HargaJual.setText("Masukan Harga Jual...");
         HargaJual.setToolTipText("Harga Jual");
         HargaJual.setAlignmentX(1.0F);
         HargaJual.setAlignmentY(1.0F);
@@ -157,9 +155,7 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 150, 30));
 
         StockObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        StockObat.setForeground(new java.awt.Color(102, 102, 102));
         StockObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        StockObat.setText("Masukan Stock Obat...");
         StockObat.setToolTipText("Stock Obat");
         StockObat.setAlignmentX(1.0F);
         StockObat.setAlignmentY(1.0F);
@@ -188,9 +184,7 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, 30));
 
         MerkObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        MerkObat.setForeground(new java.awt.Color(102, 102, 102));
         MerkObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        MerkObat.setText("Masukan Merk Obat...");
         MerkObat.setToolTipText("Merk Obat");
         MerkObat.setAlignmentX(1.0F);
         MerkObat.setAlignmentY(1.0F);
@@ -277,9 +271,7 @@ public class MenuObat extends javax.swing.JFrame {
         tambahData.getContentPane().add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 130, -1));
 
         NamaObat.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        NamaObat.setForeground(new java.awt.Color(102, 102, 102));
         NamaObat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        NamaObat.setText("Masukan Nama Obat...");
         NamaObat.setToolTipText("Nama Obat");
         NamaObat.setAlignmentX(1.0F);
         NamaObat.setAlignmentY(1.0F);
@@ -959,6 +951,8 @@ public class MenuObat extends javax.swing.JFrame {
 
     private void btnPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembayaranActionPerformed
         // TODO add your handling code here:
+        new MenuPembayaran.JenisBiaya().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPembayaranActionPerformed
 
     private void InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputActionPerformed
@@ -1140,54 +1134,42 @@ public class MenuObat extends javax.swing.JFrame {
 
     private void NamaObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NamaObatFocusGained
         // TODO add your handling code here:
-        if(NamaObat.getText().equals("Masukan Nama Obat..."));{
-            NamaObat.setText(null);
-            NamaObat.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_NamaObatFocusGained
 
     private void NamaObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NamaObatFocusLost
         // TODO add your handling code here:
-        NamaObat.setForeground(new Color(102,102,102));
+       
     }//GEN-LAST:event_NamaObatFocusLost
 
     private void MerkObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MerkObatFocusGained
         // TODO add your handling code here:
-        if(MerkObat.getText().equals("Masukan Merk Obat..."));{
-            MerkObat.setText(null);
-            MerkObat.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_MerkObatFocusGained
 
     private void MerkObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MerkObatFocusLost
         // TODO add your handling code here:
-         MerkObat.setForeground(new Color(102,102,102));
+         
     }//GEN-LAST:event_MerkObatFocusLost
 
     private void StockObatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StockObatFocusGained
         // TODO add your handling code here:
-        if(StockObat.getText().equals("Masukan Stock Obat..."));{
-            StockObat.setText(null);
-            StockObat.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_StockObatFocusGained
 
     private void StockObatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_StockObatFocusLost
         // TODO add your handling code here:
-        StockObat.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_StockObatFocusLost
 
     private void HargaJualFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HargaJualFocusGained
         // TODO add your handling code here:
-        if(HargaJual.getText().equals("Masukan Harga Jual..."));{
-            HargaJual.setText(null);
-            HargaJual.setForeground(Color.BLACK);
-        }
+        
     }//GEN-LAST:event_HargaJualFocusGained
 
     private void HargaJualFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HargaJualFocusLost
         // TODO add your handling code here:
-        HargaJual.setForeground(new Color(102,102,102));
+        
     }//GEN-LAST:event_HargaJualFocusLost
     private void InputData(){
         String Kode = KodeObat.getText();

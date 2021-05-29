@@ -30,5 +30,14 @@ public class GlobalVar {
     public static String Stock;
     public static String Harga;
     public static String idbiaya;
+    public static String NoPendaftaran;
+    public static String NoPemeriksaan;
+    public static String NoPen;
+    public static int JmlData;
+    public static int TotalObat;
+    public static int TotalJenisBiaya;
+//    public static String tanggalAwal;
+//    public static String tanggalAkhir;
+//    
  
 }
