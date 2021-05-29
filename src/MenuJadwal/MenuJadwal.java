@@ -28,6 +28,7 @@ public class MenuJadwal extends javax.swing.JFrame {
      * Creates new form MenuUtama
      */
     DefaultTableModel table = new DefaultTableModel();
+    String KodeDokter;
     public MenuJadwal() {
         initComponents();
         TabelJadwal.setModel(table);
@@ -493,7 +494,6 @@ public class MenuJadwal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -1139,16 +1139,28 @@ public class MenuJadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_JamSelesaiFocusLost
         private void InputData(){
         String Kode = KodeJadwal.getText();
-        String Nama = NamaDokter.getActionCommand();
         String Har = Hari.getText();
         String Mulai = JamMulai.getText();
         String Selesai = JamSelesai.getText();
+        String nmdok = (String)NamaDokter.getSelectedItem();
+        
+        String query = "SELECT * FROM dokter WHERE NmDokter = '"+nmdok+"' ";
+                
+        try{
+            Connection connect = Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
 
+            while (rslt.next()){
+                KodeDokter = rslt.getString("KodeDokter");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
             Connection connect = Koneksi.getKoneksi();
             //query untuk memasukan data
             String query2 = "INSERT INTO jadwalpraktek (KodeJadwal, KodeDokter, Hari, JamMulai, JamSelesai ) "
-                         + "VALUES ('"+Kode+"', '"+Nama+"','"+Har+"', '"+Mulai+"', '"+Selesai+"')";
-
+                         + "VALUES ('"+Kode+"', '"+KodeDokter+"','"+Har+"', '"+Mulai+"', '"+Selesai+"')";
             try{
                 //menyiapkan statement untuk di eksekusi
                 PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
@@ -1167,6 +1179,7 @@ public class MenuJadwal extends javax.swing.JFrame {
                 JamSelesai.setText(null);
             }
         }
+        }
     private void addcombo(){
         String query = "SELECT *FROM dokter";
         
@@ -1179,9 +1192,7 @@ public class MenuJadwal extends javax.swing.JFrame {
                 String nama = rslt.getString("NmDokter");
                 String kode = rslt.getString("KodeDokter");
                 NamaDokter.addItem(nama);
-                NamaDokter.setActionCommand(kode);
                 NamaDokter1.addItem(nama);
-                NamaDokter1.setActionCommand(kode);
             }
         }catch(Exception e){
             System.out.println(e);
