@@ -37,10 +37,14 @@ public class Pembayaran extends javax.swing.JFrame {
     DefaultTableModel table = new DefaultTableModel();
     DefaultTableModel table2 = new DefaultTableModel();
     DefaultTableModel table3 = new DefaultTableModel();
+    DefaultTableModel table4 = new DefaultTableModel();
+    DefaultTableModel table5 = new DefaultTableModel();
+    DefaultTableModel table6 = new DefaultTableModel();
     int totalObat = 0;
     int totalJnsBiaya = 0;
     String cashTxt;
     String tglPemba;
+    String KodePembayaran;
     
     public Pembayaran() {
         initComponents();
@@ -61,7 +65,17 @@ public class Pembayaran extends javax.swing.JFrame {
         tableTampilJenisBiaya.setModel(table3);
         table3.addColumn("Deskripsi Biaya");
         table3.addColumn("Tarif");
-        
+        tableTampilObatprint.setModel(table4);
+        table4.addColumn("Obat");
+        table4.addColumn("Satuan");
+        table4.addColumn("Harga");
+        table4.addColumn("Total Harga");
+        tableTampilJenisBiayaprint.setModel(table5);
+        table5.addColumn("Deskripsi Biaya");
+        table5.addColumn("Tarif");
+        tableDetailObat.setModel(table6);
+        table6.addColumn("Obat");
+        table6.addColumn("Dosis Obat");
         TampilComboBox();
         tampilData();
         
@@ -153,40 +167,39 @@ public class Pembayaran extends javax.swing.JFrame {
         MIN2 = new javax.swing.JButton();
         MAX2 = new javax.swing.JButton();
         CLOSE4 = new javax.swing.JButton();
-        btnSimpan2 = new javax.swing.JButton();
-        txtKembalian1 = new javax.swing.JTextField();
+        txtKembalianprint = new javax.swing.JTextField();
         kembalian1 = new javax.swing.JLabel();
-        txtcash1 = new javax.swing.JTextField();
+        txtcashprint = new javax.swing.JTextField();
         cash1 = new javax.swing.JLabel();
-        txtTotalPembayaran1 = new javax.swing.JTextField();
+        txtTotalPembayaranprint = new javax.swing.JTextField();
         totalPembayaran1 = new javax.swing.JLabel();
         titik7 = new javax.swing.JLabel();
         titik8 = new javax.swing.JLabel();
         titik9 = new javax.swing.JLabel();
         titik10 = new javax.swing.JLabel();
-        txtPoli1 = new javax.swing.JLabel();
+        txtPoliprint = new javax.swing.JLabel();
         titik11 = new javax.swing.JLabel();
         poli1 = new javax.swing.JLabel();
-        txtdokter1 = new javax.swing.JLabel();
+        txtdokterprint = new javax.swing.JLabel();
         dokter1 = new javax.swing.JLabel();
         titik12 = new javax.swing.JLabel();
-        txtAlamattambah1 = new javax.swing.JLabel();
+        txtAlamattambahprint = new javax.swing.JLabel();
         alamatPasientambah1 = new javax.swing.JLabel();
-        txtNopembayaran1 = new javax.swing.JLabel();
+        txtNopembayaranprint = new javax.swing.JLabel();
         noPembayaran1 = new javax.swing.JLabel();
-        txtNamatambah1 = new javax.swing.JTextField();
+        txtNamatambahprint = new javax.swing.JTextField();
         NamaPasienTambah1 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tableDetailObat = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableTampilJenisBiayaprint = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableTampilObatprint = new javax.swing.JTable();
-        txtTgltambah1 = new javax.swing.JLabel();
+        txtTgltambahprint = new javax.swing.JLabel();
         tglTambahdata1 = new javax.swing.JLabel();
         headerPrint = new javax.swing.JLabel();
-        bg3 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
+        detailObat = new javax.swing.JLabel();
         btnEdit = new javax.swing.JButton();
         MIN = new javax.swing.JButton();
         MAX = new javax.swing.JButton();
@@ -841,91 +854,77 @@ public class Pembayaran extends javax.swing.JFrame {
         });
         PrintDetailInvoice.getContentPane().add(CLOSE4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 30, 30));
 
-        btnSimpan2.setBackground(new Color (0,0,0,0));
-        btnSimpan2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        btnSimpan2.setForeground(new java.awt.Color(255, 255, 255));
-        btnSimpan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpan.png"))); // NOI18N
-        btnSimpan2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnSimpan2.setBorderPainted(false);
-        btnSimpan2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/tmblSimpanAktif.png"))); // NOI18N
-        btnSimpan2.addActionListener(new java.awt.event.ActionListener() {
+        txtKembalianprint.setEditable(false);
+        txtKembalianprint.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        txtKembalianprint.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtKembalianprint.setToolTipText("Total Pembayaran");
+        txtKembalianprint.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        txtKembalianprint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimpan2ActionPerformed(evt);
+                txtKembalianprintActionPerformed(evt);
             }
         });
-        PrintDetailInvoice.getContentPane().add(btnSimpan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 50, 130, -1));
-
-        txtKembalian1.setEditable(false);
-        txtKembalian1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtKembalian1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtKembalian1.setToolTipText("Total Pembayaran");
-        txtKembalian1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
-        txtKembalian1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKembalian1ActionPerformed(evt);
-            }
-        });
-        PrintDetailInvoice.getContentPane().add(txtKembalian1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 180, 30));
+        PrintDetailInvoice.getContentPane().add(txtKembalianprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 380, 180, 30));
 
         kembalian1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         kembalian1.setForeground(new java.awt.Color(30, 174, 152));
         kembalian1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/mdi_cash-refund.png"))); // NOI18N
         kembalian1.setText("Kembalian");
-        PrintDetailInvoice.getContentPane().add(kembalian1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 160, 30));
+        PrintDetailInvoice.getContentPane().add(kembalian1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 160, 30));
 
-        txtcash1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtcash1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtcash1.setToolTipText("Total Pembayaran");
-        txtcash1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
-        txtcash1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtcashprint.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        txtcashprint.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtcashprint.setToolTipText("Total Pembayaran");
+        txtcashprint.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        txtcashprint.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtcash1FocusGained(evt);
+                txtcashprintFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtcash1FocusLost(evt);
+                txtcashprintFocusLost(evt);
             }
         });
-        txtcash1.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtcashprint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtcash1MouseClicked(evt);
+                txtcashprintMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtcash1MouseExited(evt);
+                txtcashprintMouseExited(evt);
             }
         });
-        txtcash1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        txtcashprint.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                txtcash1PropertyChange(evt);
+                txtcashprintPropertyChange(evt);
             }
         });
-        txtcash1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtcashprint.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtcash1KeyPressed(evt);
+                txtcashprintKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtcash1KeyReleased(evt);
+                txtcashprintKeyReleased(evt);
             }
         });
-        PrintDetailInvoice.getContentPane().add(txtcash1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 180, 30));
+        PrintDetailInvoice.getContentPane().add(txtcashprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, 180, 30));
 
         cash1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         cash1.setForeground(new java.awt.Color(30, 174, 152));
         cash1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/mdi_cash-plus.png"))); // NOI18N
         cash1.setText("Cash");
-        PrintDetailInvoice.getContentPane().add(cash1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 160, 30));
+        PrintDetailInvoice.getContentPane().add(cash1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 160, 30));
 
-        txtTotalPembayaran1.setEditable(false);
-        txtTotalPembayaran1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtTotalPembayaran1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtTotalPembayaran1.setToolTipText("Total Pembayaran");
-        txtTotalPembayaran1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
-        PrintDetailInvoice.getContentPane().add(txtTotalPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 180, 30));
+        txtTotalPembayaranprint.setEditable(false);
+        txtTotalPembayaranprint.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        txtTotalPembayaranprint.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTotalPembayaranprint.setToolTipText("Total Pembayaran");
+        txtTotalPembayaranprint.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 174, 152), 2, true));
+        PrintDetailInvoice.getContentPane().add(txtTotalPembayaranprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 300, 180, 30));
 
         totalPembayaran1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         totalPembayaran1.setForeground(new java.awt.Color(30, 174, 152));
         totalPembayaran1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/mdi_cash-multiple.png"))); // NOI18N
         totalPembayaran1.setText("Total Pembayaran");
-        PrintDetailInvoice.getContentPane().add(totalPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 160, 30));
+        PrintDetailInvoice.getContentPane().add(totalPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 160, 30));
 
         titik7.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
         titik7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -945,55 +944,65 @@ public class Pembayaran extends javax.swing.JFrame {
         titik10.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
         titik10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik10.setText(":");
-        PrintDetailInvoice.getContentPane().add(titik10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 10, -1));
+        PrintDetailInvoice.getContentPane().add(titik10, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 60, 10, -1));
 
-        txtPoli1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtPoli1.setText("Poli Mata");
-        PrintDetailInvoice.getContentPane().add(txtPoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 100, -1));
+        txtPoliprint.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        txtPoliprint.setForeground(new java.awt.Color(0, 0, 0));
+        txtPoliprint.setText("Poli Mata");
+        PrintDetailInvoice.getContentPane().add(txtPoliprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 100, -1));
 
         titik11.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
         titik11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik11.setText(":");
-        PrintDetailInvoice.getContentPane().add(titik11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 10, -1));
+        PrintDetailInvoice.getContentPane().add(titik11, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 10, -1));
 
         poli1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        poli1.setForeground(new java.awt.Color(0, 0, 0));
         poli1.setText("Poli");
-        PrintDetailInvoice.getContentPane().add(poli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 50, -1));
+        PrintDetailInvoice.getContentPane().add(poli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 50, -1));
 
-        txtdokter1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtdokter1.setText("Hadimas Aprilian");
-        PrintDetailInvoice.getContentPane().add(txtdokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 100, -1));
+        txtdokterprint.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        txtdokterprint.setForeground(new java.awt.Color(0, 0, 0));
+        txtdokterprint.setText("Hadimas Aprilian");
+        PrintDetailInvoice.getContentPane().add(txtdokterprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 100, -1));
 
         dokter1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        dokter1.setForeground(new java.awt.Color(0, 0, 0));
         dokter1.setText("Dokter Pemeriksa");
-        PrintDetailInvoice.getContentPane().add(dokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 100, -1));
+        PrintDetailInvoice.getContentPane().add(dokter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, 100, -1));
 
         titik12.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
         titik12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titik12.setText(":");
         PrintDetailInvoice.getContentPane().add(titik12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 10, -1));
 
-        txtAlamattambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtAlamattambah1.setText("Kp. Palalangon Rt.04 Rw.05");
-        PrintDetailInvoice.getContentPane().add(txtAlamattambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 100, 230, -1));
+        txtAlamattambahprint.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        txtAlamattambahprint.setForeground(new java.awt.Color(0, 0, 0));
+        txtAlamattambahprint.setText("Kp. Palalangon Rt.04 Rw.05");
+        PrintDetailInvoice.getContentPane().add(txtAlamattambahprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 100, 230, -1));
 
         alamatPasientambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        alamatPasientambah1.setForeground(new java.awt.Color(0, 0, 0));
         alamatPasientambah1.setText("Alamat Pasien");
         PrintDetailInvoice.getContentPane().add(alamatPasientambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 80, -1));
 
-        txtNopembayaran1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        PrintDetailInvoice.getContentPane().add(txtNopembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 60, 110, 18));
+        txtNopembayaranprint.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        txtNopembayaranprint.setForeground(new java.awt.Color(0, 0, 0));
+        PrintDetailInvoice.getContentPane().add(txtNopembayaranprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 60, 110, 18));
 
         noPembayaran1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        noPembayaran1.setForeground(new java.awt.Color(0, 0, 0));
         noPembayaran1.setText("No Pembayaran");
         PrintDetailInvoice.getContentPane().add(noPembayaran1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 90, -1));
 
-        txtNamatambah1.setEditable(false);
-        txtNamatambah1.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        txtNamatambah1.setBorder(null);
-        PrintDetailInvoice.getContentPane().add(txtNamatambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 80, 110, 18));
+        txtNamatambahprint.setEditable(false);
+        txtNamatambahprint.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        txtNamatambahprint.setForeground(new java.awt.Color(0, 0, 0));
+        txtNamatambahprint.setBorder(null);
+        PrintDetailInvoice.getContentPane().add(txtNamatambahprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 80, 110, 18));
 
         NamaPasienTambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        NamaPasienTambah1.setForeground(new java.awt.Color(51, 51, 51));
         NamaPasienTambah1.setText("Nama Pasien");
         PrintDetailInvoice.getContentPane().add(NamaPasienTambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 70, -1));
 
@@ -1020,7 +1029,7 @@ public class Pembayaran extends javax.swing.JFrame {
         tableDetailObat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane5.setViewportView(tableDetailObat);
 
-        PrintDetailInvoice.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 590, 150));
+        PrintDetailInvoice.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 590, 110));
 
         tableTampilJenisBiayaprint.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         tableTampilJenisBiayaprint.setModel(new javax.swing.table.DefaultTableModel(
@@ -1045,7 +1054,12 @@ public class Pembayaran extends javax.swing.JFrame {
         tableTampilJenisBiayaprint.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setViewportView(tableTampilJenisBiayaprint);
 
-        PrintDetailInvoice.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 600, 90));
+        PrintDetailInvoice.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 600, 90));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Detail Aturan Pakai Obat Pasien :");
+        PrintDetailInvoice.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, 30));
 
         tableTampilObatprint.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         tableTampilObatprint.setModel(new javax.swing.table.DefaultTableModel(
@@ -1072,11 +1086,13 @@ public class Pembayaran extends javax.swing.JFrame {
 
         PrintDetailInvoice.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 90));
 
-        txtTgltambah1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
-        txtTgltambah1.setText("31 desember 2020");
-        PrintDetailInvoice.getContentPane().add(txtTgltambah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 40, 100, -1));
+        txtTgltambahprint.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        txtTgltambahprint.setForeground(new java.awt.Color(0, 0, 0));
+        txtTgltambahprint.setText("31 desember 2020");
+        PrintDetailInvoice.getContentPane().add(txtTgltambahprint, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 40, 100, -1));
 
         tglTambahdata1.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        tglTambahdata1.setForeground(new java.awt.Color(0, 0, 0));
         tglTambahdata1.setText("Tanggal Pembayaran ");
         PrintDetailInvoice.getContentPane().add(tglTambahdata1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, -1));
 
@@ -1085,14 +1101,14 @@ public class Pembayaran extends javax.swing.JFrame {
         headerPrint.setPreferredSize(new java.awt.Dimension(1029, 30));
         PrintDetailInvoice.getContentPane().add(headerPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 1029, 30));
 
-        bg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/bgTambahDataPembayaran.png"))); // NOI18N
-        bg3.setToolTipText("");
-        bg3.addMouseListener(new java.awt.event.MouseAdapter() {
+        detailObat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/bgTambahDataPembayaran.png"))); // NOI18N
+        detailObat.setToolTipText("");
+        detailObat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bg3MouseClicked(evt);
+                detailObatMouseClicked(evt);
             }
         });
-        PrintDetailInvoice.getContentPane().add(bg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1029, 525));
+        PrintDetailInvoice.getContentPane().add(detailObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1029, 525));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 730));
@@ -1105,21 +1121,10 @@ public class Pembayaran extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnDelete.setBackground(new Color(0,0,0,0));
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/delete.png"))); // NOI18N
-        btnDelete.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnDelete.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/deleteaktif.png"))); // NOI18N
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 350, 90, 80));
-
         btnEdit.setBackground(new Color(0,0,0,0));
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/edit.png"))); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/detailPemba.png"))); // NOI18N
         btnEdit.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnEdit.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPegawai/Asset/editaktif.png"))); // NOI18N
+        btnEdit.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/detail.png"))); // NOI18N
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
@@ -1291,6 +1296,11 @@ public class Pembayaran extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TabelPembayaran.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelPembayaranMouseClicked(evt);
+            }
+        });
         tableBiaya.setViewportView(TabelPembayaran);
 
         getContentPane().add(tableBiaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 850, 440));
@@ -1660,8 +1670,8 @@ public class Pembayaran extends javax.swing.JFrame {
                 int jmlBaris = tableTampilObat.getRowCount();
                 String nilai;
                 for (int i = 0; i < jmlBaris; i++){
-                    nilai = tableTampilObat.getValueAt(i, 3).toString().replace("IDR", "");
-                    totalObat = totalObat + Integer.parseInt(nilai.replace(",", ""));
+                    nilai = tableTampilObat.getValueAt(i, 3).toString();
+                    totalObat = totalObat + Integer.parseInt(nilai);
                 }
                 Koneksi.GlobalVar.TotalObat = totalObat;
 //                txtTotalPembayaran.setText(String.valueOf(Koneksi.GlobalVar.TotalObat));
@@ -1746,31 +1756,7 @@ public class Pembayaran extends javax.swing.JFrame {
             System.out.println(e);
         } 
     }
-    
-    private void hapusData(){
-        //ambill data no pendaftaran
-           
-        Connection connect = Koneksi.Koneksi.getKoneksi();
-        int baris = TabelPembayaran.getSelectedRow();
-        int jawab;
-        String kode = table.getValueAt(baris,0).toString();
         
-        String query = "DELETE FROM jenisbiaya WHERE IDJenisBiaya = '"+kode+"';";
-        try{
-            if ((jawab = JOptionPane.showConfirmDialog(null, "Ingin menghapus data?", "konfirmasi", JOptionPane.YES_NO_OPTION)) == 0) {
-            PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query);
-            ps.execute();
-            JOptionPane.showMessageDialog(null , "Data Berhasil Dihapus");
-        }
-        }catch(SQLException | HeadlessException e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Data Gagal Dihapus");
-        }finally{
-            tampilData();
-        }
-        
-    }
-    
     private void tambahData(){
         String query = "SELECT DATE_FORMAT(NOW(), '%Y-%m-%d') AS tanggal";
       
@@ -1813,8 +1799,28 @@ public class Pembayaran extends javax.swing.JFrame {
     }
 
     
-    private void LoadData(){      
-        String query = "SELECT *FROM jenisbiaya WHERE IDJenisBiaya = '"+Koneksi.GlobalVar.idbiaya+"' ";
+    private void LoadData(){
+        int row = tableTampilObatprint.getRowCount();
+        for(int a = 0 ; a < row ; a++){
+            table4.removeRow(0);
+        }
+        int row2 = tableTampilJenisBiayaprint.getRowCount();
+        for(int a = 0 ; a < row2 ; a++){
+            table5.removeRow(0);
+        }
+        int row3 = tableDetailObat.getRowCount();
+        for(int a = 0 ; a < row3 ; a++){
+            table6.removeRow(0);
+        }
+        String query =  "SELECT KodePembayaran, TglPembayaran, pemeriksaan.NoPemeriksaan, pemeriksaan.NoPendaftaran, NamaPas,AlmPas, NmDokter, NamaPoli, TotalPembayaran, Cash, Kembalian FROM pembayaran\n"+
+                        "INNER JOIN pemeriksaan on pembayaran.NoPemeriksaan = pemeriksaan.NoPemeriksaan \n"+
+                        "INNER JOIN dokter ON pemeriksaan.KodeDokter = dokter.KodeDokter \n"+
+                        "INNER JOIN poli ON dokter.KodePoli = poli.KodePoli\n"+
+                        "INNER JOIN pendaftaran ON pemeriksaan.NoPendaftaran = pendaftaran.NoPendaftaran \n" +
+                        "INNER JOIN pasien ON pendaftaran.NoPasien = pasien.NoPasien \n"+
+                        "WHERE KodePembayaran = '"+ KodePembayaran +"'";
+        
+                
         
         try{
             Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
@@ -1822,49 +1828,97 @@ public class Pembayaran extends javax.swing.JFrame {
             ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
             
             while (rslt.next()){
-                String id = rslt.getString("IDJenisBiaya");
-                String nama = rslt.getString("NamaBiaya");
-                String tarif = rslt.getString("Tarif");
-                
-                idjenis1.setText(id);
-                namajenis1.setText(nama);
-                tarifjenis1.setText(tarif);
-            } 
-        }catch(Exception e){
-            
-            System.out.println(e);
-        } 
-    }
-  
-    private void UpdateData(){
-        
-        String id = idjenis1.getText();
-        String nama = namajenis1.getText();
-        String tarif = tarifjenis1.getText();
-                 
-        Connection connect = Koneksi.Koneksi.getKoneksi();
-        
-            String query2 = "UPDATE jenisbiaya SET NamaBiaya = '"+nama+"', Tarif = '"+tarif+"'"
-                    + "WHERE IDJenisBiaya = '"+id+"';";
-            
+                //menampung data sementara
+                    String kodePembayaran = rslt.getString("KodePembayaran");
+                    Koneksi.GlobalVar.nopemrikprint = rslt.getString("NoPemeriksaan");
+                    String tglPemba = rslt.getString("TglPembayaran");
+                    Koneksi.GlobalVar.nopendafprint = rslt.getString("NoPendaftaran");
+                    String NamaPasien = rslt.getString("NamaPas");
+                    String AlamatPas = rslt.getString("AlmPas");
+                    String dokter = rslt.getString("NmDokter");
+                    String poli = rslt.getString("NamaPoli");
+                    String Total = rslt.getString("TotalPembayaran");
+                    String uang = rslt.getString("Cash");
+                    String kembali = rslt.getString("Kembalian");
+                //Menampilkan data pembayaran obat
+                    txtTgltambahprint.setText(tglPemba);
+                    txtNopembayaranprint.setText(kodePembayaran);
+                    txtNamatambahprint.setText(NamaPasien);
+                    txtAlamattambahprint.setText(AlamatPas);
+                    txtdokterprint.setText(dokter);
+                    txtPoliprint.setText(poli);
+                    txtTotalPembayaranprint.setText(Total);
+                    txtcashprint.setText(uang);
+                    txtKembalianprint.setText(kembali);
 
-            try{
-                PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
-                ps.executeUpdate(query2);
-                JOptionPane.showMessageDialog(null , "Data  Berhasil diUpdate");
-            }catch(SQLException | HeadlessException e){
-                System.out.println(e);
-                JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
-            }finally{
-                editJenisBiaya.dispose();
-                idjenis1.setText(null);
-                namajenis1.setText(null);
-                tarifjenis1.setText(null);
+            }         
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        String query2 = "SELECT resep.NoPemeriksaan, NmObat,Dosis, Jumlah, HargaJual, (Jumlah * HargaJual) AS Total FROM resep \n" +
+                                "INNER JOIN detail_resep ON resep.NoResep = detail_resep.NoResep \n" +
+                                "INNER JOIN obat on detail_resep.KodeObat = obat.KodeObat \n"+
+                                "WHERE resep.NoPemeriksaan = '"+ Koneksi.GlobalVar.nopemrikprint +"'";
+                try{
+                    Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+                    Statement sttmnt = connect.createStatement();//membuat statement
+                    ResultSet rslt = sttmnt.executeQuery(query2);//menjalanakn query
+
+                    while (rslt.next()){
+                        //menampung data sementara
+                            String Obat = rslt.getString("NmObat");
+                            String Jumlah = rslt.getString("Jumlah");
+                            String Harga = rslt.getString("HargaJual");
+                            String total = rslt.getString("Total");
+                            String dosis = rslt.getString("Dosis");
+
+
+                        //masukan semua data kedalam array
+
+
+                        String[] dataObat = {Obat,Jumlah,Harga,total};
+                        String[] datadosis = {Obat, dosis};
+                        //menambahakan baris sesuai dengan data yang tersimpan diarray
+                        table4.addRow(dataObat);
+                        table6.addRow(datadosis);
+                        
+                    }
+                        //mengeset nilai yang ditampung agar muncul di table
+                        tableTampilObatprint.setModel(table4);
+                        tableDetailObat.setModel(table6);
+                }catch(Exception e){
+                    System.out.println(e);
+                }
                 
-                tampilData();
-            }
+                //menampilkan data pembayaran jenis biaya
+                String query3 = "SELECT NamaBiaya, Tarif FROM jenisbiaya \n" +
+                                "INNER JOIN detail_biaya ON jenisbiaya.IDJenisBiaya = detail_biaya.IDJenisBiaya \n" +
+                                "INNER JOIN pemeriksaan ON detail_biaya.NoPendaftaran = pemeriksaan.NoPendaftaran \n" +
+                                "WHERE detail_biaya.NoPendaftaran = pemeriksaan.NoPendaftaran AND detail_biaya.NoPendaftaran = '"+ Koneksi.GlobalVar.nopendafprint +"'";
+                try{
+                    Connection connect = Koneksi.Koneksi.getKoneksi();//memanggil koneksi
+                    Statement sttmnt = connect.createStatement();//membuat statement
+                    ResultSet rslt = sttmnt.executeQuery(query3);//menjalanakn query
+
+                    while (rslt.next()){
+                        //menampung data sementara
+                            String biaya = rslt.getString("NamaBiaya");
+                            String tarif = rslt.getString("Tarif");
+
+                        //masukan semua data kedalam array
+
+
+                        String[] dataBiaya = {biaya,tarif};
+                        //menambahakan baris sesuai dengan data yang tersimpan diarray
+                        table5.addRow(dataBiaya);
+                    }
+                        //mengeset nilai yang ditampung agar muncul di table
+                        tableTampilJenisBiayaprint.setModel(table5);
+                }catch(Exception e){
+                    System.out.println(e);
+                }
     }
-    
+     
     private void kodeotomatis(){
         String query = "SELECT * FROM pembayaran ORDER BY KodePembayaran DESC ";
         try{
@@ -1953,15 +2007,10 @@ public class Pembayaran extends javax.swing.JFrame {
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
-        editJenisBiaya.setVisible(true);
-        editJenisBiaya.setBounds(450, 120, 600, 520);
+        PrintDetailInvoice.setVisible(true);
+        PrintDetailInvoice.setBounds(200, 130, 1030, 520);
         LoadData();
     }//GEN-LAST:event_btnEditActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-        hapusData();
-    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -2024,7 +2073,6 @@ public class Pembayaran extends javax.swing.JFrame {
 
     private void btnSimpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan1ActionPerformed
         // TODO add your handling code here:
-        UpdateData();
         tampilData();
     }//GEN-LAST:event_btnSimpan1ActionPerformed
 
@@ -2282,50 +2330,58 @@ public class Pembayaran extends javax.swing.JFrame {
 
     private void CLOSE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE4ActionPerformed
         // TODO add your handling code here:
+        PrintDetailInvoice.dispose();
     }//GEN-LAST:event_CLOSE4ActionPerformed
 
-    private void btnSimpan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan2ActionPerformed
+    private void txtKembalianprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKembalianprintActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSimpan2ActionPerformed
+    }//GEN-LAST:event_txtKembalianprintActionPerformed
 
-    private void txtKembalian1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKembalian1ActionPerformed
+    private void txtcashprintFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcashprintFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtKembalian1ActionPerformed
+    }//GEN-LAST:event_txtcashprintFocusGained
 
-    private void txtcash1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcash1FocusGained
+    private void txtcashprintFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcashprintFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1FocusGained
+    }//GEN-LAST:event_txtcashprintFocusLost
 
-    private void txtcash1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcash1FocusLost
+    private void txtcashprintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcashprintMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1FocusLost
+    }//GEN-LAST:event_txtcashprintMouseClicked
 
-    private void txtcash1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcash1MouseClicked
+    private void txtcashprintMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcashprintMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1MouseClicked
+    }//GEN-LAST:event_txtcashprintMouseExited
 
-    private void txtcash1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcash1MouseExited
+    private void txtcashprintPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtcashprintPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1MouseExited
+    }//GEN-LAST:event_txtcashprintPropertyChange
 
-    private void txtcash1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtcash1PropertyChange
+    private void txtcashprintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcashprintKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1PropertyChange
+    }//GEN-LAST:event_txtcashprintKeyPressed
 
-    private void txtcash1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcash1KeyPressed
+    private void txtcashprintKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcashprintKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1KeyPressed
+    }//GEN-LAST:event_txtcashprintKeyReleased
 
-    private void txtcash1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcash1KeyReleased
+    private void detailObatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailObatMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcash1KeyReleased
-
-    private void bg3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bg3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bg3MouseClicked
+    }//GEN-LAST:event_detailObatMouseClicked
 
     private void PrintDetailInvoiceWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_PrintDetailInvoiceWindowOpened
         // TODO add your handling code here:
+         for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+            //this.setOpacity(f);
+            PrintDetailInvoice.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+           catch(Exception e){
+            }
+        }
     }//GEN-LAST:event_PrintDetailInvoiceWindowOpened
 
     private void PopupSearchWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_PopupSearchWindowOpened
@@ -2352,6 +2408,11 @@ public class Pembayaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         tanggalAkhir();
     }//GEN-LAST:event_inputtglakhirPropertyChange
+
+    private void TabelPembayaranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelPembayaranMouseClicked
+        // TODO add your handling code here:
+        KodePembayaran = table.getValueAt(TabelPembayaran.getSelectedRow(),0).toString();
+    }//GEN-LAST:event_TabelPembayaranMouseClicked
 
     /**
      * @param args the command line arguments
@@ -2437,10 +2498,8 @@ public class Pembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel bg;
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
-    private javax.swing.JLabel bg3;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnBatal1;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHome;
@@ -2456,7 +2515,6 @@ public class Pembayaran extends javax.swing.JFrame {
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnSimpan1;
-    private javax.swing.JButton btnSimpan2;
     private javax.swing.JButton btnSubJenisBiaya;
     private javax.swing.JButton btnSubPembayaran;
     private javax.swing.JButton btnUser;
@@ -2465,6 +2523,7 @@ public class Pembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel cash1;
     private javax.swing.JComboBox<String> cmbNoPendaftaran;
     private javax.swing.JLabel daun;
+    private javax.swing.JLabel detailObat;
     private javax.swing.JLabel dokter;
     private javax.swing.JLabel dokter1;
     private javax.swing.JDialog editJenisBiaya;
@@ -2476,6 +2535,7 @@ public class Pembayaran extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser inputtglakhir;
     private com.toedter.calendar.JDateChooser inputtglawal;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2520,25 +2580,25 @@ public class Pembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel totalPembayaran;
     private javax.swing.JLabel totalPembayaran1;
     private javax.swing.JLabel txtAlamattambah;
-    private javax.swing.JLabel txtAlamattambah1;
+    private javax.swing.JLabel txtAlamattambahprint;
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtKembalian;
-    private javax.swing.JTextField txtKembalian1;
+    private javax.swing.JTextField txtKembalianprint;
     private javax.swing.JTextField txtNamatambah;
-    private javax.swing.JTextField txtNamatambah1;
+    private javax.swing.JTextField txtNamatambahprint;
     private javax.swing.JLabel txtNopembayaran;
-    private javax.swing.JLabel txtNopembayaran1;
+    private javax.swing.JLabel txtNopembayaranprint;
     private javax.swing.JLabel txtPoli;
-    private javax.swing.JLabel txtPoli1;
+    private javax.swing.JLabel txtPoliprint;
     private javax.swing.JLabel txtTgltambah;
-    private javax.swing.JLabel txtTgltambah1;
+    private javax.swing.JLabel txtTgltambahprint;
     private javax.swing.JTextField txtTotalPembayaran;
-    private javax.swing.JTextField txtTotalPembayaran1;
+    private javax.swing.JTextField txtTotalPembayaranprint;
     private javax.swing.JLabel txtUser;
     private javax.swing.JTextField txtcash;
-    private javax.swing.JTextField txtcash1;
+    private javax.swing.JTextField txtcashprint;
     private javax.swing.JLabel txtdokter;
-    private javax.swing.JLabel txtdokter1;
+    private javax.swing.JLabel txtdokterprint;
     private javax.swing.JLabel userPanel;
     // End of variables declaration//GEN-END:variables
 }

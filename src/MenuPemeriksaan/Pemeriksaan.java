@@ -678,7 +678,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/medical-icon_outpatient.png"))); // NOI18N
         jLabel13.setText("Keluhan");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 310, -1, -1));
 
@@ -689,25 +689,25 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/medical-icon_intensive-care.png"))); // NOI18N
         jLabel14.setText("Diagnosa");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/medical-icon_intensive-care.png"))); // NOI18N
         jLabel15.setText("Perawatan");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/carbon_add-filled.png"))); // NOI18N
         jLabel16.setText("Tambah Resep ?");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/fa-solid_weight.png"))); // NOI18N
         jLabel17.setText("Berat Badan");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, -1, -1));
 
@@ -731,7 +731,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/la_file-medical-alt.png"))); // NOI18N
         jLabel18.setText("Tensi Diastolik");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 530, -1, -1));
 
@@ -755,7 +755,7 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/la_file-medical-alt.png"))); // NOI18N
         jLabel19.setText("Tensi Sistolik");
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 580, -1, -1));
 
@@ -784,13 +784,13 @@ public class Pemeriksaan extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/fluent_book-number-16-filled.png"))); // NOI18N
         jLabel20.setText("No Pendaftran");
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(30, 174, 152));
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Asset/bx_bxs-user.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPemeriksaan/Asset/fa-solid_clipboard-list.png"))); // NOI18N
         jLabel21.setText("Riwayat Pemeriksaan");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
 
