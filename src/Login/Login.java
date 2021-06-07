@@ -169,14 +169,7 @@ public class Login extends javax.swing.JFrame {
             ResultSet go = sttmnt.executeQuery(query);
            
             if(go.next()){
-                if("admin".equals(go.getString("TypeUser"))){
-                    GlobalVar.nama = go.getString("username");
-                    GlobalVar.id_user = go.getString("id_user");
-                    GlobalVar.hak_akses = go.getString("TypeUser");
-                    JOptionPane.showMessageDialog(null, "Selamat Datang " + GlobalVar.nama );
-                    new MenuUtama.MenuUtama().setVisible(true);
-                    dispose();
-                }else if("gudang".equals(go.getString("TypeUser"))){
+                if("Pegawai".equals(go.getString("TypeUser"))){
                     GlobalVar.nama = go.getString("username");
                     GlobalVar.id_user = go.getString("id_user");
                     GlobalVar.hak_akses = go.getString("TypeUser");
@@ -190,7 +183,6 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Selamat Datang " + GlobalVar.nama );
                     new MenuUtama.MenuUtama().setVisible(true);
                     dispose();
-
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau Password Salah");

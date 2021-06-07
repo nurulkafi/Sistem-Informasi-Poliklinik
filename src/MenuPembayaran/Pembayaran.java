@@ -83,7 +83,18 @@ public class Pembayaran extends javax.swing.JFrame {
         txtUser.setText("Hi!, "+ GlobalVar.nama);
         this.setBackground(new Color(0,0,0,0));
         PopupFilter.setBackground(new Color(0,0,0,0));
-
+        if(Koneksi.GlobalVar.hak_akses.equals("Pegawai")){
+            btnPegawai.setEnabled(false);
+            btnDokter.setEnabled(false);
+            btnPemeriksaan.setEnabled(false);
+        }else if(Koneksi.GlobalVar.hak_akses.equals("Dokter")){
+            btnPegawai.setEnabled(false);
+            btnPendaftaran.setEnabled(false);
+            btnDokter.setEnabled(false);
+            btnPoli.setEnabled(false);
+            btnObat.setEnabled(false);
+            btnPembayaran.setEnabled(false);
+        }
     }
 
     /**

@@ -40,6 +40,18 @@ public class MenuObat extends javax.swing.JFrame {
         tampilData();
         txtUser.setText("Hi!, " + GlobalVar.nama);
         this.setBackground(new Color(0,0,0,0));
+        if(GlobalVar.hak_akses.equals("Pegawai")){
+            btnPegawai.setEnabled(false);
+            btnDokter.setEnabled(false);
+            btnPemeriksaan.setEnabled(false);
+        }else if(GlobalVar.hak_akses.equals("Dokter")){
+            btnPegawai.setEnabled(false);
+            btnPendaftaran.setEnabled(false);
+            btnDokter.setEnabled(false);
+            btnPoli.setEnabled(false);
+            btnObat.setEnabled(false);
+            btnPembayaran.setEnabled(false);
+        }
     }
 
     /**
