@@ -617,7 +617,7 @@ public class DataPendaftaran extends javax.swing.JFrame {
         }
         
         String query = 
-                "SELECT NoPendaftaran,pendaftaran.NoPasien,NamaPas,TglPendaftaran,NoUrut FROM pendaftaran INNER JOIN pasien ON pendaftaran.NoPasien = pasien.NoPasien";
+                "SELECT NoPendaftaran,pendaftaran.NoPasien,NamaPas,TglPendaftaran,NoUrut FROM pendaftaran INNER JOIN pasien ON pendaftaran.NoPasien = pasien.NoPasien WHERE TglPendaftaran = CURDATE()";
                 
         
         try{
