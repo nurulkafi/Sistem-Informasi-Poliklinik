@@ -35,6 +35,7 @@ public class GlobalVar {
     public static String nopemrikprint;
     public static String nopendafprint;
     public static String NoPen;
+    public static String Status;
     public static int JmlData;
     public static int TotalObat;
     public static int TotalJenisBiaya;

@@ -923,7 +923,7 @@ public class MenuDokter extends javax.swing.JFrame {
         
             String query2 = "UPDATE Dokter SET NmDokter = '"+nama+"', KodePoli = '"+kodepoli+"', AlmDokter = '"+alm+"', `TelpDokter` = '"+tlp+"' "
                     + "WHERE KodeDokter = '"+kode+"';";
-            String query3 = "UPDATE login SET UserName = '"+nama+"', Password = '"+nama+"', TypeUser = '"+"Dokter"+"'"
+            String query3 = "UPDATE login SET UserName = '"+nama+"', Password = '"+"123456"+"', TypeUser = '"+"Dokter"+"'"
                     + "WHERE id_user = '"+kode+"' ;";
 
             try{
