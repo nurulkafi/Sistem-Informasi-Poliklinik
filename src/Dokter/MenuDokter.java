@@ -513,7 +513,6 @@ public class MenuDokter extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
         setOpacity(0.0F);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);

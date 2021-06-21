@@ -102,10 +102,14 @@ public class MenuJadwal extends javax.swing.JFrame {
         Simpan1 = new javax.swing.JButton();
         header2 = new javax.swing.JLabel();
         bg2 = new javax.swing.JLabel();
+        PopupSearch = new javax.swing.JDialog();
+        CLOSE4 = new javax.swing.JButton();
+        txtCari = new javax.swing.JTextField();
+        cari = new javax.swing.JButton();
+        titleSearch = new javax.swing.JLabel();
+        bg3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelJadwal = new javax.swing.JTable();
-        Cari = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         Delete = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
         Input = new javax.swing.JButton();
@@ -118,6 +122,7 @@ public class MenuJadwal extends javax.swing.JFrame {
         btnJadwalPraktek = new javax.swing.JButton();
         btnPemeriksaan = new javax.swing.JButton();
         btnPoli = new javax.swing.JButton();
+        Search = new javax.swing.JButton();
         btnDokter = new javax.swing.JButton();
         btnPegawai = new javax.swing.JButton();
         btnPendaftaran = new javax.swing.JButton();
@@ -503,6 +508,61 @@ public class MenuJadwal extends javax.swing.JFrame {
         bg2.setToolTipText("");
         editData.getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 520));
 
+        PopupSearch.setUndecorated(true);
+        PopupSearch.setOpacity(0.0F);
+        PopupSearch.setResizable(false);
+        PopupSearch.setSize(new java.awt.Dimension(251, 116));
+        PopupSearch.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                PopupSearchWindowOpened(evt);
+            }
+        });
+        PopupSearch.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CLOSE4.setBackground(new Color(0,0,0,0));
+        CLOSE4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/xOff.png"))); // NOI18N
+        CLOSE4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        CLOSE4.setBorderPainted(false);
+        CLOSE4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CLOSE4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Close.png"))); // NOI18N
+        CLOSE4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLOSE4ActionPerformed(evt);
+            }
+        });
+        PopupSearch.getContentPane().add(CLOSE4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 30, 30));
+
+        txtCari.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        txtCari.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCari.setToolTipText("Cari Berdasarkan Nama");
+        txtCari.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(30, 173, 152), 2, true));
+        txtCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCariActionPerformed(evt);
+            }
+        });
+        PopupSearch.getContentPane().add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 30));
+
+        cari.setBackground(new Color(0,0,0,0));
+        cari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/SearchAktif.png"))); // NOI18N
+        cari.setBorder(null);
+        cari.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Search.png"))); // NOI18N
+        cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cariActionPerformed(evt);
+            }
+        });
+        PopupSearch.getContentPane().add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, 50));
+
+        titleSearch.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
+        titleSearch.setForeground(new java.awt.Color(255, 255, 255));
+        titleSearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleSearch.setText("Search");
+        PopupSearch.getContentPane().add(titleSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 30));
+
+        bg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/SearchPopup.png"))); // NOI18N
+        PopupSearch.getContentPane().add(bg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setUndecorated(true);
@@ -531,18 +591,7 @@ public class MenuJadwal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelJadwal);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 860, 460));
-
-        Cari.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        Cari.setText("Cari");
-        getContentPane().add(Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, -1, -1));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, 120, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 860, 430));
 
         Delete.setBackground(new Color(0,0,0,0));
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPoli/Asset/delete.png"))); // NOI18N
@@ -665,6 +714,26 @@ public class MenuJadwal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 292, -1, -1));
+
+        Search.setBackground(new Color(0,0,0,0));
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/Search.png"))); // NOI18N
+        Search.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Search.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Search.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPembayaran/Asset/seachAktif.png"))); // NOI18N
+        Search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SearchMouseEntered(evt);
+            }
+        });
+        Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 150, 80));
 
         btnDokter.setBackground(new Color(0,0,0,0));
         btnDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuUtama/Asset/Dokter.png"))); // NOI18N
@@ -819,6 +888,7 @@ public class MenuJadwal extends javax.swing.JFrame {
                 String Har = rslt.getString("Hari");
                 String Jmulai = rslt.getString("JamMulai");
                 String Jselesai = rslt.getString("JamSelesai");
+                
                 KodeJadwal1.setText(Kode);
                 Hari1.setText(Har);
                 JamMulai1.setText(Jmulai);
@@ -830,34 +900,48 @@ public class MenuJadwal extends javax.swing.JFrame {
         } 
     }
         private void UpdateData(){
-        
-        String Kode = GlobalVar.KodeObat;
-        String Kode2 = NamaDokter1.getActionCommand();
+        String Kode = KodeJadwal1.getText();
         String Har = Hari1.getText();
-        String Jmulai = JamMulai1.getText();
-        String Jselesai = JamSelesai.getText();
-                        //panggil koneksi
-            Connection connect = Koneksi.getKoneksi();
+        String Mulai = JamMulai1.getText();
+        String Selesai = JamSelesai1.getText();
+        String nmdok = (String)NamaDokter1.getSelectedItem();
         
-            String query2 = "UPDATE jadwalpraktek SET  KodeDokter = '"+Kode2+"',"
-                    + " Hari = '"+Har+"', JamMulai = '"+Jmulai+"', JamSelesai = '"+Jselesai+"' WHERE KodeJadwal = '"+Kode+"'";
+        String query = "SELECT * FROM dokter WHERE NmDokter = '"+nmdok+"' ";
+                
+        try{
+            Connection connect = Koneksi.getKoneksi();//memanggil koneksi
+            Statement sttmnt = connect.createStatement();//membuat statement
+            ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
 
+            while (rslt.next()){
+                KodeDokter = rslt.getString("KodeDokter");   
+             }
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+            Connection connect = Koneksi.getKoneksi();
+            //query untuk memasukan data
+            String query2 = "UPDATE jadwalpraktek SET KodeDokter = '"+KodeDokter+"' ,Hari= '"+Har+"' ,"
+                    + "JamMulai = '"+Mulai+"' ,JamSelesai= '"+Selesai+"' WHERE KodeJadwal = '"+Kode+"';";
             try{
+                //menyiapkan statement untuk di eksekusi
                 PreparedStatement ps = (PreparedStatement) connect.prepareStatement(query2);
                 ps.executeUpdate(query2);
-                JOptionPane.showMessageDialog(null , "Data  Berhasil diUpdate");
+                JOptionPane.showMessageDialog(null,"Data Berhasil Disimpan");
+
             }catch(SQLException | HeadlessException e){
                 System.out.println(e);
-                JOptionPane.showMessageDialog(null, "Data Gagal diUpdate");
+                JOptionPane.showMessageDialog(null,"Data Gagal Disimpan");
+
             }finally{
                 editData.dispose();
                 KodeJadwal1.setText(null);
                 Hari1.setText(null);
                 JamMulai1.setText(null);
                 JamSelesai1.setText(null);
-                tampilData();
             }
         }
+    }
         private void kodeotomatis(){
         String query = "SELECT * FROM jadwalpraktek ORDER BY KodeJadwal DESC ";
         try{
@@ -888,7 +972,48 @@ public class MenuJadwal extends javax.swing.JFrame {
             System.out.println(e);
         }
     }
-
+        private void cari(){
+        int row = TabelJadwal.getRowCount();
+        for(int a = 0 ; a < row ; a++){
+            table.removeRow(0);
+        }
+        
+        String cari = txtCari.getText();
+        
+        String query = 
+                        "SELECT KodeJadwal,dokter.KodeDokter,NmDokter,Hari,JamMulai,JamSelesai FROM jadwalpraktek\n" +
+                        "INNER JOIN dokter ON jadwalpraktek.KodeDokter = dokter.KodeDokter\n "+
+                        "WHERE NmDokter LIKE '%"+cari+"%'ORDER BY KodeJadwal ";
+//                    "SELECT KodeDokter,KodePoli,TelpPeg,TglLhrPeg,JnsKelPeg,AlmPeg FROM pegawai WHERE NamaPeg LIKE '%"+cari+"%'";
+                
+       try{
+           Connection connect = Koneksi.getKoneksi();//memanggil koneksi
+           Statement sttmnt = connect.createStatement();//membuat statement
+           ResultSet rslt = sttmnt.executeQuery(query);//menjalanakn query
+           
+           while (rslt.next()){
+                //menampung data sementara
+                   
+                    String kode = rslt.getString("KodeJadwal");
+                    String kodedok = rslt.getString("KodeDokter");
+                    String namadok = rslt.getString("NmDokter");
+                    String har = rslt.getString("Hari");
+                    String jmulai = rslt.getString("JamMulai");
+                    String jselesai = rslt.getString("JamSelesai");
+                    
+                //masukan semua data kedalam array
+                String[] data = {kode,kodedok,namadok,har,jmulai,jselesai};
+                //menambahakan baris sesuai dengan data yang tersimpan diarray
+                table.addRow(data);
+            }
+                //mengeset nilai yang ditampung agar muncul di table
+                TabelJadwal.setModel(table);
+           
+        
+        }catch(Exception e){
+               System.out.println(e);
+        }
+    }
     private void MINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MINActionPerformed
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
@@ -947,7 +1072,7 @@ public class MenuJadwal extends javax.swing.JFrame {
 
     private void InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputActionPerformed
         // TODO add your handling code here:
-         kodeotomatis();
+        kodeotomatis();
         tambahData.setVisible(true);
         tambahData.setBounds(380, 120   , 600, 520);
     }//GEN-LAST:event_InputActionPerformed
@@ -957,16 +1082,13 @@ public class MenuJadwal extends javax.swing.JFrame {
         editData.setVisible(true);
         editData.setBounds(380, 120, 600, 520);
         LoadData();
+        addcombo();
     }//GEN-LAST:event_EditActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
         hapusData();
     }//GEN-LAST:event_DeleteActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void MIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIN1ActionPerformed
         // TODO add your handling code here:
@@ -1031,6 +1153,7 @@ public class MenuJadwal extends javax.swing.JFrame {
     private void Simpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Simpan1ActionPerformed
         // TODO add your handling code here:
         UpdateData();
+        tampilData();
     }//GEN-LAST:event_Simpan1ActionPerformed
 
     private void editDataWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_editDataWindowOpened
@@ -1074,7 +1197,6 @@ public class MenuJadwal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String kode = table.getValueAt(TabelJadwal.getSelectedRow(),0).toString();
         GlobalVar.KodeJadwal = kode;
-
     }//GEN-LAST:event_TabelJadwalMouseClicked
 
     private void JamSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JamSelesaiActionPerformed
@@ -1149,6 +1271,51 @@ public class MenuJadwal extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_JamSelesaiFocusLost
+
+    private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
+        // TODO add your handling code here:
+        PopupSearch.setVisible(true);
+        PopupSearch.setLocation(930, 240);
+    }//GEN-LAST:event_SearchMouseClicked
+
+    private void SearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchMouseEntered
+
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchActionPerformed
+
+    private void CLOSE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSE4ActionPerformed
+        // TODO add your handling code here:
+        tampilData();
+        PopupSearch.setVisible(false);
+    }//GEN-LAST:event_CLOSE4ActionPerformed
+
+    private void txtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCariActionPerformed
+
+    private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
+        // TODO add your handling code here:
+        cari();
+        PopupSearch.setVisible(false);
+    }//GEN-LAST:event_cariActionPerformed
+
+    private void PopupSearchWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_PopupSearchWindowOpened
+        // TODO add your handling code here:
+        for(double i = 0.0; i <= 1.0; i = i + 0.1){
+            String val = i+ "";
+            float f = Float.valueOf(val);
+            //            this.setOpacity(f);
+            PopupSearch.setOpacity(f);
+            try{
+                Thread.sleep(20);
+            }
+            catch(Exception e){
+            }
+        }
+    }//GEN-LAST:event_PopupSearchWindowOpened
         private void InputData(){
         String Kode = KodeJadwal.getText();
         String Har = Hari.getText();
@@ -1202,7 +1369,6 @@ public class MenuJadwal extends javax.swing.JFrame {
             
             while (rslt.next()){
                 String nama = rslt.getString("NmDokter");
-                String kode = rslt.getString("KodeDokter");
                 NamaDokter.addItem(nama);
                 NamaDokter1.addItem(nama);
             }
@@ -1258,7 +1424,7 @@ public class MenuJadwal extends javax.swing.JFrame {
     private javax.swing.JButton CLOSE;
     private javax.swing.JButton CLOSE1;
     private javax.swing.JButton CLOSE2;
-    private javax.swing.JButton Cari;
+    private javax.swing.JButton CLOSE4;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Edit;
     private javax.swing.JTextField Hari;
@@ -1288,12 +1454,15 @@ public class MenuJadwal extends javax.swing.JFrame {
     private javax.swing.JLabel NamaDok1;
     private javax.swing.JComboBox<String> NamaDokter;
     private javax.swing.JComboBox<String> NamaDokter1;
+    private javax.swing.JDialog PopupSearch;
+    private javax.swing.JButton Search;
     private javax.swing.JButton Simpan;
     private javax.swing.JButton Simpan1;
     private javax.swing.JTable TabelJadwal;
     private javax.swing.JLabel bg;
     private javax.swing.JLabel bg1;
     private javax.swing.JLabel bg2;
+    private javax.swing.JLabel bg3;
     private javax.swing.JButton btnDokter;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnJadwalPraktek;
@@ -1304,15 +1473,17 @@ public class MenuJadwal extends javax.swing.JFrame {
     private javax.swing.JButton btnPendaftaran;
     private javax.swing.JButton btnPoli;
     private javax.swing.JButton btnUser;
+    private javax.swing.JButton cari;
     private javax.swing.JDialog editData;
     private javax.swing.JLabel header;
     private javax.swing.JLabel header1;
     private javax.swing.JLabel header2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel navi;
     private javax.swing.JDialog tambahData;
+    private javax.swing.JLabel titleSearch;
+    private javax.swing.JTextField txtCari;
     private javax.swing.JLabel txtUser;
     private javax.swing.JLabel userPanel;
     // End of variables declaration//GEN-END:variables
