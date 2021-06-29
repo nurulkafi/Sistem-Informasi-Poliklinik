@@ -1,4 +1,4 @@
-# Sistem Informasi Minimarket
+# Sistem Informasi Poliklinik
 Tugas Besar Pemograman Objek 1 Kelompok 3
 <h1>Anggota : </h1>
 <p>Moch Nurul Kafi	3411191101</p>
